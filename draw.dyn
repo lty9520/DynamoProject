@@ -1,4 +1,4 @@
-<Workspace Version="0.9.1.4062" X="3529.80794317913" Y="2895.97741190341" zoom="1.01349558339705" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="False">
+<Workspace Version="0.9.1.4062" X="349.312538549021" Y="412.008605198171" zoom="0.01953278453125" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="False">
   <NamespaceResolutionMap>
     <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
     <ClassMap partialName="Polygon" resolvedName="Autodesk.DesignScript.Geometry.Polygon" assemblyName="ProtoGeometry.dll" />
@@ -2208,7 +2208,7 @@
       <PortInfo index="1" default="True" />
       <PortInfo index="2" default="True" />
     </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="1cc7d226-6486-4ce9-a8df-7cb42dd8ad2c" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="34771.6255971109" y="-6336.73894741735" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//获取创建枋类构件的中心点&#xA;//p_center-&gt;与坊正交的栱的长方体部分的质心&#xA;//p_down-&gt;栌枓的内角点&#xA;//dh-&gt;与坊正交的栱的高的一半&#xA;def getNDGFangCenterPoint(p_center, p_down, dh)&#xA;{&#xA;	x1 = 0;&#xA;	y1 = 0;&#xA;	z1 = p_down.Z + (p_center.Z + dh - p_down.Z) / 2;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p1;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="1cc7d226-6486-4ce9-a8df-7cb42dd8ad2c" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="34771.6255971109" y="-6336.73894741735" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//获取泥道栱方向创建枋类构件的中心点&#xA;//p_center-&gt;与坊正交的栱的长方体部分的质心&#xA;//p_down-&gt;栌枓的内角点&#xA;//dh-&gt;与坊正交的栱的高的一半&#xA;def getNDGFangCenterPoint(p_center, p_down, dh)&#xA;{&#xA;	x1 = 0;&#xA;	y1 = 0;&#xA;	z1 = p_down.Z + (p_center.Z + dh - p_down.Z) / 2;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p1;&#xA;};" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="d894fc61-7565-4178-837c-1d60623f54b3" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="34753.2213493831" y="-6725.5032827095" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="getNDGFangCenterPoint(p_center, p_down, dh);" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="67bce808-665c-449a-a7ff-c7d28b2c8590" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Cuboid.ByLengths" x="35292.4213493831" y="-6600.71661604283" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Cuboid.ByLengths@Autodesk.DesignScript.Geometry.Point,double,double,double">
       <PortInfo index="0" default="True" />
@@ -3473,8 +3473,8 @@
       <PortInfo index="1" default="True" />
       <PortInfo index="2" default="True" />
     </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="e7fe9881-f639-4f2c-b2b3-f3a3f3ce3dfd" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="45551.5492795032" y="8255.46870285533" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//获取创建枋类构件的中心点&#xA;//p_center-&gt;与坊正交的栱的长方体部分的质心&#xA;//p_down-&gt;栌枓的内角点&#xA;//dh-&gt;与坊正交的栱的高的一半&#xA;def getHGFang(p, db, w, l, h)&#xA;{&#xA;	x1 = p.X + db - l / 2;&#xA;	y1 = p.Y - w / 2;&#xA;	z1 = p.Z + h / 2;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	cube = Cuboid.ByLengths(p1, l, w, h);&#xA;&#xA;	return = cube;&#xA;};" ShouldFocus="false" />
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="f4113da3-5b90-4920-b21d-b6767aeed0b2" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="45533.1450317754" y="7866.70436756318" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="getHGFang(p, db, w, l, h);" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="e7fe9881-f639-4f2c-b2b3-f3a3f3ce3dfd" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="45551.5492795032" y="8255.46870285533" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//获取华栱创建枋类构件的中心点&#xA;//p-&gt;栌斗内角点&#xA;//db-&gt;超出栌斗部分的长度&#xA;//w-&gt;枋的宽&#xA;//l-&gt;枋的长&#xA;//h-&gt;枋的高&#xA;def createHGFang(p, db, w, l, h)&#xA;{&#xA;	x1 = p.X + db - l / 2;&#xA;	y1 = p.Y - w / 2;&#xA;	z1 = p.Z + h / 2;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	cube = Cuboid.ByLengths(p1, l, w, h);&#xA;&#xA;	return = cube;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="f4113da3-5b90-4920-b21d-b6767aeed0b2" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="45533.1450317754" y="7866.70436756318" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="createHGFang(p, db, w, l, h);" ShouldFocus="false" />
     <CoreNodeModels.Input.DoubleInput guid="2145a92b-56e9-4391-ba90-79614c519e94" type="CoreNodeModels.Input.DoubleInput" nickname="15-t" x="45141.7288993891" y="8185.17989797364" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double value="40" />
     </CoreNodeModels.Input.DoubleInput>
@@ -3484,45 +3484,44 @@
     <CoreNodeModels.Input.DoubleInput guid="f748b5ac-b1b0-43b8-8d55-d1fdb7d1e625" type="CoreNodeModels.Input.DoubleInput" nickname="15-h" x="45130.5135374296" y="8390.43366483186" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double value="60" />
     </CoreNodeModels.Input.DoubleInput>
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="7f70fba1-de5b-413b-8ed6-0d6d990d6ea5" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="45501.9646640476" y="4144.57833237893" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="def getMidPoint(p1, p2, h1, dh, h)&#xA;{&#xA;	x1 = (p1.X + p2.X) / 2;&#xA;	y1 = (p1.Y + p2.Y) / 2;&#xA;	z1 = p1.Z + h1 + dh + h / 2;&#xA;&#xA;	p_mid = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p_mid;&#xA;};" ShouldFocus="false" />
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="ba85181b-bef1-4ae9-a2f8-e7ec5a6ad156" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="45458.3465937463" y="2994.51743042314" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="getMidPoint(p1, p2, h1, dh, h);" ShouldFocus="false" />
-    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="7707887a-ee1f-4832-8a9f-d4d9e2e744be" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Surface.PointAtParameter" x="44644.1533826423" y="4579.58574723838" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Surface.PointAtParameter@double,double">
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="7f70fba1-de5b-413b-8ed6-0d6d990d6ea5" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="46428.4965608329" y="4101.62652259418" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//获取柱头坊的中心点&#xA;//p1, p2-&gt;两侧散枓的内角点&#xA;//h1-&gt;散枓的h1&#xA;//dh-&gt;散枓的U型底高&#xA;//h-&gt;枋的高&#xA;def getMidPoint(p1, p2, h1, dh, h)&#xA;{&#xA;	x1 = (p1.X + p2.X) / 2;&#xA;	y1 = (p1.Y + p2.Y) / 2;&#xA;	z1 = p1.Z + h1 + dh + h / 2;&#xA;&#xA;	p_mid = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p_mid;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="ba85181b-bef1-4ae9-a2f8-e7ec5a6ad156" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="46384.8784905316" y="2951.56562063839" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="getMidPoint(p1, p2, h1, dh, h);" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="7707887a-ee1f-4832-8a9f-d4d9e2e744be" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Surface.PointAtParameter" x="45570.6852794276" y="4536.63393745363" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Surface.PointAtParameter@double,double">
       <PortInfo index="1" default="True" />
       <PortInfo index="2" default="True" />
     </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
-    <CoreNodeModels.Input.DoubleInput guid="8c7e2652-2dc9-462c-84bb-421a1598b48b" type="CoreNodeModels.Input.DoubleInput" nickname="Number" x="44233.5285524441" y="4726.82844374011" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+    <CoreNodeModels.Input.DoubleInput guid="8c7e2652-2dc9-462c-84bb-421a1598b48b" type="CoreNodeModels.Input.DoubleInput" nickname="Number" x="45160.0604492294" y="4683.87663395536" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double value="0.5" />
     </CoreNodeModels.Input.DoubleInput>
-    <CoreNodeModels.Input.DoubleInput guid="0efc78c6-b6b4-4894-b239-e949874e49d3" type="CoreNodeModels.Input.DoubleInput" nickname="Number" x="44250.4888039848" y="4861.2058213315" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+    <CoreNodeModels.Input.DoubleInput guid="0efc78c6-b6b4-4894-b239-e949874e49d3" type="CoreNodeModels.Input.DoubleInput" nickname="Number" x="45177.0207007701" y="4818.25401154675" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double value="0.5" />
     </CoreNodeModels.Input.DoubleInput>
-    <CoreNodeModels.Input.DoubleInput guid="70b22a3c-5ae5-41c9-992e-1caad4d9f26e" type="CoreNodeModels.Input.DoubleInput" nickname="Number" x="44245.4043742403" y="2455.36651931798" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+    <CoreNodeModels.Input.DoubleInput guid="70b22a3c-5ae5-41c9-992e-1caad4d9f26e" type="CoreNodeModels.Input.DoubleInput" nickname="Number" x="45171.9362710256" y="2412.41470953323" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double value="0.5" />
     </CoreNodeModels.Input.DoubleInput>
-    <CoreNodeModels.Input.DoubleInput guid="4b0dcc30-e0d6-497b-b1ce-131ba1051fbe" type="CoreNodeModels.Input.DoubleInput" nickname="Number" x="44262.364625781" y="2589.74389690937" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+    <CoreNodeModels.Input.DoubleInput guid="4b0dcc30-e0d6-497b-b1ce-131ba1051fbe" type="CoreNodeModels.Input.DoubleInput" nickname="Number" x="45188.8965225663" y="2546.79208712462" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double value="0.5" />
     </CoreNodeModels.Input.DoubleInput>
-    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="cb077317-97d4-42da-a9dc-71735804ee16" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Surface.PointAtParameter" x="44518.8648489414" y="2293.68546960604" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Surface.PointAtParameter@double,double">
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="cb077317-97d4-42da-a9dc-71735804ee16" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Surface.PointAtParameter" x="45445.3967457267" y="2250.73365982129" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Surface.PointAtParameter@double,double">
       <PortInfo index="1" default="True" />
       <PortInfo index="2" default="True" />
     </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="a335af75-ba9c-44fd-8596-e1260e7c4b90" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="45066.3645102408" y="3159.60364940184" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="h - h1 - h2;" ShouldFocus="false" />
-    <CoreNodeModels.Input.DoubleInput guid="a7fe2a87-1b82-491a-9e0f-9c5d70a056da" type="CoreNodeModels.Input.DoubleInput" nickname="13-h" x="45336.9696768228" y="3330.98857753417" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="a335af75-ba9c-44fd-8596-e1260e7c4b90" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="45992.8964070261" y="3116.65183961709" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="h - h1 - h2;" ShouldFocus="false" />
+    <CoreNodeModels.Input.DoubleInput guid="a7fe2a87-1b82-491a-9e0f-9c5d70a056da" type="CoreNodeModels.Input.DoubleInput" nickname="13-h" x="46263.5015736081" y="3288.03676774942" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double value="60" />
     </CoreNodeModels.Input.DoubleInput>
-    <CoreNodeModels.Input.DoubleInput guid="12ea482f-0b2c-4d0e-8952-e745c41ef507" type="CoreNodeModels.Input.DoubleInput" nickname="14-w" x="45355.9912231182" y="3412.81305278059" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+    <CoreNodeModels.Input.DoubleInput guid="12ea482f-0b2c-4d0e-8952-e745c41ef507" type="CoreNodeModels.Input.DoubleInput" nickname="14-w" x="46282.5231199035" y="3369.86124299584" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double value="40" />
     </CoreNodeModels.Input.DoubleInput>
-    <CoreNodeModels.Input.DoubleInput guid="c735ef6a-f148-4b7a-88e2-800bf4eaf34d" type="CoreNodeModels.Input.DoubleInput" nickname="14-l" x="45349.4020534135" y="3549.24289974262" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+    <CoreNodeModels.Input.DoubleInput guid="c735ef6a-f148-4b7a-88e2-800bf4eaf34d" type="CoreNodeModels.Input.DoubleInput" nickname="14-l" x="46275.9339501988" y="3506.29108995787" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double value="466" />
     </CoreNodeModels.Input.DoubleInput>
-    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="bbf48690-585a-43ef-9594-53a8a7d8b8b9" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Cuboid.ByLengths" x="46029.3716307131" y="3021.2785281523" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Cuboid.ByLengths@Autodesk.DesignScript.Geometry.Point,double,double,double">
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="bbf48690-585a-43ef-9594-53a8a7d8b8b9" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Cuboid.ByLengths" x="46955.9035274984" y="2978.32671836755" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Cuboid.ByLengths@Autodesk.DesignScript.Geometry.Point,double,double,double">
       <PortInfo index="0" default="True" />
       <PortInfo index="1" default="True" />
       <PortInfo index="2" default="True" />
       <PortInfo index="3" default="True" />
     </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="ac4db22f-e180-42d0-891a-a72d9be2b39d" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="46393.7419795089" y="-2012.1878382522" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="def getMidPoint(p1, p2, h1, dh, h)&#xA;{&#xA;	x1 = (p1.X + p2.X) / 2;&#xA;	y1 = (p1.Y + p2.Y) / 2;&#xA;	z1 = p1.Z + h1 + dh + h / 2;&#xA;&#xA;	p_mid = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p_mid;&#xA;};" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="54701733-d5f1-47a8-a3e1-f6dd6919eacb" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="46350.1239092076" y="-3162.24874020799" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="getMidPoint(p1, p2, h1, dh, h);" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="74bf35f3-d934-421c-8db4-88c0598c3fe2" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Surface.PointAtParameter" x="45535.9306981036" y="-1577.18042339275" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Surface.PointAtParameter@double,double">
       <PortInfo index="1" default="True" />
@@ -3560,7 +3559,6 @@
       <PortInfo index="2" default="True" />
       <PortInfo index="3" default="True" />
     </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="124cabf6-79b1-4086-91fb-c322b840a5fe" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="46379.4915555508" y="-8905.07807007746" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="def getMidPoint(p1, p2, h1, dh, h)&#xA;{&#xA;	x1 = (p1.X + p2.X) / 2;&#xA;	y1 = (p1.Y + p2.Y) / 2;&#xA;	z1 = p1.Z + h1 + dh + h / 2;&#xA;&#xA;	p_mid = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p_mid;&#xA;};" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="fb55eb62-8dbf-43d4-b570-754133ebc3eb" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="46335.8734852495" y="-10055.1389720332" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="getMidPoint(p1, p2, h1, dh, h);" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="8cd1c1ac-b15a-4ea6-9231-26176e86616c" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Surface.PointAtParameter" x="45521.6802741455" y="-8470.07065521801" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" assembly="ProtoGeometry.dll" function="Autodesk.DesignScript.Geometry.Surface.PointAtParameter@double,double">
       <PortInfo index="1" default="True" />
@@ -5906,7 +5904,7 @@
   </Connectors>
   <Notes />
   <Annotations>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="6ac200a3-eca3-4ea3-bdeb-2bfb413acdb0" annotationText="创建镜像平面（备用）" left="-5346.2257696307" top="-3343.08501177848" width="1082.42239935727" height="2420.40364284087" fontSize="14" InitialTop="-3313.08501177848" InitialHeight="1783.61062220743" TextblockHeight="20" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="6ac200a3-eca3-4ea3-bdeb-2bfb413acdb0" annotationText="创建镜像平面（备用）" left="-5346.2257696307" top="-3343.08501177848" width="1083.42239935727" height="2420.00364284087" fontSize="14" InitialTop="-3313.08501177848" InitialHeight="1783.61062220743" TextblockHeight="20" backgrouund="#FFC1D676">
       <Models ModelGuid="10fb5014-38a4-4e27-b253-055ecdb975fd" />
       <Models ModelGuid="61422b0d-ca3d-4c4c-8d7f-70fe86aa9e06" />
       <Models ModelGuid="d2febbea-ab18-4b7b-8ad6-5dd186a2e1ec" />
@@ -5916,7 +5914,7 @@
       <Models ModelGuid="1542c200-8d11-4793-80ef-4fd4934ac60b" />
       <Models ModelGuid="1570b8d7-1be1-49ab-a2cf-a3c48c3f092e" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="afedb545-7ddf-4d52-8fd7-eac74f586337" annotationText="创建栌枓U型面" left="-1834.48757195206" top="-5406.44857546164" width="2059.07669229322" height="5025.44433033423" fontSize="96" InitialTop="-5281.24857546164" InitialHeight="4807.84433033423" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="afedb545-7ddf-4d52-8fd7-eac74f586337" annotationText="创建栌枓U型面" left="-1834.48757195206" top="-5406.24857546164" width="2060.47669229322" height="5025.84433033423" fontSize="96" InitialTop="-5281.24857546164" InitialHeight="4807.84433033423" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="9257df5c-219e-4ae6-bea7-0fe4c36b80e2" />
       <Models ModelGuid="aff33883-f9fd-4b58-9bf1-e34c1353c271" />
       <Models ModelGuid="23c7c1ce-2f02-4846-9429-5688122be580" />
@@ -5935,7 +5933,7 @@
       <Models ModelGuid="1aa6e95c-4942-47e5-b900-b26548ed26d1" />
       <Models ModelGuid="27b6862d-221c-448c-a3a3-628b2316046b" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="1aa7ea6f-80e8-4a33-a4ff-1398835ff8cd" annotationText="创建最底面" left="-5343.52121462707" top="-5412.85609144642" width="1234.74661365836" height="1336.76796833387" fontSize="96" InitialTop="-5287.65609144642" InitialHeight="1241.56796833387" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="1aa7ea6f-80e8-4a33-a4ff-1398835ff8cd" annotationText="创建最底面" left="-5343.52121462707" top="-5412.65609144642" width="1234.74661365836" height="1336.56796833387" fontSize="96" InitialTop="-5287.65609144642" InitialHeight="1241.56796833387" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="d30ea55b-9319-4fd2-8ff9-10edbc71632d" />
       <Models ModelGuid="05d10e17-8f2b-455d-8d02-5644bf727fdc" />
       <Models ModelGuid="875fc4ae-66ad-48a5-8b3e-d54ebdd05b19" />
@@ -5946,7 +5944,7 @@
       <Models ModelGuid="4450a056-8a07-462f-b4f2-3b4645ca87bf" />
       <Models ModelGuid="3ff3a0d5-f2d1-4173-bdbd-21bd6f6b6d90" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="4c6322d8-94df-40df-9ac0-ab817df94abe" annotationText="创建栌枓四个倾斜梯形面" left="-3745.38625793236" top="-5398.55408485548" width="1797.38253451961" height="4718.05246781499" fontSize="96" InitialTop="-5273.35408485548" InitialHeight="4640.45246781499" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="4c6322d8-94df-40df-9ac0-ab817df94abe" annotationText="创建栌枓四个倾斜梯形面" left="-3745.38625793236" top="-5398.35408485548" width="1797.38253451961" height="4717.65246781499" fontSize="96" InitialTop="-5273.35408485548" InitialHeight="4640.45246781499" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="e7839d9a-9733-474c-8804-26641c7ec10a" />
       <Models ModelGuid="8d604b40-fce5-441c-9fb6-ddc4ae8eebc5" />
       <Models ModelGuid="718bab9e-6eac-4c18-ac41-10f9258de0f1" />
@@ -5977,7 +5975,7 @@
       <Models ModelGuid="76152f63-e4a6-41a8-86ee-d7f9f1a3d901" />
       <Models ModelGuid="84a60c2d-6ffb-49ac-81cc-c620cc9ea1cc" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="2933066b-cd29-42be-b2c6-9067b1529d5d" annotationText="创建二跳散枓/交互枓底面" left="5394.84131912799" top="-7470.37261176702" width="1709.85804992534" height="524.523213823459" fontSize="96" InitialTop="-7345.17261176702" InitialHeight="344.45050811786" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="2933066b-cd29-42be-b2c6-9067b1529d5d" annotationText="创建二跳散枓/交互枓底面" left="5394.84131912799" top="-7470.17261176702" width="1709.85804992534" height="524.52321382346" fontSize="96" InitialTop="-7345.17261176702" InitialHeight="344.45050811786" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="7275342f-2191-4425-8c33-3a48a02ebdd1" />
       <Models ModelGuid="e78345b3-3c06-42fd-b698-0e2e71fe99b9" />
       <Models ModelGuid="79487cfc-1f6b-4b16-b594-82381041d8f0" />
@@ -5989,7 +5987,7 @@
       <Models ModelGuid="cbe7d6e3-b9e2-4fcf-ae79-91276847af33" />
       <Models ModelGuid="56c77b49-533a-4bc9-889b-c90c571140f4" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="79ef4050-751b-492f-aad2-5e988177fc96" annotationText="创建二跳散枓/交互枓的梯形面" left="7299.08250783477" top="-7445.12501504461" width="1797.38253451961" height="2476.64316166367" fontSize="96" InitialTop="-7319.92501504461" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="79ef4050-751b-492f-aad2-5e988177fc96" annotationText="创建二跳散枓/交互枓的梯形面" left="7299.08250783477" top="-7444.92501504461" width="1797.38253451961" height="2476.64316166367" fontSize="96" InitialTop="-7319.92501504461" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="c22218f8-4bd7-47b6-b201-3dd0a13532d2" />
       <Models ModelGuid="f5394fc5-301f-45f4-a72d-6c59c83d905b" />
       <Models ModelGuid="4d85d28f-d27a-476f-bc39-adfc1d2a10d3" />
@@ -6020,7 +6018,7 @@
       <Models ModelGuid="e8fd1a28-082c-41f0-9124-6033f2d860dd" />
       <Models ModelGuid="7088d525-bd3f-47c4-8216-127d71eb0e57" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="b0a12960-7231-4f8e-979b-02dfba16265e" annotationText="创建二跳散枓/交互枓底面" left="5247.39103071095" top="-4350.66548512662" width="1887.39675473756" height="589.215123174799" fontSize="96" InitialTop="-4225.46548512662" InitialHeight="344.450508117859" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="b0a12960-7231-4f8e-979b-02dfba16265e" annotationText="创建二跳散枓/交互枓底面" left="5247.39103071095" top="-4350.46548512662" width="1887.39675473756" height="589.215123174799" fontSize="96" InitialTop="-4225.46548512662" InitialHeight="344.450508117859" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="a140ff61-9ce8-460b-a77e-af0ef738ee55" />
       <Models ModelGuid="e50b70cd-658b-4a67-af82-5b15465a5ff7" />
       <Models ModelGuid="51aa295c-d4a6-49ad-98ea-3f4e4d611394" />
@@ -6033,7 +6031,7 @@
       <Models ModelGuid="7d23dee8-848a-41ae-ab9c-f277a2951ac9" />
       <Models ModelGuid="0ef73fda-3815-4f67-ba7c-a80c1218fbb2" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="f10f2a58-ef47-483b-9883-8ac6ede88282" annotationText="创建二跳散枓/交互枓的梯形面" left="7381.84111851648" top="-4357.45220373764" width="1797.38253451961" height="2476.64316166367" fontSize="96" InitialTop="-4232.25220373764" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="f10f2a58-ef47-483b-9883-8ac6ede88282" annotationText="创建二跳散枓/交互枓的梯形面" left="7381.84111851648" top="-4357.25220373764" width="1797.38253451961" height="2476.64316166367" fontSize="96" InitialTop="-4232.25220373764" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="1c7f2bb6-ded6-433b-b374-4da1fc401da2" />
       <Models ModelGuid="1b526e56-4cb9-452b-9844-55251904c8f7" />
       <Models ModelGuid="7cdca4cb-e1d3-4969-b2b2-c97425492e1a" />
@@ -6064,7 +6062,7 @@
       <Models ModelGuid="b5b6be39-dd8e-4947-8385-faef02365b02" />
       <Models ModelGuid="7038b462-835b-4142-8bc2-c2210056b14d" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="2eb570bb-52e8-4b15-9513-3dc1f1b6ee7d" annotationText="创建二跳散枓/交互枓底面" left="5164.07318840162" top="-1284.43370704669" width="1872.39422270625" height="574.605283949514" fontSize="96" InitialTop="-1159.23370704669" InitialHeight="344.450508117859" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="2eb570bb-52e8-4b15-9513-3dc1f1b6ee7d" annotationText="创建二跳散枓/交互枓底面" left="5164.07318840162" top="-1284.23370704669" width="1872.39422270625" height="574.605283949514" fontSize="96" InitialTop="-1159.23370704669" InitialHeight="344.450508117859" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="3992e89c-4eb4-4a54-9c8d-9809591d7a29" />
       <Models ModelGuid="31ddd837-0366-4ab9-9577-53763f66dc63" />
       <Models ModelGuid="1c849070-08dc-4ac3-a4b9-c8f1e366dac3" />
@@ -6077,7 +6075,7 @@
       <Models ModelGuid="d8e9a8be-1959-426b-8c87-83bf22423cbf" />
       <Models ModelGuid="73fe16cf-4786-4d41-8369-036d3813967a" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="c080fe6d-89dd-4504-b50c-2ac854e77916" annotationText="创建二跳散枓/交互枓的梯形面" left="7376.04486649087" top="-1277.09868031767" width="1797.38253451961" height="2476.64316166367" fontSize="96" InitialTop="-1151.89868031767" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="c080fe6d-89dd-4504-b50c-2ac854e77916" annotationText="创建二跳散枓/交互枓的梯形面" left="7376.04486649087" top="-1276.89868031767" width="1797.38253451961" height="2476.64316166367" fontSize="96" InitialTop="-1151.89868031767" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="a91fc0da-1432-45ca-8479-e53fafc9aaa2" />
       <Models ModelGuid="bd18a753-9a0b-48a7-b554-b9ef7319e4db" />
       <Models ModelGuid="73785ee9-9549-4ac5-9af9-b225ea73c8cf" />
@@ -6108,7 +6106,7 @@
       <Models ModelGuid="1c40240a-8d9f-4bd5-86aa-125260dd7f25" />
       <Models ModelGuid="fbc53c6b-e7ad-4706-acd8-4a5bd060306a" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="def3ef1a-71f0-48f7-a6da-a9931defcd6e" annotationText="创建卷杀部分" left="402.487219638462" top="-7477.32557256978" width="4330.61430558156" height="14062.7753440815" fontSize="96" InitialTop="-7352.12557256978" InitialHeight="14364.596916637" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="def3ef1a-71f0-48f7-a6da-a9931defcd6e" annotationText="创建卷杀部分" left="402.487219638462" top="-7477.12557256978" width="4330.61430558156" height="14062.7753440815" fontSize="96" InitialTop="-7352.12557256978" InitialHeight="14364.596916637" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="83cde9db-0c8f-4337-922e-acc430e13323" />
       <Models ModelGuid="8fde2576-0351-4a6e-a29b-b82509413056" />
       <Models ModelGuid="33d14cd0-a905-4ea3-9f79-cef138e56d2d" />
@@ -6160,7 +6158,7 @@
       <Models ModelGuid="8d00f1de-4e46-4195-9837-85d234877d6b" />
       <Models ModelGuid="0ac55db9-a791-4d24-a665-478618381fe3" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="7f10642e-ba14-4459-a0a6-d503cf5fe9ed" annotationText="创建二跳散枓U型面" left="9273.04213589421" top="-7479.16510097282" width="1839.02017912329" height="2576.24971453038" fontSize="96" InitialTop="-7353.96510097282" InitialHeight="2481.24971453038" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="7f10642e-ba14-4459-a0a6-d503cf5fe9ed" annotationText="创建二跳散枓U型面" left="9273.04213589421" top="-7478.96510097282" width="1839.02017912329" height="2576.24971453038" fontSize="96" InitialTop="-7353.96510097282" InitialHeight="2481.24971453038" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="664353aa-33d1-46ef-8a64-e434f4e64517" />
       <Models ModelGuid="a96f98de-3d85-46a7-9ce5-7526da4151aa" />
       <Models ModelGuid="3bb85ade-ff7d-4e52-80ed-d5569a9cf5a6" />
@@ -6191,7 +6189,7 @@
       <Models ModelGuid="4bb61d45-6f84-413c-8a21-4012361218df" />
       <Models ModelGuid="8fe52d13-822b-47fe-8b30-0ed68ca3b5a8" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="cc95238c-9e0d-43b0-8c6f-de3fd961f134" annotationText="创建二跳散枓U型面" left="9341.97206858272" top="-4372.71463414814" width="1822.05762454858" height="2576.24971453038" fontSize="96" InitialTop="-4247.51463414814" InitialHeight="2481.24971453038" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="cc95238c-9e0d-43b0-8c6f-de3fd961f134" annotationText="创建二跳散枓U型面" left="9341.97206858272" top="-4372.51463414814" width="1822.05762454858" height="2576.24971453038" fontSize="96" InitialTop="-4247.51463414814" InitialHeight="2481.24971453038" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="f411f4bf-64f2-4ca6-a397-0ff364f16e40" />
       <Models ModelGuid="c9abda7b-555e-4b4c-8568-5fb7c7a4d9e6" />
       <Models ModelGuid="fdbd0006-c06b-43a8-a698-e002907d7e6f" />
@@ -6222,7 +6220,7 @@
       <Models ModelGuid="013635f3-447d-42a0-ba4c-925939466bfe" />
       <Models ModelGuid="1a74fd96-a0bb-46e9-973f-ce6908dab6d6" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="0a39845c-081b-4ece-a618-4b52432c424e" annotationText="创建二跳散枓U型面" left="9370.07933126518" top="-1291.12625617047" width="1842.86800847892" height="3136.05888041437" fontSize="96" InitialTop="-1165.92625617047" InitialHeight="2481.24971453038" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="0a39845c-081b-4ece-a618-4b52432c424e" annotationText="创建二跳散枓U型面" left="9370.07933126518" top="-1290.92625617047" width="1842.86800847892" height="3136.05888041437" fontSize="96" InitialTop="-1165.92625617047" InitialHeight="2481.24971453038" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="acb46d2b-2cef-49f8-bd85-37d848fa29ef" />
       <Models ModelGuid="8495495d-84b1-4fe6-9e78-4913ee38155e" />
       <Models ModelGuid="e6674f9d-b321-4fe4-b200-aca711aacfbb" />
@@ -6253,7 +6251,7 @@
       <Models ModelGuid="fdb51c79-19d0-4379-a0d3-c2599c44435f" />
       <Models ModelGuid="a4ab0d3a-cdf0-4cf3-945f-7f8e8c1580d1" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="16d9ebae-32e4-4e5e-bce3-b3b0cbd51a78" annotationText="创建二跳卷杀部分" left="13779.2988781727" top="-11768.4251208391" width="3051.6047306425" height="1472.1576463251" fontSize="96" InitialTop="-11643.2251208391" InitialHeight="1377.75764632509" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="16d9ebae-32e4-4e5e-bce3-b3b0cbd51a78" annotationText="创建二跳卷杀部分" left="13779.2988781727" top="-11768.2251208391" width="3051.0047306425" height="1472.7576463251" fontSize="96" InitialTop="-11643.2251208391" InitialHeight="1377.75764632509" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="d1663069-287f-4437-9b46-fbb7ded31839" />
       <Models ModelGuid="6e5c0a27-1f9a-420a-b637-d796f7f55bb8" />
       <Models ModelGuid="f34143b1-6293-49a3-8bc5-57be9a47ecb2" />
@@ -6274,7 +6272,7 @@
       <Models ModelGuid="3d777966-4bb3-4c05-88b4-ec3241edc5ad" />
       <Models ModelGuid="b4522df8-4534-4b9d-a74b-55bcdde46bc8" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="088f0da4-2f49-4b25-9832-b7bb81be2e8c" annotationText="创建二跳卷杀部分" left="13702.1812509284" top="-6334.35766970563" width="3273.2121455184" height="1468.52054753529" fontSize="96" InitialTop="-6209.15766970563" InitialHeight="1374.12054753529" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="088f0da4-2f49-4b25-9832-b7bb81be2e8c" annotationText="创建二跳卷杀部分" left="13702.1812509284" top="-6334.15766970563" width="3272.6121455184" height="1469.12054753529" fontSize="96" InitialTop="-6209.15766970563" InitialHeight="1374.12054753529" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="7ffc45cd-e1c9-4152-ba2f-337c004a4fbb" />
       <Models ModelGuid="887f100e-2281-42d5-8dfa-3b8fc3698310" />
       <Models ModelGuid="f16a32e6-2426-40cc-b086-c5c58313ebc0" />
@@ -6295,7 +6293,7 @@
       <Models ModelGuid="09f8b5bb-9d59-46b5-bbe4-a64181c49bcf" />
       <Models ModelGuid="f0b41f6f-7691-40bd-b2d4-a5be9ceb9a4a" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="36447f8a-39f8-425e-bb57-0e1eaf31d919" annotationText="创建二跳卷杀部分" left="13773.214694385" top="4674.91429236041" width="3253.234587669" height="1362.14177290662" fontSize="96" InitialTop="4800.11429236041" InitialHeight="1267.14177290662" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="36447f8a-39f8-425e-bb57-0e1eaf31d919" annotationText="创建二跳卷杀部分" left="13773.214694385" top="4675.11429236041" width="3252.634587669" height="1362.14177290662" fontSize="96" InitialTop="4800.11429236041" InitialHeight="1267.14177290662" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="bfb62c90-c68b-4883-b999-a57a12508362" />
       <Models ModelGuid="89c41ce3-178a-4077-b2e2-e6fe54772eab" />
       <Models ModelGuid="8ea3e6d8-cb12-4cc9-89e6-f1c8c0b03402" />
@@ -6316,7 +6314,7 @@
       <Models ModelGuid="99e2f538-5913-4ae0-ae8d-d80105511cc5" />
       <Models ModelGuid="772a5055-1bf3-4402-a5f0-cbcf2c909c43" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="30a275ae-0bcc-462f-9e21-654bf72aa039" annotationText="创建二跳单卷杀栱长方体部分" left="15408.542467903" top="1102.6123314106" width="3683.9954433124" height="2362.22477256623" fontSize="96" InitialTop="1227.8123314106" InitialHeight="1810.62477256624" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="30a275ae-0bcc-462f-9e21-654bf72aa039" annotationText="创建二跳单卷杀栱长方体部分" left="15408.542467903" top="1102.8123314106" width="3683.9954433124" height="2361.62477256623" fontSize="96" InitialTop="1227.8123314106" InitialHeight="1810.62477256624" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="ad6d7eed-cf77-414a-93d7-c35ca1ceb5b5" />
       <Models ModelGuid="d3feb883-0ba0-42ac-b746-cf4c8ab8a5ee" />
       <Models ModelGuid="74f7dfc0-a730-4d23-82a7-476133f80c08" />
@@ -6343,7 +6341,7 @@
       <Models ModelGuid="8abea7d6-9d53-42c7-b7fd-5787045690e1" />
       <Models ModelGuid="a1430957-0e1f-40f5-9892-fdf71d6d4da6" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="c2965f6e-a584-43d6-9029-78b534d8e437" annotationText="创建二跳卷杀部分" left="13606.5504074531" top="-1208.88793457863" width="3253.234587669" height="1362.14177290662" fontSize="96" InitialTop="-1083.68793457863" InitialHeight="1266.94177290662" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="c2965f6e-a584-43d6-9029-78b534d8e437" annotationText="创建二跳卷杀部分" left="13606.5504074531" top="-1208.68793457863" width="3252.634587669" height="1362.14177290662" fontSize="96" InitialTop="-1083.68793457863" InitialHeight="1266.94177290662" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="11259585-9c69-4203-b9c7-b1e50e12ab69" />
       <Models ModelGuid="47ce5dfa-31cf-46da-914d-18e95c399c10" />
       <Models ModelGuid="ad9d7558-ae54-42e1-a52b-0d46c14c666f" />
@@ -6364,7 +6362,7 @@
       <Models ModelGuid="a483a3a5-6aea-4921-b013-cddaa29e0339" />
       <Models ModelGuid="56b1dfb0-c2e6-4dbe-bf7d-e7c5ac3ba8cd" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="a9e9e409-7db1-4c93-b622-42b02e46cfc0" annotationText="创建二跳卷杀部分" left="13695.4176527516" top="-3916.0732728404" width="3253.234587669" height="1362.14177290662" fontSize="96" InitialTop="-3790.8732728404" InitialHeight="1266.94177290662" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="a9e9e409-7db1-4c93-b622-42b02e46cfc0" annotationText="创建二跳卷杀部分" left="13695.4176527516" top="-3915.8732728404" width="3252.634587669" height="1362.14177290662" fontSize="96" InitialTop="-3790.8732728404" InitialHeight="1266.94177290662" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="b5bd350c-aab7-40f1-85da-a2427bf3d4a4" />
       <Models ModelGuid="36c78cde-5340-4918-9817-d37a5f86f78d" />
       <Models ModelGuid="79021018-eb21-4348-ab38-84d3768b1e8a" />
@@ -6385,7 +6383,7 @@
       <Models ModelGuid="01fff2fa-f6c7-48f7-a9f0-f72ec8dfb806" />
       <Models ModelGuid="8e6ad327-593e-4d53-bedf-e3820f904759" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="9c601b16-9441-4f49-9ccd-0cb2b5f42039" annotationText="创建二跳中间柱形体" left="15789.5154228055" top="-9057.60242614188" width="2315.5973597549" height="1270.82509040858" fontSize="96" InitialTop="-8932.40242614188" InitialHeight="1175.62509040858" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="9c601b16-9441-4f49-9ccd-0cb2b5f42039" annotationText="创建二跳中间柱形体" left="15789.5154228055" top="-9057.40242614188" width="2314.9973597549" height="1270.82509040858" fontSize="96" InitialTop="-8932.40242614188" InitialHeight="1175.62509040858" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="89cb1a84-5fcf-4c21-9355-ad24ad0a4d8f" />
       <Models ModelGuid="4ab85ef4-0f0b-4697-aa12-45a7b743e19a" />
       <Models ModelGuid="bb2a5d23-fe16-4753-ae42-25be81d9152a" />
@@ -6399,7 +6397,7 @@
       <Models ModelGuid="90a4de11-06a9-495d-9788-858f0b8b5bad" />
       <Models ModelGuid="79c1015e-cba8-46d8-a393-a242ecebf82a" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="b8b7d558-4f93-4df3-bf6c-3ee32a3b204b" annotationText="创建三跳散枓/交互枓底面" left="19239.8104896281" top="-11550.8380343194" width="1656" height="649.5866666667" fontSize="96" InitialTop="-11425.6380343194" InitialHeight="344.450508117858" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="b8b7d558-4f93-4df3-bf6c-3ee32a3b204b" annotationText="创建三跳散枓/交互枓底面" left="19239.8104896281" top="-11550.6380343194" width="1656" height="649.7866666667" fontSize="96" InitialTop="-11425.6380343194" InitialHeight="344.450508117858" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="e631e6f1-4c4e-43b1-bf31-cd6204c37d1f" />
       <Models ModelGuid="716de728-9488-40c5-b378-48f8c64f3be9" />
       <Models ModelGuid="e2da121d-8fb5-47f1-b0a6-79f6bc253c72" />
@@ -6414,7 +6412,7 @@
       <Models ModelGuid="166bc9d5-724d-4c96-baf5-3a9616ab2efd" />
       <Models ModelGuid="9ea1fbe1-4e90-4c9e-a2b6-e648546703f5" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="69004382-3244-4059-9f64-3f79078d354b" annotationText="创建三跳散枓/交互枓底面" left="19399.7218298694" top="-7055.84146997117" width="1656" height="649.58666666666" fontSize="96" InitialTop="-6930.64146997117" InitialHeight="554.3866666667" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="69004382-3244-4059-9f64-3f79078d354b" annotationText="创建三跳散枓/交互枓底面" left="19399.7218298694" top="-7055.64146997117" width="1656" height="649.78666666666" fontSize="96" InitialTop="-6930.64146997117" InitialHeight="554.3866666667" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="2f83a6f8-a986-42af-a064-2df3de06c319" />
       <Models ModelGuid="dc0c0dc2-87ef-4c71-8ffa-031f5a776227" />
       <Models ModelGuid="599583e1-4252-4eda-a631-ad14dadece88" />
@@ -6430,7 +6428,7 @@
       <Models ModelGuid="0b214481-c388-4c71-b411-4a38ac329d28" />
       <Models ModelGuid="bdb5f0eb-67e3-476d-a8a9-4b5db3eef704" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="d4340d10-c8f2-487d-b771-91fe213931f6" annotationText="创建三跳散枓/交互枓底面" left="19516.11647217" top="-4015.9182124673" width="1656" height="649.5866666667" fontSize="96" InitialTop="-3890.7182124673" InitialHeight="554.3866666667" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="d4340d10-c8f2-487d-b771-91fe213931f6" annotationText="创建三跳散枓/交互枓底面" left="19516.11647217" top="-4015.7182124673" width="1656" height="649.7866666667" fontSize="96" InitialTop="-3890.7182124673" InitialHeight="554.3866666667" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="9b2a4238-8d45-47ce-ba15-2adba790b9cb" />
       <Models ModelGuid="31485c5f-d9bf-481e-82c9-5c67895f8a3b" />
       <Models ModelGuid="60933cdb-2be9-4ac6-b233-60967de431a3" />
@@ -6445,7 +6443,7 @@
       <Models ModelGuid="91b76833-0ef6-41ad-b8be-bbe616df3dcc" />
       <Models ModelGuid="83ac5db1-a7ca-4091-8d5a-9ad7e56edc1a" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="85820bcb-8608-40e4-93f4-418a793ab8df" annotationText="创建三跳散枓/交互枓底面" left="19492.705041838" top="-504.706947264208" width="1652.5155083926" height="649.58666666666" fontSize="96" InitialTop="-379.506947264208" InitialHeight="554.386666666661" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="85820bcb-8608-40e4-93f4-418a793ab8df" annotationText="创建三跳散枓/交互枓底面" left="19492.705041838" top="-504.506947264208" width="1652.5155083926" height="649.78666666666" fontSize="96" InitialTop="-379.506947264208" InitialHeight="554.386666666661" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="f24141c6-84db-4afa-9782-3cd25d5c2a9e" />
       <Models ModelGuid="62ee0d47-efd6-422c-9869-c02c12cb773d" />
       <Models ModelGuid="42e390bf-d430-4745-8573-7200febbb8a8" />
@@ -6461,7 +6459,7 @@
       <Models ModelGuid="2e8d80ea-bbf1-411e-adf3-4b24c020d75d" />
       <Models ModelGuid="bf26fae3-bca4-46c3-af94-289ae94de222" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="3d71b013-63dd-4e33-a999-143f786f59fc" annotationText="创建三跳散枓/交互枓底面" left="19608.973525395" top="4312.10226912055" width="1656" height="662.58666666667" fontSize="96" InitialTop="4437.30226912055" InitialHeight="554.386666666661" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="3d71b013-63dd-4e33-a999-143f786f59fc" annotationText="创建三跳散枓/交互枓底面" left="19608.973525395" top="4312.30226912055" width="1656" height="662.786666666671" fontSize="96" InitialTop="4437.30226912055" InitialHeight="554.386666666661" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="d6d0c9ba-075e-45e9-929c-1088be80c844" />
       <Models ModelGuid="e0b3351e-dd2d-42c3-b7c1-ba940797dcf6" />
       <Models ModelGuid="b35bbdd9-1013-4f89-a5e4-107b76d51781" />
@@ -6477,7 +6475,7 @@
       <Models ModelGuid="64247ca1-ea15-4478-b00d-785354e3881c" />
       <Models ModelGuid="3bfb1b89-d92c-4e41-b67d-b239cfad5332" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="f31fd38b-c3eb-483d-ab0f-888b2aa9a5ae" annotationText="创建三跳散枓/交互枓的梯形" left="21919.5058988914" top="-12336.42351865" width="1797.3825345196" height="2476.64316166369" fontSize="96" InitialTop="-12211.22351865" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="f31fd38b-c3eb-483d-ab0f-888b2aa9a5ae" annotationText="创建三跳散枓/交互枓的梯形" left="21919.5058988914" top="-12336.22351865" width="1797.3825345196" height="2476.64316166369" fontSize="96" InitialTop="-12211.22351865" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="7989a46c-eb9d-41bd-9a69-c12b770f0749" />
       <Models ModelGuid="7728dd5c-79ae-4348-a0b8-425e54e61cb4" />
       <Models ModelGuid="eb88d3b0-c924-4fea-bc14-e1ea7664bea6" />
@@ -6508,7 +6506,7 @@
       <Models ModelGuid="0a1238c2-07f9-4aee-aaa5-9dbf109785c6" />
       <Models ModelGuid="8b52dba3-2d3b-469a-a676-83ce163fe192" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="808cd2c1-8091-4ea2-adfa-4405a953fbb8" annotationText="创建三跳散枓/交互枓的梯形" left="22120.4436075518" top="-4638.74358911858" width="1797.3825345196" height="2476.64316166369" fontSize="96" InitialTop="-4513.54358911858" InitialHeight="2381.44316166369" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="808cd2c1-8091-4ea2-adfa-4405a953fbb8" annotationText="创建三跳散枓/交互枓的梯形" left="22120.4436075518" top="-4638.54358911858" width="1797.3825345196" height="2476.64316166369" fontSize="96" InitialTop="-4513.54358911858" InitialHeight="2381.44316166369" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="57f0666d-1cec-4e56-8f54-6c1ef42db530" />
       <Models ModelGuid="f59c237f-bd7c-41de-9592-45e7855b1d14" />
       <Models ModelGuid="e9254d2b-04a9-4cb4-8bcc-d51a4e3eb35e" />
@@ -6539,7 +6537,7 @@
       <Models ModelGuid="a6171f80-f392-4f6a-b4ef-db8e115855e5" />
       <Models ModelGuid="33aa73b6-9ad7-4b46-b0cd-26cd02862edb" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="90436986-e879-45f7-b8b1-7cadab00c963" annotationText="创建三跳散枓/交互枓的梯形面" left="22181.3211501071" top="-1137.15884435388" width="1797.3825345196" height="2476.64316166368" fontSize="96" InitialTop="-1011.95884435388" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="90436986-e879-45f7-b8b1-7cadab00c963" annotationText="创建三跳散枓/交互枓的梯形面" left="22181.3211501071" top="-1136.95884435388" width="1797.3825345196" height="2476.64316166368" fontSize="96" InitialTop="-1011.95884435388" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="14fab5e1-aef1-48c4-9872-152197517cf9" />
       <Models ModelGuid="b601f425-e124-4acd-acd4-9c1d8a6c4a61" />
       <Models ModelGuid="60d4d74a-de70-4a5d-bdd7-d4adf1f87139" />
@@ -6570,7 +6568,7 @@
       <Models ModelGuid="34119ebf-26f7-4f79-a14b-711c39cd3df9" />
       <Models ModelGuid="a8a18ba0-285e-46fa-bfb0-68cde81388bd" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="3b9159aa-c996-4584-a9cf-f832fd325e52" annotationText="创建三跳散枓/交互枓的梯形面" left="22004.1329800783" top="-8106.77344401207" width="1797.3825345196" height="2476.64316166367" fontSize="96" InitialTop="-7981.57344401207" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="3b9159aa-c996-4584-a9cf-f832fd325e52" annotationText="创建三跳散枓/交互枓的梯形面" left="22004.1329800783" top="-8106.57344401207" width="1797.3825345196" height="2476.64316166367" fontSize="96" InitialTop="-7981.57344401207" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="ce012cec-c533-4780-872a-1a31628c38cd" />
       <Models ModelGuid="03348030-4a8b-4dd9-ab7b-a04c06736187" />
       <Models ModelGuid="c9eb2b43-5ae0-437b-bc6b-51d2cdb2b70b" />
@@ -6601,7 +6599,7 @@
       <Models ModelGuid="ef83d939-5ce8-46e4-9e91-b2148de5f09e" />
       <Models ModelGuid="644108d2-9e9f-4f7c-a522-199c9e64cfaf" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="e551d2c3-b961-4d55-b995-1e624a706db6" annotationText="创建三跳散枓/交互枓的梯形面" left="22226.3834534897" top="3328.78617344089" width="1797.3825345196" height="2476.64316166367" fontSize="96" InitialTop="3453.98617344089" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="e551d2c3-b961-4d55-b995-1e624a706db6" annotationText="创建三跳散枓/交互枓的梯形面" left="22226.3834534897" top="3328.98617344089" width="1797.3825345196" height="2476.64316166367" fontSize="96" InitialTop="3453.98617344089" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="23af99d5-cddd-4d68-8707-2484400f9821" />
       <Models ModelGuid="71ea7e1b-4a62-4e80-8a04-54257fd1b7c2" />
       <Models ModelGuid="76185c5e-216d-4ab7-89c6-a2d5cf13e7d4" />
@@ -6632,7 +6630,7 @@
       <Models ModelGuid="47b404f2-ff08-42dd-bd1b-5a832461b900" />
       <Models ModelGuid="4c9e8139-ffad-4ead-858a-c94079fbe7fb" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="208602c7-b6f0-4ee3-ae6d-7f50ea7e1237" annotationText="创建三跳散枓U型" left="24412.049408774" top="-12390.3687069616" width="1839.0201791233" height="2576.24971453036" fontSize="96" InitialTop="-12265.1687069616" InitialHeight="2481.04971453038" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="208602c7-b6f0-4ee3-ae6d-7f50ea7e1237" annotationText="创建三跳散枓U型" left="24412.049408774" top="-12390.1687069616" width="1839.0201791233" height="2576.24971453036" fontSize="96" InitialTop="-12265.1687069616" InitialHeight="2481.04971453038" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="4573ad1a-e313-4726-9326-b09a7268a17b" />
       <Models ModelGuid="11467d9a-eadd-457e-bb7a-80cd769aea9f" />
       <Models ModelGuid="4c705cc3-d194-4719-9f50-3f9265bb5fcf" />
@@ -6663,7 +6661,7 @@
       <Models ModelGuid="f85939b0-28ef-47ee-852a-09e9e41b9e42" />
       <Models ModelGuid="52202927-e7ca-4496-a39d-87d67d5a29d4" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="ac1a1e2c-f04f-4e5d-9780-262482ee28a7" annotationText="创建三跳散枓U型面" left="24404.3961319257" top="-4672.88764991502" width="1839.0201791233" height="2576.24971453036" fontSize="96" InitialTop="-4547.68764991502" InitialHeight="2481.04971453036" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="ac1a1e2c-f04f-4e5d-9780-262482ee28a7" annotationText="创建三跳散枓U型面" left="24404.3961319257" top="-4672.68764991502" width="1839.0201791233" height="2576.24971453036" fontSize="96" InitialTop="-4547.68764991502" InitialHeight="2481.04971453036" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="362fc140-962a-48a3-a383-cd51becb860e" />
       <Models ModelGuid="43ca6afc-38ec-4f69-83b0-ef5023c820c6" />
       <Models ModelGuid="e6514810-eefc-45d3-9eec-4657e579414b" />
@@ -6694,7 +6692,7 @@
       <Models ModelGuid="1ce31c1e-b5ad-41b2-973c-9d57432c423a" />
       <Models ModelGuid="b56fbe51-5ec9-4afb-8fda-33acfaba02ac" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="cafcfedf-3100-4a22-ae90-6b00164f3ab6" annotationText="创建三跳散枓U型面" left="24535.5552862615" top="-1122.87377587208" width="1822.0576245486" height="2576.24971453039" fontSize="96" InitialTop="-997.673775872085" InitialHeight="2481.04971453038" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="cafcfedf-3100-4a22-ae90-6b00164f3ab6" annotationText="创建三跳散枓U型面" left="24535.5552862615" top="-1122.67377587209" width="1822.0576245486" height="2576.24971453039" fontSize="96" InitialTop="-997.673775872085" InitialHeight="2481.04971453038" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="aaaa1179-3784-4f2e-9d01-0629cd777e1d" />
       <Models ModelGuid="40df1a99-1dd0-44b3-8114-825b6970d2d8" />
       <Models ModelGuid="f76b478e-4a28-418b-a805-483d41e77576" />
@@ -6725,7 +6723,7 @@
       <Models ModelGuid="4d147e72-2fc1-4e97-9ffb-40cd64aa8a83" />
       <Models ModelGuid="be5f0c29-bcfd-4aa9-81ed-de332f18e614" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="1a26b4e7-90a4-481a-bd1c-34a6969d1544" annotationText="创建三跳散枓U型面" left="24449.0819431598" top="-8159.64207077762" width="1822.0576245486" height="2576.24971453038" fontSize="96" InitialTop="-8034.44207077762" InitialHeight="2481.04971453038" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="1a26b4e7-90a4-481a-bd1c-34a6969d1544" annotationText="创建三跳散枓U型面" left="24449.0819431598" top="-8159.44207077762" width="1822.0576245486" height="2576.24971453038" fontSize="96" InitialTop="-8034.44207077762" InitialHeight="2481.04971453038" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="ed61433f-c95f-4e0f-9562-6d4bbebef995" />
       <Models ModelGuid="10627326-8af7-40de-a116-4c440c431bc4" />
       <Models ModelGuid="5602f4cd-d1da-48d8-b24f-786d1fa3b8f3" />
@@ -6756,7 +6754,7 @@
       <Models ModelGuid="6f5ad047-3d0a-4ce5-ad70-a51dae77a038" />
       <Models ModelGuid="3e98b482-99f1-44a4-8718-845c1365c76a" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="ba5bc7c2-87bd-470a-9323-a5cf030a67bb" annotationText="创建三跳散枓U型面" left="24487.3108064404" top="2894.76563487645" width="1842.8680084789" height="3136.05888041437" fontSize="96" InitialTop="3019.96563487645" InitialHeight="3040.85888041437" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="ba5bc7c2-87bd-470a-9323-a5cf030a67bb" annotationText="创建三跳散枓U型面" left="24487.3108064404" top="2894.96563487645" width="1842.8680084789" height="3136.05888041437" fontSize="96" InitialTop="3019.96563487645" InitialHeight="3040.85888041437" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="954b61c1-7468-4041-a7d2-24a6d0f55b4a" />
       <Models ModelGuid="ae81da36-7069-4d62-823a-4442f5e7d959" />
       <Models ModelGuid="ddc44cb1-f130-41ea-ac39-884e3619e55d" />
@@ -6787,7 +6785,7 @@
       <Models ModelGuid="edbe970d-4b98-4d97-8791-58e6cec9766d" />
       <Models ModelGuid="02220b64-2ce4-4df6-b169-1249cd1fbad3" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="c44f9d68-e00a-4ea8-a0fb-1f71a26fb982" annotationText="创建三跳卷杀部分" left="27253.1863151091" top="-4631.44798867374" width="3051.6047306425" height="1472.1576463251" fontSize="96" InitialTop="-4506.24798867374" InitialHeight="1376.9576463251" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="c44f9d68-e00a-4ea8-a0fb-1f71a26fb982" annotationText="创建三跳卷杀部分" left="27253.1863151091" top="-4631.24798867374" width="3051.0047306425" height="1472.7576463251" fontSize="96" InitialTop="-4506.24798867374" InitialHeight="1376.9576463251" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="b6e91bd7-0ea5-48ef-9518-29910c3b90a4" />
       <Models ModelGuid="5bcda349-614b-4c68-8577-ebfad38b5090" />
       <Models ModelGuid="29113568-bc8c-4a02-9a1b-1d607af42ad9" />
@@ -6808,7 +6806,7 @@
       <Models ModelGuid="bdb0ff5b-4a00-4ec0-ad55-626bc22df134" />
       <Models ModelGuid="26397da4-01f2-4d77-88ef-43bb648dcf62" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="40bb1269-1786-4a2d-bcc6-631ea1314830" annotationText="创建三跳卷杀部分" left="27280.8952167739" top="-888.56605780252" width="3051.6047306425" height="1472.1576463251" fontSize="96" InitialTop="-763.36605780252" InitialHeight="1376.9576463251" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="40bb1269-1786-4a2d-bcc6-631ea1314830" annotationText="创建三跳卷杀部分" left="27280.8952167739" top="-888.36605780252" width="3051.0047306425" height="1472.7576463251" fontSize="96" InitialTop="-763.36605780252" InitialHeight="1376.9576463251" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="890cbad1-c304-4cfa-9bb9-0788e7bb0401" />
       <Models ModelGuid="b7961f72-ead3-419d-b461-d8cd80742210" />
       <Models ModelGuid="574e4a8f-ecb5-4aad-be84-aea067533c0a" />
@@ -6829,7 +6827,7 @@
       <Models ModelGuid="fe50a103-4faa-4291-b10f-5e9c565ea69b" />
       <Models ModelGuid="42282c3c-29de-4976-9f79-cc204141feb5" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="ee0fe74b-a615-432c-ac87-8c7738cc984d" annotationText="创建三跳卷杀部分" left="27348.9588868515" top="2054.28431780279" width="3051.6047306425" height="1472.1576463251" fontSize="96" InitialTop="2179.48431780279" InitialHeight="1376.9576463251" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="ee0fe74b-a615-432c-ac87-8c7738cc984d" annotationText="创建三跳卷杀部分" left="27348.9588868515" top="2054.48431780279" width="3051.0047306425" height="1472.7576463251" fontSize="96" InitialTop="2179.48431780279" InitialHeight="1376.9576463251" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="abb48c78-2833-43ec-aaeb-9fc171605dc5" />
       <Models ModelGuid="9087b9b1-639f-4bd3-a965-fab15acf64f5" />
       <Models ModelGuid="9c282213-1523-41bf-866f-6d8b60a4bd6d" />
@@ -6850,7 +6848,7 @@
       <Models ModelGuid="5d12b7ab-5434-444a-9951-43150dd3be2b" />
       <Models ModelGuid="241bcf76-bef9-4734-b073-de511d652d1d" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="96c8e7aa-bcce-4644-a0ce-bae547cc86e1" annotationText="创建三跳卷杀部分" left="27355.0821593981" top="3656.92403880171" width="3051.6047306425" height="1472.1576463251" fontSize="96" InitialTop="3782.12403880171" InitialHeight="1376.9576463251" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="96c8e7aa-bcce-4644-a0ce-bae547cc86e1" annotationText="创建三跳卷杀部分" left="27355.0821593981" top="3657.12403880171" width="3051.0047306425" height="1472.7576463251" fontSize="96" InitialTop="3782.12403880171" InitialHeight="1376.9576463251" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="9e427343-7c7a-4009-b8cc-bd7ab10fcc87" />
       <Models ModelGuid="5ca31717-5a50-415d-861a-dad3b0547ba9" />
       <Models ModelGuid="a72e5258-d723-447c-94f0-a76a189b2f78" />
@@ -6871,7 +6869,7 @@
       <Models ModelGuid="8c9a902b-d8f7-4281-ab5b-6c089c1e83bb" />
       <Models ModelGuid="53807b08-01ab-49b1-babe-a2c3cb1fbfd6" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="86540370-49ce-486a-90e4-223b4ddc1a47" annotationText="创建三跳卷杀部分" left="27353.4179322676" top="5686.86302410666" width="3253.234587669" height="1362.14177290662" fontSize="96" InitialTop="5812.06302410666" InitialHeight="1266.94177290662" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="86540370-49ce-486a-90e4-223b4ddc1a47" annotationText="创建三跳卷杀部分" left="27353.4179322676" top="5687.06302410666" width="3252.634587669" height="1362.14177290662" fontSize="96" InitialTop="5812.06302410666" InitialHeight="1266.94177290662" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="76993560-900b-41de-84e6-52b64f031138" />
       <Models ModelGuid="37fb0f67-0d39-4a8d-b7d6-7519cbde0eb1" />
       <Models ModelGuid="52492a80-a48a-4c52-8b20-c2e420a5c210" />
@@ -6892,7 +6890,7 @@
       <Models ModelGuid="aa22a30a-bd81-418e-b476-80df1e3f1d99" />
       <Models ModelGuid="e55a4e06-656e-4395-a64b-05eef2b1bec2" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="d93e2c34-cd1d-49b3-b4fb-4523a95d85da" annotationText="创建二跳中间柱形体" left="31996.4199850992" top="2699.29700480947" width="2315.5973597549" height="1270.82509040858" fontSize="96" InitialTop="2824.49700480947" InitialHeight="1175.62509040858" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="d93e2c34-cd1d-49b3-b4fb-4523a95d85da" annotationText="创建二跳中间柱形体" left="31996.4199850992" top="2699.49700480947" width="2314.9973597549" height="1270.82509040858" fontSize="96" InitialTop="2824.49700480947" InitialHeight="1175.62509040858" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="d28e990f-8164-4844-b185-40cf02ad7654" />
       <Models ModelGuid="33a5669d-aae6-42b1-aa3c-6d330a7425d7" />
       <Models ModelGuid="1074a8d4-b771-41fc-ac3a-5b54ee444c61" />
@@ -6906,7 +6904,7 @@
       <Models ModelGuid="ac733809-ae02-45e2-af73-f34bd80ba7f9" />
       <Models ModelGuid="827927c7-4c59-4004-a00b-a45f946e0d7b" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="0d3c7d2f-8cb4-4039-8950-86aa63ffcae0" annotationText="创建二跳中间柱形体" left="31836.4663031228" top="-2761.04461693904" width="2315.5973597549" height="1270.82509040858" fontSize="96" InitialTop="-2635.84461693904" InitialHeight="1175.62509040858" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="0d3c7d2f-8cb4-4039-8950-86aa63ffcae0" annotationText="创建二跳中间柱形体" left="31836.4663031228" top="-2760.84461693904" width="2314.9973597549" height="1270.82509040858" fontSize="96" InitialTop="-2635.84461693904" InitialHeight="1175.62509040858" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="a735fc6d-a697-48fd-a7c1-d9827e2f381c" />
       <Models ModelGuid="15edd1d6-16fa-4018-a5a8-a3924a4f9419" />
       <Models ModelGuid="80b82939-156c-4e91-8ff0-ec19f97c81b3" />
@@ -6920,7 +6918,7 @@
       <Models ModelGuid="416930e4-aca1-42bd-82a2-fa88d890270d" />
       <Models ModelGuid="2a43448b-a3d2-427b-a795-14717b9893bd" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="1adda939-03c8-417d-8126-84c1852a1d72" annotationText="创建三跳单卷杀栱长方体部分" left="31374.5110390263" top="5569.53112065836" width="3683.9954433124" height="1016.20758542534" fontSize="96" InitialTop="5694.73112065836" InitialHeight="2267.02477256623" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="1adda939-03c8-417d-8126-84c1852a1d72" annotationText="创建三跳单卷杀栱长方体部分" left="31374.5110390263" top="5569.73112065836" width="3683.9954433124" height="1016.20758542534" fontSize="96" InitialTop="5694.73112065836" InitialHeight="2267.02477256623" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="a29db78f-361e-41bf-954a-5f83e8ba3814" />
       <Models ModelGuid="6e43f4a4-40c4-4330-b415-e67cef73a6db" />
       <Models ModelGuid="2d58e850-8442-4d00-bccc-0000c22f215a" />
@@ -6946,7 +6944,7 @@
       <Models ModelGuid="6874bb0d-e905-42b2-b07a-3688640d7629" />
       <Models ModelGuid="29bbc7f5-cbf3-4d0c-a33c-b866dd312f69" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="313a787f-60b8-4198-9994-09b187ab68fe" annotationText="创建三跳柱头枋" left="33910.4213493831" top="-6961.91661604283" width="1537.6" height="937.77766862548" fontSize="96" InitialTop="-6836.71661604283" InitialHeight="952.341049351651" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="313a787f-60b8-4198-9994-09b187ab68fe" annotationText="创建三跳柱头枋" left="33910.4213493831" top="-6961.71661604283" width="1537" height="937.97766862548" fontSize="96" InitialTop="-6836.71661604283" InitialHeight="952.341049351651" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="a5e37f6e-e60b-403d-9ba6-2b81a379b1c6" />
       <Models ModelGuid="f90ac76a-8303-46b4-9fb8-2dab3f24f1cb" />
       <Models ModelGuid="6eec68ed-d045-45b6-919b-e7414e072782" />
@@ -6961,7 +6959,7 @@
       <Models ModelGuid="eba316f3-484d-47a3-a9ae-8e21d865943a" />
       <Models ModelGuid="b57d9ba8-1190-4999-a396-d58a98c8d468" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="6eba18a1-7633-4725-8d7f-53ff72ea9f39" annotationText="创建四跳散枓/交互枓底面" left="36272.3177871872" top="7307.7655064825" width="1656" height="662.586666666679" fontSize="96" InitialTop="7432.9655064825" InitialHeight="567.386666666671" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="6eba18a1-7633-4725-8d7f-53ff72ea9f39" annotationText="创建四跳散枓/交互枓底面" left="36272.3177871872" top="7307.9655064825" width="1656" height="662.78666666668" fontSize="96" InitialTop="7432.9655064825" InitialHeight="567.386666666671" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="29632090-0b3f-4b9d-8820-d260c9e09f80" />
       <Models ModelGuid="31c0a6c9-ca11-4e17-882e-4854bc5cd0bb" />
       <Models ModelGuid="61378ea6-f0ae-4298-8b9b-c5c4ae7c3c02" />
@@ -6977,7 +6975,7 @@
       <Models ModelGuid="d8a81d15-f3d4-46b1-9ca1-1b06ad274cba" />
       <Models ModelGuid="1bcacec2-3c2a-40a7-a862-5f89930b2197" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="4ed3789b-8c7b-4fa2-8091-63ffd0f0ee56" annotationText="创建四跳散枓/交互枓底面" left="36233.2768811232" top="4549.3217135834" width="1652.5155083926" height="649.586666666659" fontSize="96" InitialTop="4674.5217135834" InitialHeight="554.38666666666" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="4ed3789b-8c7b-4fa2-8091-63ffd0f0ee56" annotationText="创建四跳散枓/交互枓底面" left="36233.2768811232" top="4549.5217135834" width="1652.5155083926" height="649.78666666666" fontSize="96" InitialTop="4674.5217135834" InitialHeight="554.38666666666" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="cd3bc413-02f4-49cb-b0de-c986ccac23b7" />
       <Models ModelGuid="88063301-07d8-4fe4-a4e1-ab2b91e62e0a" />
       <Models ModelGuid="68b356f3-bf27-48c1-94b9-cbccacb1c3da" />
@@ -6993,7 +6991,7 @@
       <Models ModelGuid="807ceb2b-d3ed-4ebf-8600-293b07c0aacf" />
       <Models ModelGuid="f0329453-8a1b-47c1-8c7d-d5d6b276a698" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="664cfa83-c87e-490d-8473-153819cde3a2" annotationText="创建四跳散枓/交互枓底面" left="36426.1967327601" top="-1002.61901518903" width="1652.5155083926" height="649.58666666666" fontSize="96" InitialTop="-877.419015189034" InitialHeight="554.38666666666" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="664cfa83-c87e-490d-8473-153819cde3a2" annotationText="创建四跳散枓/交互枓底面" left="36426.1967327601" top="-1002.41901518903" width="1652.5155083926" height="649.78666666666" fontSize="96" InitialTop="-877.419015189034" InitialHeight="554.38666666666" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="816bea91-76ee-40a8-bb34-4e725eb1b9f1" />
       <Models ModelGuid="b6ea1abe-d9bb-49a0-8118-4f9f3ce13e04" />
       <Models ModelGuid="5a5c00fb-ea3d-42fd-8183-079cf6141018" />
@@ -7009,7 +7007,7 @@
       <Models ModelGuid="56e91894-a3bd-4d18-b030-757e7e60865c" />
       <Models ModelGuid="a5967020-5d23-4dad-a8d1-40aabf55da60" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="fc7dace5-9f86-449e-a2e4-9a63b6a014f6" annotationText="创建四跳散枓/交互枓底面" left="36389.4702788973" top="-4615.63127356441" width="1656" height="649.586666666699" fontSize="96" InitialTop="-4490.43127356441" InitialHeight="554.3866666667" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="fc7dace5-9f86-449e-a2e4-9a63b6a014f6" annotationText="创建四跳散枓/交互枓底面" left="36389.4702788973" top="-4615.43127356441" width="1656" height="649.7866666667" fontSize="96" InitialTop="-4490.43127356441" InitialHeight="554.3866666667" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="89c47097-f35b-44a4-acd4-b565744139c2" />
       <Models ModelGuid="8af8ff8f-61d5-4c91-9b43-943b5024125d" />
       <Models ModelGuid="ca1d5c0c-3763-4f02-9be7-ec368379e26b" />
@@ -7024,7 +7022,7 @@
       <Models ModelGuid="0ac7884b-1898-46fe-9c29-7077ccc11063" />
       <Models ModelGuid="24522ae6-c599-41f3-bd6c-64eb8ed9a364" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="f836b6bd-8e3d-4274-aec8-d2b81f63c5f6" annotationText="创建四跳散枓/交互枓底面" left="36460.9174279104" top="1665.49866253969" width="1656" height="649.5866666667" fontSize="96" InitialTop="1790.69866253969" InitialHeight="554.3866666667" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="f836b6bd-8e3d-4274-aec8-d2b81f63c5f6" annotationText="创建四跳散枓/交互枓底面" left="36460.9174279104" top="1665.69866253969" width="1656" height="649.7866666667" fontSize="96" InitialTop="1790.69866253969" InitialHeight="554.3866666667" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="9cec1392-cf91-465f-a377-696a987d25aa" />
       <Models ModelGuid="a46e5109-3e85-4523-a066-04fadd925e83" />
       <Models ModelGuid="72eeeb8d-7239-4efc-8645-34f97fda561e" />
@@ -7039,7 +7037,7 @@
       <Models ModelGuid="89d44e9c-2330-4074-8380-cf5695e30ab5" />
       <Models ModelGuid="661e1d98-10b2-4739-b673-c8f7851cd244" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="fa6d8fcb-e970-4751-8445-d213a1175a9f" annotationText="创建四跳散枓/交互枓底面" left="36782.0362601513" top="-11607.161173359" width="1366.4" height="548.918079467104" fontSize="96" InitialTop="-11481.961173359" InitialHeight="554.3866666667" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="fa6d8fcb-e970-4751-8445-d213a1175a9f" annotationText="创建四跳散枓/交互枓底面" left="36782.0362601513" top="-11606.961173359" width="1366.4" height="549.118079467102" fontSize="96" InitialTop="-11481.961173359" InitialHeight="554.3866666667" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="13f576eb-41ef-4ab9-902d-914db2fb56ea" />
       <Models ModelGuid="395c7e83-360c-4138-b810-fbd0622facb0" />
       <Models ModelGuid="b1937531-85b6-40a1-88c9-4091fb21ec16" />
@@ -7050,7 +7048,7 @@
       <Models ModelGuid="a9ceda9b-2168-47a9-9c27-b141bfcef9c1" />
       <Models ModelGuid="1aad00a3-f512-44a5-9529-cae2d4708c18" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="8e2cd960-4eb6-4153-9059-6bf10051313a" annotationText="创建四跳散枓/交互枓底面" left="36684.1337816777" top="-7965.63677691728" width="1366.4" height="548.918079467111" fontSize="96" InitialTop="-7840.43677691728" InitialHeight="453.718079467103" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="8e2cd960-4eb6-4153-9059-6bf10051313a" annotationText="创建四跳散枓/交互枓底面" left="36684.1337816777" top="-7965.43677691728" width="1366.4" height="549.118079467111" fontSize="96" InitialTop="-7840.43677691728" InitialHeight="453.718079467103" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="61b629fa-d67b-4edc-8014-53ff6646bd63" />
       <Models ModelGuid="029acdbd-82f5-4792-ac0f-89b5703ef0ac" />
       <Models ModelGuid="979fe90a-9fb4-462e-95c3-3e81ddc97b07" />
@@ -7061,7 +7059,7 @@
       <Models ModelGuid="7f827da5-5a18-4afe-8787-f8672a94b286" />
       <Models ModelGuid="4c997a81-8a2a-4c91-b8aa-6993c0ecfbed" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="fdc94242-4168-4fc1-aed5-f884faa034ab" annotationText="创建三跳散枓/交互枓的梯形" left="39924.6433925223" top="-12545.3023565276" width="1797.38253451959" height="2476.6431616637" fontSize="96" InitialTop="-12420.1023565276" InitialHeight="2381.44316166369" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="fdc94242-4168-4fc1-aed5-f884faa034ab" annotationText="创建三跳散枓/交互枓的梯形" left="39924.6433925223" top="-12545.1023565276" width="1797.38253451959" height="2476.6431616637" fontSize="96" InitialTop="-12420.1023565276" InitialHeight="2381.44316166369" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="9d3cd2be-6800-40ee-a51d-c78760054535" />
       <Models ModelGuid="a56445f7-1f1e-42ac-bd6f-0a3c77e2f744" />
       <Models ModelGuid="2769fbc0-155d-44e0-b5dd-adfefabbd0e3" />
@@ -7092,7 +7090,7 @@
       <Models ModelGuid="37a641c6-34d7-4de9-958a-085b3ddc7fb6" />
       <Models ModelGuid="f07ac2cd-17c6-450c-983d-9cdbc2a4e34a" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="19bf1fc9-f65b-4a9c-8d27-8bd0b549f747" annotationText="创建三跳散枓U型" left="42866.5145992625" top="-12601.7963889958" width="1839.0201791233" height="2576.2497145304" fontSize="96" InitialTop="-12476.5963889958" InitialHeight="2481.04971453036" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="19bf1fc9-f65b-4a9c-8d27-8bd0b549f747" annotationText="创建三跳散枓U型" left="42866.5145992625" top="-12601.5963889958" width="1839.0201791233" height="2576.2497145304" fontSize="96" InitialTop="-12476.5963889958" InitialHeight="2481.04971453036" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="5543d5f0-75f6-4dc2-9ec2-41803d870749" />
       <Models ModelGuid="7478759e-ab14-490d-ab44-3539bd5f2069" />
       <Models ModelGuid="fe595622-7c77-4683-982a-63000666e489" />
@@ -7123,7 +7121,7 @@
       <Models ModelGuid="316f55c8-2f83-4f97-b2ab-4a23f7489b58" />
       <Models ModelGuid="b6c8fe41-c886-494f-9027-86ddef4f8963" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="6c519950-097d-4ad5-ba96-249b10a25160" annotationText="创建三跳散枓U型" left="42216.3959356038" top="831.364342407595" width="1839.0201791233" height="2576.24971453031" fontSize="96" InitialTop="956.564342407595" InitialHeight="2481.0497145303" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="6c519950-097d-4ad5-ba96-249b10a25160" annotationText="创建三跳散枓U型" left="42216.3959356038" top="831.564342407595" width="1839.0201791233" height="2576.24971453031" fontSize="96" InitialTop="956.564342407595" InitialHeight="2481.0497145303" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="fe0e4a6e-51ca-4f4d-bc48-8530a4294d80" />
       <Models ModelGuid="7ca0ee8a-e6ee-43cb-9bc1-f8db24d93acf" />
       <Models ModelGuid="32386a9b-7f2f-4d12-ba9b-d2a8899669c3" />
@@ -7154,7 +7152,7 @@
       <Models ModelGuid="a0ce9d29-f7c9-4640-bed0-1e205d73f1fc" />
       <Models ModelGuid="bd9354a1-5bb0-432c-8a05-3bee595337b0" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="7c6fa5e8-7bad-4885-ac13-3f47405b9c54" annotationText="创建三跳散枓/交互枓的梯形" left="39683.5069274655" top="836.944983402159" width="1797.38253451959" height="2476.6431616637" fontSize="96" InitialTop="962.144983402159" InitialHeight="2381.4431616637" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="7c6fa5e8-7bad-4885-ac13-3f47405b9c54" annotationText="创建三跳散枓/交互枓的梯形" left="39683.5069274655" top="837.144983402159" width="1797.38253451959" height="2476.6431616637" fontSize="96" InitialTop="962.144983402159" InitialHeight="2381.4431616637" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="84c87005-1f03-4324-94e9-82126b59ec38" />
       <Models ModelGuid="63e46c73-0f2d-4e1d-aa42-599e1f69ea43" />
       <Models ModelGuid="8c090f16-06a8-44d7-ae51-d5626013cb14" />
@@ -7185,7 +7183,7 @@
       <Models ModelGuid="e52152cf-bea1-44ed-8dd4-0f0387c2d16b" />
       <Models ModelGuid="757b3f26-aa6e-4aec-bb7e-427d8cba23f1" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="25eec192-baa9-4aff-bdef-6a9da76798e5" annotationText="创建三跳散枓U型" left="42374.0079866014" top="-5469.68909991812" width="1839.0201791233" height="2576.2497145303" fontSize="96" InitialTop="-5344.48909991812" InitialHeight="2481.0497145303" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="25eec192-baa9-4aff-bdef-6a9da76798e5" annotationText="创建三跳散枓U型" left="42374.0079866014" top="-5469.48909991812" width="1839.0201791233" height="2576.2497145303" fontSize="96" InitialTop="-5344.48909991812" InitialHeight="2481.0497145303" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="9cb791d2-f828-48f2-809d-5c50eb68e810" />
       <Models ModelGuid="7f9c5e02-ee48-4b6c-9a69-ff38f4e69632" />
       <Models ModelGuid="2de5567f-962a-4822-9003-529d1e5b2d6f" />
@@ -7216,7 +7214,7 @@
       <Models ModelGuid="fc99d7d0-5aed-442b-8073-99e9e1fdcd17" />
       <Models ModelGuid="047440c7-858a-4f06-a709-a9c4c1902eb0" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="1a2d15b0-5fb0-4d75-be37-0a546368242d" annotationText="创建三跳散枓/交互枓的梯形" left="40042.2820089104" top="-5450.22736014211" width="1797.3825345196" height="2476.6431616637" fontSize="96" InitialTop="-5325.02736014211" InitialHeight="2381.4431616637" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="1a2d15b0-5fb0-4d75-be37-0a546368242d" annotationText="创建三跳散枓/交互枓的梯形" left="40042.2820089104" top="-5450.02736014211" width="1797.3825345196" height="2476.6431616637" fontSize="96" InitialTop="-5325.02736014211" InitialHeight="2381.4431616637" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="8e828ef7-901e-44a0-a5a9-4b58d50834cb" />
       <Models ModelGuid="88c375aa-d5dd-4860-bb90-05556cf530c1" />
       <Models ModelGuid="aa41dcbf-11ff-4a23-9b9a-93742d1f248d" />
@@ -7247,7 +7245,7 @@
       <Models ModelGuid="1b48d1de-13c9-4094-9f8c-74f0e9ba72fa" />
       <Models ModelGuid="9be81c48-74a1-4c78-8d3f-eb6bf172751b" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="7d832bc6-8ecd-4d82-aaa9-26e4ce26997d" annotationText="创建三跳散枓U型面" left="42417.9930466253" top="-8885.77857705515" width="1822.0576245486" height="2576.24971453038" fontSize="96" InitialTop="-8760.57857705515" InitialHeight="2481.04971453038" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="7d832bc6-8ecd-4d82-aaa9-26e4ce26997d" annotationText="创建三跳散枓U型面" left="42417.9930466253" top="-8885.57857705515" width="1822.0576245486" height="2576.24971453038" fontSize="96" InitialTop="-8760.57857705515" InitialHeight="2481.04971453038" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="9c5f8f1f-52c1-49c8-aa70-0984c4250556" />
       <Models ModelGuid="e1c698db-0c67-4e2f-98bd-7abf3da360d2" />
       <Models ModelGuid="3970dc26-5cc9-40f6-923b-c2f408a3fc33" />
@@ -7278,7 +7276,7 @@
       <Models ModelGuid="241b206c-5995-42d1-91a0-a515df44abe8" />
       <Models ModelGuid="ff71e9f7-cd79-43a2-8954-6978648e0afe" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="74572914-5b03-42d3-b8af-095c082a5e70" annotationText="创建三跳散枓/交互枓的梯形面" left="39973.0440835438" top="-8832.9099502896" width="1797.3825345196" height="2476.64316166367" fontSize="96" InitialTop="-8707.7099502896" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="74572914-5b03-42d3-b8af-095c082a5e70" annotationText="创建三跳散枓/交互枓的梯形面" left="39973.0440835438" top="-8832.7099502896" width="1797.3825345196" height="2476.64316166367" fontSize="96" InitialTop="-8707.7099502896" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="ef8cb0d9-046a-4a6b-98b3-c293d2fe425d" />
       <Models ModelGuid="4260c936-e223-4ab1-946b-ad3589af7459" />
       <Models ModelGuid="dcd3c1ee-5905-4580-9f7b-099b72c81eaf" />
@@ -7309,7 +7307,7 @@
       <Models ModelGuid="c068c19b-203c-41cf-81dd-d7aa225c0e41" />
       <Models ModelGuid="8f43aa93-56e5-4964-999e-fbd0a55fe2d2" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="f549ff16-3cef-4906-a03c-efda29108716" annotationText="创建三跳散枓U型面" left="42226.0817101463" top="-1886.65924664333" width="1822.05762454859" height="2576.24971453039" fontSize="96" InitialTop="-1761.45924664333" InitialHeight="2481.04971453038" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="f549ff16-3cef-4906-a03c-efda29108716" annotationText="创建三跳散枓U型面" left="42226.0817101463" top="-1886.45924664333" width="1822.05762454859" height="2576.24971453039" fontSize="96" InitialTop="-1761.45924664333" InitialHeight="2481.04971453038" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="c37ea06c-fdf3-4494-ba3f-8de4f156b899" />
       <Models ModelGuid="e9673abf-9e49-4e88-9254-886a567e2a5d" />
       <Models ModelGuid="d80b7a9d-7c14-456f-b00e-57575f2d39b9" />
@@ -7340,7 +7338,7 @@
       <Models ModelGuid="1dacfd4f-e794-4936-9bb7-ac3ff183a3c0" />
       <Models ModelGuid="3ff1e48b-20bd-4f12-a1fa-ed1916797495" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="6224f803-b3c2-43ad-a1bf-c977c632f521" annotationText="创建三跳散枓/交互枓的梯形面" left="39781.1327470648" top="-1833.79061987777" width="1797.38253451959" height="2476.64316166366" fontSize="96" InitialTop="-1708.59061987777" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="6224f803-b3c2-43ad-a1bf-c977c632f521" annotationText="创建三跳散枓/交互枓的梯形面" left="39781.1327470648" top="-1833.59061987777" width="1797.38253451959" height="2476.64316166366" fontSize="96" InitialTop="-1708.59061987777" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="b2546099-2c32-4c2b-aba0-c8870d939b95" />
       <Models ModelGuid="24153e38-2d07-481a-8f65-5fe85efb20e6" />
       <Models ModelGuid="759ea95e-b74f-4d5f-99a1-ba7cf7f12eeb" />
@@ -7371,7 +7369,7 @@
       <Models ModelGuid="03e60ec6-4078-4291-8b80-a016a1e9c328" />
       <Models ModelGuid="5a152287-dc1f-4336-965c-d16544677f7b" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="92e30989-cb08-4980-94b4-9ace392b36ef" annotationText="创建三跳散枓U型面" left="42133.4089226907" top="3630.7333830773" width="1822.0576245486" height="2576.24971453038" fontSize="96" InitialTop="3755.9333830773" InitialHeight="2481.04971453038" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="92e30989-cb08-4980-94b4-9ace392b36ef" annotationText="创建三跳散枓U型面" left="42133.4089226907" top="3630.9333830773" width="1822.0576245486" height="2576.24971453038" fontSize="96" InitialTop="3755.9333830773" InitialHeight="2481.04971453038" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="bc8de071-b0a4-49ce-b0b0-344fe3f3e5cb" />
       <Models ModelGuid="29acb26a-bb9e-4947-9cb5-2c7d70c5b7ed" />
       <Models ModelGuid="0df9316c-c35b-4efc-b3b5-7c2c171bdf6a" />
@@ -7402,7 +7400,7 @@
       <Models ModelGuid="0831d04b-65aa-451d-b614-0a16f92821e8" />
       <Models ModelGuid="8efe7de6-77e1-4244-8a50-be933a101772" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="14ddb125-ef8b-4ee6-9cc6-ebcb084244e1" annotationText="创建三跳散枓/交互枓的梯形面" left="39679.5326277524" top="3630.03801870178" width="1797.3825345196" height="2476.64316166367" fontSize="96" InitialTop="3755.23801870178" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="14ddb125-ef8b-4ee6-9cc6-ebcb084244e1" annotationText="创建三跳散枓/交互枓的梯形面" left="39679.5326277524" top="3630.23801870178" width="1797.3825345196" height="2476.64316166367" fontSize="96" InitialTop="3755.23801870178" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="1615f59d-87ce-4fb2-ace6-843db4137e32" />
       <Models ModelGuid="36d77433-3ebc-470a-b9cd-70743eb86403" />
       <Models ModelGuid="16dbae09-b6c2-46b4-9755-c28232792b43" />
@@ -7433,7 +7431,7 @@
       <Models ModelGuid="7a0bf4c7-6477-4343-b0c6-ac4ba2d81077" />
       <Models ModelGuid="fa440694-7c08-4144-b31e-5377b55e4ea3" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="1b74f608-6ea5-459a-b39c-cf0e215fb4c7" annotationText="创建三跳散枓/交互枓的梯形面" left="39646.9979296167" top="6861.99548184128" width="1797.3825345196" height="2476.64316166367" fontSize="96" InitialTop="6987.19548184128" InitialHeight="2381.44316166367" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="1b74f608-6ea5-459a-b39c-cf0e215fb4c7" annotationText="创建三跳散枓/交互枓的梯形面" left="39646.9979296167" top="6862.19548184128" width="1797.3825345196" height="2476.64316166367" fontSize="96" InitialTop="6987.19548184128" InitialHeight="2381.44316166367" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="79037eeb-aee5-4dbe-a964-9c4e8904c921" />
       <Models ModelGuid="66090845-5147-49b4-96a5-cbeababf97cf" />
       <Models ModelGuid="30cc3626-869b-4277-ac74-c6e84d7002c1" />
@@ -7464,7 +7462,7 @@
       <Models ModelGuid="42b53b3a-0996-44b7-9997-123ae9ffcf48" />
       <Models ModelGuid="ac526a90-c3bd-447b-bf94-cbd338d298f4" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="e8c1a428-6386-4d75-8ea1-6e94d36be5af" annotationText="创建三跳散枓U型面" left="42104.6219562964" top="6454.20116644071" width="1842.86800847889" height="3136.05888041437" fontSize="96" InitialTop="6579.40116644071" InitialHeight="3040.85888041437" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="e8c1a428-6386-4d75-8ea1-6e94d36be5af" annotationText="创建三跳散枓U型面" left="42104.6219562964" top="6454.40116644071" width="1842.86800847889" height="3136.05888041437" fontSize="96" InitialTop="6579.40116644071" InitialHeight="3040.85888041437" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="204ccd84-b96a-49cc-8103-f5aa67c60e3c" />
       <Models ModelGuid="059beb84-9e9a-4afc-b2d3-da753b7fe832" />
       <Models ModelGuid="d72aa74d-ac82-4842-a347-20b1701f1981" />
@@ -7495,7 +7493,7 @@
       <Models ModelGuid="54cd20d2-3eaa-4947-8426-2dec61cdec51" />
       <Models ModelGuid="96235970-1823-4c33-bcdd-fcb2186fb06b" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="fe3a106b-dd4f-4496-9b6e-374936aa51e4" annotationText="创建四跳生头木" left="44690.3450317754" top="7702.07770089652" width="1220.00424772779" height="901.19100195881" fontSize="96" InitialTop="7827.27770089652" InitialHeight="842.577668625481" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="fe3a106b-dd4f-4496-9b6e-374936aa51e4" annotationText="创建四跳生头木" left="44690.3450317754" top="7702.27770089652" width="1220.20424772779" height="936.19100195881" fontSize="96" InitialTop="7827.27770089652" InitialHeight="842.577668625481" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="1889d9c4-e6a5-477c-a7cd-cbb4dc782990" />
       <Models ModelGuid="186d833a-798f-412f-9d17-2af25dad623f" />
       <Models ModelGuid="b7692488-99ce-4923-ad3d-0949f9cb2513" />
@@ -7508,7 +7506,7 @@
       <Models ModelGuid="cf783d27-3164-442b-ab7f-d4c706e59e4c" />
       <Models ModelGuid="f748b5ac-b1b0-43b8-8d55-d1fdb7d1e625" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="2a76a7d8-191f-4e59-8065-bc3a5ef98aa6" annotationText="创建四跳柱头枋" left="44223.5285524441" top="2168.48546960604" width="1961.443078269" height="2760.52035172546" fontSize="96" InitialTop="2293.68546960604" InitialHeight="2665.32035172547" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="2a76a7d8-191f-4e59-8065-bc3a5ef98aa6" annotationText="创建四跳柱头枋" left="45150.0604492294" top="2125.73365982129" width="1960.843078269" height="2760.52035172546" fontSize="96" InitialTop="2250.73365982129" InitialHeight="2665.32035172547" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="7f70fba1-de5b-413b-8ed6-0d6d990d6ea5" />
       <Models ModelGuid="ba85181b-bef1-4ae9-a2f8-e7ec5a6ad156" />
       <Models ModelGuid="7707887a-ee1f-4832-8a9f-d4d9e2e744be" />
@@ -7523,8 +7521,7 @@
       <Models ModelGuid="c735ef6a-f148-4b7a-88e2-800bf4eaf34d" />
       <Models ModelGuid="bbf48690-585a-43ef-9594-53a8a7d8b8b9" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="cc5bfa56-7efb-4718-8b2a-accc754a6890" annotationText="创建四跳柱头枋" left="45115.3058679054" top="-3988.28070102509" width="1961.443078269" height="2760.52035172546" fontSize="96" InitialTop="-3863.08070102509" InitialHeight="2665.32035172546" TextblockHeight="115.2" backgrouund="#FFC1D676">
-      <Models ModelGuid="ac4db22f-e180-42d0-891a-a72d9be2b39d" />
+    <Dynamo.Graph.Annotations.AnnotationModel guid="cc5bfa56-7efb-4718-8b2a-accc754a6890" annotationText="创建四跳柱头枋" left="45115.3058679054" top="-3988.08070102509" width="1960.843078269" height="2760.52035172546" fontSize="96" InitialTop="-3863.08070102509" InitialHeight="2665.32035172546" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="54701733-d5f1-47a8-a3e1-f6dd6919eacb" />
       <Models ModelGuid="74bf35f3-d934-421c-8db4-88c0598c3fe2" />
       <Models ModelGuid="3cfc689f-59d4-4dbf-a6d2-41e9eb245dca" />
@@ -7538,8 +7535,7 @@
       <Models ModelGuid="731f20c3-8e22-4868-93d1-d48b7978a966" />
       <Models ModelGuid="0c16c652-46b8-40ae-a3eb-051f531621c9" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="a71d5379-9177-44d0-981b-05054d3ff3d9" annotationText="创建四跳柱头枋" left="45101.0554439473" top="-10881.1709328503" width="1961.443078269" height="2760.52035172541" fontSize="96" InitialTop="-10755.9709328503" InitialHeight="2665.32035172546" TextblockHeight="115.2" backgrouund="#FFC1D676">
-      <Models ModelGuid="124cabf6-79b1-4086-91fb-c322b840a5fe" />
+    <Dynamo.Graph.Annotations.AnnotationModel guid="a71d5379-9177-44d0-981b-05054d3ff3d9" annotationText="创建四跳柱头枋" left="45101.0554439473" top="-10880.9709328503" width="1960.843078269" height="2760.52035172541" fontSize="96" InitialTop="-10755.9709328503" InitialHeight="2665.32035172546" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="fb55eb62-8dbf-43d4-b570-754133ebc3eb" />
       <Models ModelGuid="8cd1c1ac-b15a-4ea6-9231-26176e86616c" />
       <Models ModelGuid="41f06e3e-dfff-4f86-8443-de3016a58201" />
@@ -7553,7 +7549,7 @@
       <Models ModelGuid="8e180fa5-f46d-45e4-8291-00c7154cbf3e" />
       <Models ModelGuid="2751adc3-63a3-4274-af55-a1d9b4260871" />
     </Dynamo.Graph.Annotations.AnnotationModel>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="e26bd8cb-7fa1-4ac9-b980-9bbef8a7ab69" annotationText="创建叉柱" left="48143.6421843349" top="-6416.90607324631" width="933.009002645897" height="797.363986051422" fontSize="96" InitialTop="-6291.70607324631" InitialHeight="702.163986051422" TextblockHeight="115.2" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="e26bd8cb-7fa1-4ac9-b980-9bbef8a7ab69" annotationText="创建叉柱" left="48143.6421843349" top="-6416.70607324631" width="933.209002645897" height="797.363986051419" fontSize="96" InitialTop="-6291.70607324631" InitialHeight="702.163986051422" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="4995f90b-30eb-4ed8-ad41-2cea96fddf33" />
       <Models ModelGuid="cc6d8a54-e54b-4ace-a844-480926e62461" />
       <Models ModelGuid="ea44ed17-d4f3-45ed-8d6e-8eefe04a3178" />
