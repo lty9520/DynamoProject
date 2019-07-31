@@ -1,0 +1,46 @@
+<Workspace Version="0.9.1.4062" X="39.954710214848" Y="32.8753773459874" zoom="0.888789228297156" Name="createUPlane" Description="创建枓U型侧面&#xD;&#xA;p-&gt;底边中心定位点&#xD;&#xA;w-&gt;长边长&#xD;&#xA;w1-&gt;顶部短边长&#xD;&#xA;h1-&gt;高（h - h1)&#xD;&#xA;h2-&gt;中间U型部分高&#xD;&#xA;direc-&gt;绘制方向" ID="a3cc1167-a245-4934-86b0-5aa1c60b5955" Category="Geometry.Polygon">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Polygon" resolvedName="Autodesk.DesignScript.Geometry.Polygon" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="bf4e2394-f3a2-4875-b4c6-933ffb1237fd" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="667" y="679" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//创建栌枓U型侧面&#xA;//p-&gt;底边中心定位点&#xA;//w-&gt;长边长&#xA;//w1-&gt;顶部短边长&#xA;//h1-&gt;高（h - h1)&#xA;//h2-&gt;中间U型部分高&#xA;//direc-&gt;绘制方向&#xA;def createUPlane(p, w, w1, h1, h2, direc)&#xA;{&#xA;	x1 =0;&#xA;	y1 =0;&#xA;	z1 =0;&#xA;	x2 =0;&#xA;	y2 =0;&#xA;	z2 =0;&#xA;	x3 =0;&#xA;	y3 =0;&#xA;	z3 =0;&#xA;	x4 =0;&#xA;	y4 =0;&#xA;	z4 =0;&#xA;	x5 =0;&#xA;	y5 =0;&#xA;	z5 =0;&#xA;	x6 =0;&#xA;	y6 =0;&#xA;	z6 =0;&#xA;	x7 =0;&#xA;	y7 =0;&#xA;	z7 =0;&#xA;	x8 =0;&#xA;	y8 =0;&#xA;	z8 =0;&#xA;&#xA;	geometry = [Imperative]&#xA;	{&#xA;&#xA;		if(direc == &quot;x&quot;)&#xA;		{&#xA;			x1 = p.X - w / 2;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X + w / 2;&#xA;			y2 = p.Y;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X + w / 2;&#xA;			y3 = p.Y;&#xA;			z3 = p.Z + h1;&#xA;&#xA;			x4 = p.X + w1 / 2;&#xA;			y4 = p.Y;&#xA;			z4 = p.Z + h1;&#xA;&#xA;			x5 = p.X + w1 / 2;&#xA;			y5 = p.Y;&#xA;			z5 = p.Z + h1 - h2;&#xA;&#xA;			x6 = p.X - w1 / 2;&#xA;			y6 = p.Y;&#xA;			z6 = p.Z + h1 - h2;&#xA;&#xA;			x7 = p.X - w1 / 2;&#xA;			y7 = p.Y;&#xA;			z7 = p.Z + h1;&#xA;&#xA;			x8 = p.X - w / 2;&#xA;			y8 = p.Y;&#xA;			z8 = p.Z + h1;&#xA;		}&#xA;&#xA;		if(direc == &quot;y&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y - w / 2;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X;&#xA;			y2 = p.Y + w / 2;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X;&#xA;			y3 = p.Y + w / 2;&#xA;			z3 = p.Z + h1;&#xA;&#xA;			x4 = p.X;&#xA;			y4 = p.Y + w1 / 2;&#xA;			z4 = p.Z + h1;&#xA;&#xA;			x5 = p.X;&#xA;			y5 = p.Y + w1 / 2;&#xA;			z5 = p.Z + h1 - h2;&#xA;&#xA;			x6 = p.X;&#xA;			y6 = p.Y - w1 / 2;&#xA;			z6 = p.Z + h1 - h2;&#xA;&#xA;			x7 = p.X;&#xA;			y7 = p.Y - w1 / 2;&#xA;			z7 = p.Z + h1;&#xA;&#xA;			x8 = p.X;&#xA;			y8 = p.Y - w / 2;&#xA;			z8 = p.Z + h1;&#xA;		}&#xA;&#xA;	}&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;	p2 = Point.ByCoordinates(x2, y2, z2);&#xA;	p3 = Point.ByCoordinates(x3, y3, z3);&#xA;	p4 = Point.ByCoordinates(x4, y4, z4);&#xA;	p5 = Point.ByCoordinates(x5, y5, z5);&#xA;	p6 = Point.ByCoordinates(x6, y6, z6);&#xA;	p7 = Point.ByCoordinates(x7, y7, z7);&#xA;	p8 = Point.ByCoordinates(x8, y8, z8);&#xA;&#xA;	poly = Polygon.ByPoints({p1, p2, p3, p4, p5, p6, p7, p8});&#xA;&#xA;	return = poly;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="0437bc2e-a30b-4737-b00a-fbeb30d7408e" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="613" y="165" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="createUPlane(p ,w, w1, h1, h2, direction);" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="abf457b6-3e4a-4d33-ad1e-0a19fe4ec66f" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="331.5" y="208" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//long length&#xD;&#xA;w:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="08d851dc-d3f5-4104-9316-c10fbfa66773" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="353.5" y="495" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//height(h - h1)&#xD;&#xA;h1:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="bf6ea99e-3b4c-4c7f-adb0-90d89ca4c5f7" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="307.5" y="644" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//height of middle U-shaped&#xD;&#xA;h2:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="bc9334f0-15b9-4ac9-aaad-6095f7931554" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="314.5" y="771" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//direction of creation&#xD;&#xA;direction:string" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="2c1d0dc4-9543-4b42-a6e8-29e7134627ce" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="336.5" y="67" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Center point of bootom&#xD;&#xA;p:Point" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="65f13cea-7fde-43b1-a181-ca1343fe6983" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="329.5" y="343" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Top middle short length&#xD;&#xA;w1:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="9bc51e73-eaa9-4dae-b9f9-de73a3e49c4a" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="1230.07002414041" y="162.664273423996" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
+      <Symbol value="Polygon" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="0437bc2e-a30b-4737-b00a-fbeb30d7408e" start_index="0" end="9bc51e73-eaa9-4dae-b9f9-de73a3e49c4a" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="abf457b6-3e4a-4d33-ad1e-0a19fe4ec66f" start_index="0" end="0437bc2e-a30b-4737-b00a-fbeb30d7408e" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="08d851dc-d3f5-4104-9316-c10fbfa66773" start_index="0" end="0437bc2e-a30b-4737-b00a-fbeb30d7408e" end_index="3" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="bf6ea99e-3b4c-4c7f-adb0-90d89ca4c5f7" start_index="0" end="0437bc2e-a30b-4737-b00a-fbeb30d7408e" end_index="4" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="bc9334f0-15b9-4ac9-aaad-6095f7931554" start_index="0" end="0437bc2e-a30b-4737-b00a-fbeb30d7408e" end_index="5" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="2c1d0dc4-9543-4b42-a6e8-29e7134627ce" start_index="0" end="0437bc2e-a30b-4737-b00a-fbeb30d7408e" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="65f13cea-7fde-43b1-a181-ca1343fe6983" start_index="0" end="0437bc2e-a30b-4737-b00a-fbeb30d7408e" end_index="2" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="-524.892028808594" eyeY="182.819534301758" eyeZ="171.570999145508" lookX="569.976135253906" lookY="-3.87806367874146" lookZ="-133.798248291016" upX="-0.202409639954567" upY="0.978147566318512" upZ="0.0475143529474735" />
+  </Cameras>
+</Workspace>

@@ -1,0 +1,30 @@
+<Workspace Version="0.9.1.4062" X="0" Y="0" zoom="1" Name="createQuad" Description="创建四边形面&#xD;&#xA;p-&gt;面的中心点&#xD;&#xA;r-&gt;面的边长&#xD;&#xA;z-&gt;面的位置z值" ID="42473894-4402-450e-b98a-60c235356628" Category="Geometry.Polygon">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Polygon" resolvedName="Autodesk.DesignScript.Geometry.Polygon" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="20aebbc5-75e1-428d-9c90-abb86457e4c5" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="555" y="354" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//创建四边形面&#xA;//p-&gt;面的中心点&#xA;//r-&gt;面的边长&#xA;//z-&gt;面的位置z值&#xA;def createQuadCenter(p, r)&#xA;{&#xA;	//	.p1----.p2&#xA;	//	|		|&#xA;	//	|	p	|&#xA;	//	|		|&#xA;	//	|		|&#xA;	//	.p4----.p3&#xA;	x1 = p.X - r;&#xA;	y1 = p.Y - r;&#xA;	z1 = p.Z;&#xA;&#xA;	//test=p.X;&#xA;&#xA;	x2 = p.X + r;&#xA;	y2 = p.Y - r;&#xA;	z2 = p.Z;&#xA;&#xA;	x3 = p.X + r;&#xA;	y3 = p.Y + r;&#xA;	z3 = p.Z;&#xA;&#xA;	x4 = p.X - r;&#xA;	y4 = p.Y + r;&#xA;	z4 = p.Z;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;	p2 = Point.ByCoordinates(x2, y2, z2);&#xA;	p3 = Point.ByCoordinates(x3, y3, z3);&#xA;	p4 = Point.ByCoordinates(x4, y4, z4);&#xA;&#xA;	poly = Polygon.ByPoints({p1, p2, p3, p4});&#xA;&#xA;	//l1 = List.FirstItem(p1);&#xA;	//l1 = List.AddItemToEnd(p2);&#xA;	//l1 = List.AddItemToEnd(p3);&#xA;	//l1 = List.AddItemToEnd(p4);&#xA;&#xA;	//sur = Surface.ByPatch(ploy);&#xA;&#xA;	return = poly;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="b7fc1e44-e4bc-4b80-ba73-31228eb54736" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="816" y="146" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="createQuadCenter(p, r);" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="ef6b7c95-047f-4ead-bf2d-6216bd3fa81f" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="361.5" y="63" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//center of quad&#xD;&#xA;p:Point" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="39b0ce08-00df-46bd-8568-f95d90248fd1" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="334.5" y="207" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//radius of quad&#xD;&#xA;radius:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="6c577182-7ae7-4630-a91e-3592655530d8" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="1159.5" y="153" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
+      <Symbol value="Polygon" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="b7fc1e44-e4bc-4b80-ba73-31228eb54736" start_index="0" end="6c577182-7ae7-4630-a91e-3592655530d8" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="ef6b7c95-047f-4ead-bf2d-6216bd3fa81f" start_index="0" end="b7fc1e44-e4bc-4b80-ba73-31228eb54736" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="39b0ce08-00df-46bd-8568-f95d90248fd1" start_index="0" end="b7fc1e44-e4bc-4b80-ba73-31228eb54736" end_index="1" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="-524.892028808594" eyeY="182.819534301758" eyeZ="171.570999145508" lookX="569.976135253906" lookY="-3.87806367874146" lookZ="-133.798248291016" upX="-0.202409639954567" upY="0.978147566318512" upZ="0.0475143529474735" />
+  </Cameras>
+</Workspace>

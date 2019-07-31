@@ -1,0 +1,51 @@
+<Workspace Version="0.9.1.4062" X="59.3302375" Y="70.2083090689912" zoom="0.70823125" Name="createJuanshaCurve" Description="创建卷杀曲线&#xD;&#xA;p-&gt;定位点&#xD;&#xA;b1-&gt;卷杀部分长&#xD;&#xA;b2-&gt;其余部分长&#xD;&#xA;m-&gt;卷杀段数&#xD;&#xA;h1-&gt;卷杀部分高&#xD;&#xA;h-&gt;整体高&#xD;&#xA;direc-&gt;方向" ID="616caeb5-0e01-4d17-a1e1-06c68b20e746" Category="Geometry.PolyCurve">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Polygon" resolvedName="Autodesk.DesignScript.Geometry.Polygon" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="PolyCurve" resolvedName="Autodesk.DesignScript.Geometry.PolyCurve" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="228401a4-d4b6-4d52-a82d-7329e5f2f477" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="859.5" y="538" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//创建卷杀曲线&#xA;//p-&gt;定位点&#xA;//b1-&gt;卷杀部分长&#xA;//b2-&gt;其余部分长&#xA;//m-&gt;卷杀段数&#xA;//h1-&gt;卷杀部分高&#xA;//h-&gt;整体高&#xA;//direc-&gt;方向&#xA;def createJuanshaCurve(p, b1, b2, m, h1, h, direc)&#xA;{&#xA;	x1 = 0;&#xA;	y1 = 0;&#xA;	z1 = 0;&#xA;	x2 = 0;&#xA;	y2 = 0;&#xA;	z2 = 0;&#xA;	x3 = 0;&#xA;	y3 = 0;&#xA;	z3 = 0;&#xA;	x4 = 0;&#xA;	y4 = 0;&#xA;	z4 = 0;&#xA;	x5 = 0;&#xA;	y5 = 0;&#xA;	z5 = 0;&#xA;	x6 = 0;&#xA;	y6 = 0;&#xA;	z6 = 0;&#xA;	x7 = 0;&#xA;	y7 = 0;&#xA;	z7 = 0;&#xA;	x8 = 0;&#xA;	y8 = 0;&#xA;	z8 = 0;&#xA;	geometry = [Imperative]&#xA;	{&#xA;&#xA;		if(direc == &quot;x+&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X + b2;&#xA;			y2 = p.Y;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X + b2 + ((4 / 10) * b1);&#xA;			y3 = p.Y;&#xA;			z3 = p.Z + ((1 / 10) * h1);&#xA;&#xA;			x4 = p.X + b2 + ((7 / 10) * b1);&#xA;			y4 = p.Y;&#xA;			z4 = p.Z + ((3 / 10) * h1);&#xA;&#xA;			x5 = p.X + b2 + ((9 / 10) * b1);&#xA;			y5 = p.Y;&#xA;			z5 = p.Z + ((6 / 10) * h1);&#xA;&#xA;			x6 = p.X + b2 + b1;&#xA;			y6 = p.Y;&#xA;			z6 = p.Z + h1;&#xA;&#xA;			x7 = p.X + b2 + b1;&#xA;			y7 = p.Y;&#xA;			z7 = p.Z + h;&#xA;&#xA;			x8 = p.X;&#xA;			y8 = p.Y;&#xA;			z8 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;x-&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X - b2;&#xA;			y2 = p.Y;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X - b2 - ((4 / 10) * b1);&#xA;			y3 = p.Y;&#xA;			z3 = p.Z + ((1 / 10) * h1);&#xA;&#xA;			x4 = p.X - b2 - ((7 / 10) * b1);&#xA;			y4 = p.Y;&#xA;			z4 = p.Z + ((3 / 10) * h1);&#xA;&#xA;			x5 = p.X - b2 - ((9 / 10) * b1);&#xA;			y5 = p.Y;&#xA;			z5 = p.Z + ((6 / 10) * h1);&#xA;&#xA;			x6 = p.X - b2 - b1;&#xA;			y6 = p.Y;&#xA;			z6 = p.Z + h1;&#xA;&#xA;			x7 = p.X - b2 - b1;&#xA;			y7 = p.Y;&#xA;			z7 = p.Z + h;&#xA;&#xA;			x8 = p.X;&#xA;			y8 = p.Y;&#xA;			z8 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;y+&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X;&#xA;			y2 = p.Y + b2;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X;&#xA;			y3 = p.Y + b2 + ((4 / 10) * b1);&#xA;			z3 = p.Z + ((1 / 10) * h1);&#xA;&#xA;			x4 = p.X;&#xA;			y4 = p.Y + b2 + ((7 / 10) * b1);&#xA;			z4 = p.Z + ((3 / 10) * h1);&#xA;&#xA;			x5 = p.X;&#xA;			y5 = p.Y + b2 + ((9 / 10) * b1);&#xA;			z5 = p.Z + ((6 / 10) * h1);&#xA;&#xA;			x6 = p.X;&#xA;			y6 = p.Y + b2 + b1;&#xA;			z6 = p.Z + h1;&#xA;&#xA;			x7 = p.X;&#xA;			y7 = p.Y + b2 + b1;&#xA;			z7 = p.Z + h;&#xA;&#xA;			x8 = p.X;&#xA;			y8 = p.Y;&#xA;			z8 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;y-&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X;&#xA;			y2 = p.Y - b2;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X;&#xA;			y3 = p.Y - b2 - ((4 / 10) * b1);&#xA;			z3 = p.Z + ((1 / 10) * h1);&#xA;&#xA;			x4 = p.X;&#xA;			y4 = p.Y - b2 - ((7 / 10) * b1);&#xA;			z4 = p.Z + ((3 / 10) * h1);&#xA;&#xA;			x5 = p.X;&#xA;			y5 = p.Y - b2 - ((9 / 10) * b1);&#xA;			z5 = p.Z + ((6 / 10) * h1);&#xA;&#xA;			x6 = p.X;&#xA;			y6 = p.Y - b2 - b1;&#xA;			z6 = p.Z + h1;&#xA;&#xA;			x7 = p.X;&#xA;			y7 = p.Y - b2 - b1;&#xA;			z7 = p.Z + h;&#xA;&#xA;			x8 = p.X;&#xA;			y8 = p.Y;&#xA;			z8 = p.Z + h;&#xA;		}&#xA;	}&#xA;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;	p2 = Point.ByCoordinates(x2, y2, z2);&#xA;	p3 = Point.ByCoordinates(x3, y3, z3);&#xA;	p4 = Point.ByCoordinates(x4, y4, z4);&#xA;	p5 = Point.ByCoordinates(x5, y5, z5);&#xA;	p6 = Point.ByCoordinates(x6, y6, z6);&#xA;	p7 = Point.ByCoordinates(x7, y7, z7);&#xA;	p8 = Point.ByCoordinates(x8, y8, z8);&#xA;&#xA;	poly = Polygon.ByPoints({p1, p2, p3, p4, p5, p6, p7, p8});&#xA;&#xA;	curve = PolyCurve.ByPoints({p1, p2, p3, p4, p5, p6, p7, p8}, true);&#xA;&#xA;	return = curve;&#xA;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="d72251f6-dce7-47d0-92d8-0b8721fc949a" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="684" y="191" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="createJuanshaCurve(p, b1, b2, m, h1, h, direction);" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="a3f78aef-6430-4bf9-b004-1eeb7e184eee" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="372.5" y="651" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//height of all&#xD;&#xA;h:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="449fe815-e1c8-490f-82d7-f00e5d84e1dc" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="388.5" y="67" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Location point&#xD;&#xA;p:Point" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="97eed550-594f-4391-9f82-1a0fcf0f169d" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="400.5" y="194" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Length of Juansha&#xD;&#xA;b1:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="e6275e83-1111-41c9-bf2c-4d6ca0f901a3" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="394.5" y="321" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Length of orthers&#xD;&#xA;b2:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="5ade542d-3668-4c2b-b19b-6ec213958d99" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="377.5" y="440" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Number of Juansha&#xD;&#xA;m:int" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="28fad52b-e4b9-4a9f-8474-5f979fb49bd0" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="374.5" y="542" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Height of Juansha&#xD;&#xA;h1:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="5eee8872-949b-4889-9766-e26c6cd9b3e9" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="389.5" y="748" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//direction&#xD;&#xA;direction:string" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="b0f7bfb7-1161-44fa-ab6e-eb3c2e8a629b" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="1368.5" y="180" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
+      <Symbol value="PolyCurve" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="d72251f6-dce7-47d0-92d8-0b8721fc949a" start_index="0" end="b0f7bfb7-1161-44fa-ab6e-eb3c2e8a629b" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="a3f78aef-6430-4bf9-b004-1eeb7e184eee" start_index="0" end="d72251f6-dce7-47d0-92d8-0b8721fc949a" end_index="5" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="449fe815-e1c8-490f-82d7-f00e5d84e1dc" start_index="0" end="d72251f6-dce7-47d0-92d8-0b8721fc949a" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="97eed550-594f-4391-9f82-1a0fcf0f169d" start_index="0" end="d72251f6-dce7-47d0-92d8-0b8721fc949a" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="e6275e83-1111-41c9-bf2c-4d6ca0f901a3" start_index="0" end="d72251f6-dce7-47d0-92d8-0b8721fc949a" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="5ade542d-3668-4c2b-b19b-6ec213958d99" start_index="0" end="d72251f6-dce7-47d0-92d8-0b8721fc949a" end_index="3" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="28fad52b-e4b9-4a9f-8474-5f979fb49bd0" start_index="0" end="d72251f6-dce7-47d0-92d8-0b8721fc949a" end_index="4" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="5eee8872-949b-4889-9766-e26c6cd9b3e9" start_index="0" end="d72251f6-dce7-47d0-92d8-0b8721fc949a" end_index="6" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="-524.892028808594" eyeY="182.819534301758" eyeZ="171.570999145508" lookX="569.976135253906" lookY="-3.87806367874146" lookZ="-133.798248291016" upX="-0.202409639954567" upY="0.978147566318512" upZ="0.0475143529474735" />
+  </Cameras>
+</Workspace>

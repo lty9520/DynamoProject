@@ -1,0 +1,35 @@
+<Workspace Version="0.9.1.4062" X="-595" Y="25" zoom="1.1575" Name="createCubiod" Description="创建单卷杀长方体栱部分，&#xD;&#xA;cur-&gt;边界曲线&#xD;&#xA;width-&gt;长方体长度&#xD;&#xA;direction-&gt;延伸方向" ID="1ec32585-a69a-4443-84c8-717fb6a518c8" Category="Geometry.PolyCurve">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="PolyCurve" resolvedName="Autodesk.DesignScript.Geometry.PolyCurve" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Curve" resolvedName="Autodesk.DesignScript.Geometry.Curve" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="4df740f6-ae66-4145-a25c-48a3649daade" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="823" y="530" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//创建单卷杀长方体栱部分，&#xA;//cur-&gt;边界曲线&#xA;//width-&gt;长方体长度&#xA;//direction-&gt;延伸方向&#xA;def createCubiod(cur, width, direction)&#xA;{&#xA;	x1 = 0;&#xA;	y1 = 0;&#xA;	z1 = 0;&#xA;	x2 = 0;&#xA;	y2 = 0;&#xA;	z2 = 0;&#xA;&#xA;	geometry = [Imperative]&#xA;	{&#xA;		if(direction == &quot;x+&quot;)&#xA;		{&#xA;			x1 = cur.StartPoint.X + width;&#xA;			y1 = cur.StartPoint.Y;&#xA;			z1 = cur.StartPoint.Z;&#xA;&#xA;			x2 = cur.EndPoint.X + width;&#xA;			y2 = cur.EndPoint.Y;&#xA;			z2 = cur.EndPoint.Z;&#xA;		}&#xA;&#xA;		if(direction == &quot;x-&quot;)&#xA;		{&#xA;			x1 = cur.StartPoint.X - width;&#xA;			y1 = cur.StartPoint.Y;&#xA;			z1 = cur.StartPoint.Z;&#xA;&#xA;			x2 = cur.EndPoint.X - width;&#xA;			y2 = cur.EndPoint.Y;&#xA;			z2 = cur.EndPoint.Z;&#xA;		}&#xA;&#xA;		if(direction == &quot;y+&quot;)&#xA;		{&#xA;			x1 = cur.StartPoint.X;&#xA;			y1 = cur.StartPoint.Y + width;&#xA;			z1 = cur.StartPoint.Z;&#xA;&#xA;			x2 = cur.EndPoint.X;&#xA;			y2 = cur.EndPoint.Y + width;&#xA;			z2 = cur.EndPoint.Z;&#xA;		}&#xA;&#xA;		if(direction == &quot;y-&quot;)&#xA;		{&#xA;			x1 = cur.StartPoint.X;&#xA;			y1 = cur.StartPoint.Y - width;&#xA;			z1 = cur.StartPoint.Z;&#xA;&#xA;			x2 = cur.EndPoint.X;&#xA;			y2 = cur.EndPoint.Y - width;&#xA;			z2 = cur.EndPoint.Z;&#xA;		}&#xA;	}&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;	p2 = Point.ByCoordinates(x2, y2, z2);&#xA;&#xA;	curve = PolyCurve.ByPoints({p1, p2}, false);&#xA;&#xA;	return = curve;&#xA;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="6b7fad62-7487-4416-ba24-0a80d8bd1189" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="781" y="309" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="createCubiod(cur, width, direction);" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="e748f617-dcaa-4aef-8191-cbcdc1860c0f" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="477.5" y="212" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Boundary curve&#xD;&#xA;cur:Curve" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="fb12af3a-964c-4e01-8566-4e3a75f7d7d6" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="499.5" y="367" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Width of cubiod&#xD;&#xA;width:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="c459195d-7d34-43d5-b263-2eb127c40ba5" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="485.5" y="521" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//direction&#xD;&#xA;direction:string" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="4d66c272-aeaf-4380-b5e5-9c47c12c1845" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="1337.04103671706" y="309.39524838013" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
+      <Symbol value="PolyCurve" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="6b7fad62-7487-4416-ba24-0a80d8bd1189" start_index="0" end="4d66c272-aeaf-4380-b5e5-9c47c12c1845" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="e748f617-dcaa-4aef-8191-cbcdc1860c0f" start_index="0" end="6b7fad62-7487-4416-ba24-0a80d8bd1189" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="fb12af3a-964c-4e01-8566-4e3a75f7d7d6" start_index="0" end="6b7fad62-7487-4416-ba24-0a80d8bd1189" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="c459195d-7d34-43d5-b263-2eb127c40ba5" start_index="0" end="6b7fad62-7487-4416-ba24-0a80d8bd1189" end_index="2" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="-524.892028808594" eyeY="182.819534301758" eyeZ="171.570999145508" lookX="569.976135253906" lookY="-3.87806367874146" lookZ="-133.798248291016" upX="-0.202409639954567" upY="0.978147566318512" upZ="0.0475143529474735" />
+  </Cameras>
+</Workspace>

@@ -1,0 +1,33 @@
+<Workspace Version="0.9.1.4062" X="0" Y="0" zoom="1" Name="getNDGFangCenterPoint" Description="获取泥道栱方向创建枋类构件的中心点&#xD;&#xA;p_center-&gt;与坊正交的栱的长方体部分的质心&#xD;&#xA;p_down-&gt;栌枓的内角点&#xD;&#xA;dh-&gt;与坊正交的栱的高的一半" ID="7cc50022-c79b-4f08-aae9-c26aec48265e" Category="Geometry.Point">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="08dfe0d7-7348-4e60-bb9b-dae4f8310965" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="784" y="545" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//获取泥道栱方向创建枋类构件的中心点&#xA;//p_center-&gt;与坊正交的栱的长方体部分的质心&#xA;//p_down-&gt;栌枓的内角点&#xA;//dh-&gt;与坊正交的栱的高的一半&#xA;def getNDGFangCenterPoint(p_center, p_down, dh)&#xA;{&#xA;	x1 = 0;&#xA;	y1 = 0;&#xA;	z1 = p_down.Z + (p_center.Z + dh - p_down.Z) / 2;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p1;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="2836a923-2c04-43ee-a3c7-db7c39b59e08" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="751" y="207" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="getNDGFangCenterPoint(p_center, p_down, dh);" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="e97f93e6-ed31-4e72-8f94-275b78ce5f5a" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="215.5" y="178" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//The centroid of the cuboid of Gong orthogonal to Fang&#xD;&#xA;p_center:Point" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="94c1c051-fd7b-461a-a314-49795d6acd69" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="392.5" y="322" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Inner corner of Dou&#xD;&#xA;p_down:Point" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="8518c886-0b7c-4bcf-bc46-364695d40c18" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="351.5" y="489" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Half height of Gong orthogonal to Fang&#xD;&#xA;dh:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="cca9a673-0ce6-44bc-9ae2-5e4aed2a35c0" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="1294.5" y="208" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
+      <Symbol value="Point" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="2836a923-2c04-43ee-a3c7-db7c39b59e08" start_index="0" end="cca9a673-0ce6-44bc-9ae2-5e4aed2a35c0" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="e97f93e6-ed31-4e72-8f94-275b78ce5f5a" start_index="0" end="2836a923-2c04-43ee-a3c7-db7c39b59e08" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="94c1c051-fd7b-461a-a314-49795d6acd69" start_index="0" end="2836a923-2c04-43ee-a3c7-db7c39b59e08" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="8518c886-0b7c-4bcf-bc46-364695d40c18" start_index="0" end="2836a923-2c04-43ee-a3c7-db7c39b59e08" end_index="2" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="-524.892028808594" eyeY="182.819534301758" eyeZ="171.570999145508" lookX="569.976135253906" lookY="-3.87806367874146" lookZ="-133.798248291016" upX="-0.202409639954567" upY="0.978147566318512" upZ="0.0475143529474735" />
+  </Cameras>
+</Workspace>

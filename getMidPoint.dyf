@@ -1,0 +1,41 @@
+<Workspace Version="0.9.1.4062" X="0" Y="0" zoom="1" Name="getMidPoint" Description="获取柱头坊的中心点&#xD;&#xA;p1, p2-&gt;两侧散枓的内角点&#xD;&#xA;h1-&gt;散枓的h1&#xD;&#xA;dh-&gt;散枓的U型底高&#xD;&#xA;h-&gt;枋的高" ID="cbcbaa18-10eb-4878-9ae5-19750c7817bd" Category="Geometry.Point">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="88c9f956-c2da-4e18-9ace-1a77abb3f76a" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="962" y="582" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//获取柱头坊的中心点&#xA;//p1, p2-&gt;两侧散枓的内角点&#xA;//h1-&gt;散枓的h1&#xA;//dh-&gt;散枓的U型底高&#xA;//h-&gt;枋的高&#xA;def getMidPoint(p1, p2, h1, dh, h)&#xA;{&#xA;	x1 = (p1.X + p2.X) / 2;&#xA;	y1 = (p1.Y + p2.Y) / 2;&#xA;	z1 = p1.Z + h1 + dh + h / 2;&#xA;&#xA;	p_mid = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p_mid;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="946f465e-59d6-4eee-9f63-8d072b89969d" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="820" y="244" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="getMidPoint(p1, p2, h1, dh, h);" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="87d179cf-9e8e-4e30-93a3-488b96277f44" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="473.5" y="248" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Another one inner corner of Dou&#xD;&#xA;p2:Point" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="8d3ef9c6-e906-4ff0-8ba4-c48bc9533115" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="551.5" y="398" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//h1 of Dou&#xD;&#xA;h1:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="03401307-3ebc-451c-8f00-1298a24ec62f" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="546.5" y="528" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Height of U Plane of Dou&#xD;&#xA;dh:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="4daf5859-8271-41c3-b20b-6d2f2feda065" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="528.5" y="698" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Height of Fang&#xD;&#xA;h:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="df708ec2-b6eb-4c75-a7b3-5893b01eb0ce" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="547.5" y="107" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//One inner corner of Dou&#xD;&#xA;p1:Point" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="fb1aa974-cda9-4bd8-ab3b-576e9f06b769" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="1223.5" y="273" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
+      <Symbol value="Point" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="946f465e-59d6-4eee-9f63-8d072b89969d" start_index="0" end="fb1aa974-cda9-4bd8-ab3b-576e9f06b769" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="87d179cf-9e8e-4e30-93a3-488b96277f44" start_index="0" end="946f465e-59d6-4eee-9f63-8d072b89969d" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="8d3ef9c6-e906-4ff0-8ba4-c48bc9533115" start_index="0" end="946f465e-59d6-4eee-9f63-8d072b89969d" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="03401307-3ebc-451c-8f00-1298a24ec62f" start_index="0" end="946f465e-59d6-4eee-9f63-8d072b89969d" end_index="3" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="4daf5859-8271-41c3-b20b-6d2f2feda065" start_index="0" end="946f465e-59d6-4eee-9f63-8d072b89969d" end_index="4" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="df708ec2-b6eb-4c75-a7b3-5893b01eb0ce" start_index="0" end="946f465e-59d6-4eee-9f63-8d072b89969d" end_index="0" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="-524.892028808594" eyeY="182.819534301758" eyeZ="171.570999145508" lookX="569.976135253906" lookY="-3.87806367874146" lookZ="-133.798248291016" upX="-0.202409639954567" upY="0.978147566318512" upZ="0.0475143529474735" />
+  </Cameras>
+</Workspace>

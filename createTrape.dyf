@@ -1,0 +1,46 @@
+<Workspace Version="0.9.1.4062" X="31" Y="-343" zoom="1" Name="createTrape" Description="创建梯形平面&#xD;&#xA;p-&gt;短边中心点&#xD;&#xA;d1-&gt;短边边长&#xD;&#xA;d2-&gt;长边边长&#xD;&#xA;h-&gt;高&#xD;&#xA;d-&gt;倾斜进深&#xD;&#xA;direc-&gt;倾斜方向" ID="7895f479-9401-41ca-a205-a566cd063c50" Category="Geometry.Polygon">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
+    <ClassMap partialName="Polygon" resolvedName="Autodesk.DesignScript.Geometry.Polygon" assemblyName="ProtoGeometry.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="38659987-5f12-483a-b739-064084829a84" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="896" y="796" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//创建梯形平面&#xA;//p-&gt;短边中心点&#xA;//d1-&gt;短边边长&#xA;//d2-&gt;长边边长&#xA;//h-&gt;高&#xA;//d-&gt;倾斜进深&#xA;//direc-&gt;倾斜方向&#xA;def createTrape(p, d1, d2, h, d, direc)&#xA;{&#xA;&#xA;	x1 = 0;&#xA;	x2 = 0;&#xA;	x3 = 0;&#xA;	x4 = 0;&#xA;	y1 = 0;&#xA;	y2 = 0;&#xA;	y3 = 0;&#xA;	y4 = 0;&#xA;	z1 = 0;&#xA;	z2 = 0;&#xA;	z3 = 0;&#xA;	z4 = 0;&#xA;	geometry = [Imperative]&#xA;	{&#xA;		if(direc == &quot;y-&quot;)&#xA;		{&#xA;			x1 = p.X - d1 / 2;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X + d1 / 2;&#xA;			y2 = p.Y;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X + d2 / 2;&#xA;			y3 = p.Y - d;&#xA;			z3 = p.Z + h;&#xA;&#xA;			x4 = p.X - d2 / 2;&#xA;			y4 = p.Y - d;&#xA;			z4 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;y+&quot;)&#xA;		{&#xA;			x1 = p.X - d1 / 2;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X + d1 / 2;&#xA;			y2 = p.Y;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X + d2 / 2;&#xA;			y3 = p.Y + d;&#xA;			z3 = p.Z + h;&#xA;&#xA;			x4 = p.X - d2 / 2;&#xA;			y4 = p.Y + d;&#xA;			z4 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;x-&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y - d1 / 2;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X;&#xA;			y2 = p.Y+ d1 / 2;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X - d;&#xA;			y3 = p.Y + d2 / 2;&#xA;			z3 = p.Z + h;&#xA;&#xA;			x4 = p.X - d;&#xA;			y4 = p.Y - d2 / 2;&#xA;			z4 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;x+&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y- d1 / 2;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X;&#xA;			y2 = p.Y+ d1 / 2;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X + d;&#xA;			y3 = p.Y + d2 / 2;&#xA;			z3 = p.Z + h;&#xA;&#xA;			x4 = p.X + d;&#xA;			y4 = p.Y - d2 / 2;&#xA;			z4 = p.Z + h;&#xA;		}&#xA;&#xA;	}&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;	p2 = Point.ByCoordinates(x2, y2, z2);&#xA;	p3 = Point.ByCoordinates(x3, y3, z3);&#xA;	p4 = Point.ByCoordinates(x4, y4, z4);&#xA;&#xA;	poly = Polygon.ByPoints({p1, p2, p3, p4});&#xA;&#xA;	return = poly;&#xA;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="ee5fd485-2e3a-4668-8727-209484f01e54" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="606" y="502" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="createTrape(p, d1, d2, h, d, direction);" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="87866493-fbb0-4f04-9d70-6172ec9ade33" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="347.5" y="920" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Tilting depth&#xD;&#xA;d:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="1d05fb5c-d262-4b15-b836-ecb2b2f70dfd" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="347.5" y="548" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Short length&#xD;&#xA;d1:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="5fab3be7-adfd-4620-ad90-6045078bb7e5" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="175.5" y="391" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Center point of short length of trape&#xD;&#xA;p:Point" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="a2462a92-ed57-4885-9c05-ae451c0b5555" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="341.5" y="800" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Height&#xD;&#xA;h:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="131b0440-974e-4238-94b9-dfffe080dbb5" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="334.5" y="689" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Long length&#xD;&#xA;d2:double" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="94d3d4e6-fc95-4978-8a35-ea54a78fd0c1" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="351.5" y="1021" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Tilting direction&#xD;&#xA;direction:string" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="64b78871-7b00-4241-ad59-253b1286dfd2" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="1201.5" y="500" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
+      <Symbol value="Polygon" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="ee5fd485-2e3a-4668-8727-209484f01e54" start_index="0" end="64b78871-7b00-4241-ad59-253b1286dfd2" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="87866493-fbb0-4f04-9d70-6172ec9ade33" start_index="0" end="ee5fd485-2e3a-4668-8727-209484f01e54" end_index="4" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="1d05fb5c-d262-4b15-b836-ecb2b2f70dfd" start_index="0" end="ee5fd485-2e3a-4668-8727-209484f01e54" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="5fab3be7-adfd-4620-ad90-6045078bb7e5" start_index="0" end="ee5fd485-2e3a-4668-8727-209484f01e54" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="a2462a92-ed57-4885-9c05-ae451c0b5555" start_index="0" end="ee5fd485-2e3a-4668-8727-209484f01e54" end_index="3" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="131b0440-974e-4238-94b9-dfffe080dbb5" start_index="0" end="ee5fd485-2e3a-4668-8727-209484f01e54" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="94d3d4e6-fc95-4978-8a35-ea54a78fd0c1" start_index="0" end="ee5fd485-2e3a-4668-8727-209484f01e54" end_index="5" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="-524.892028808594" eyeY="182.819534301758" eyeZ="171.570999145508" lookX="569.976135253906" lookY="-3.87806367874146" lookZ="-133.798248291016" upX="-0.202409639954567" upY="0.978147566318512" upZ="0.0475143529474735" />
+  </Cameras>
+</Workspace>
