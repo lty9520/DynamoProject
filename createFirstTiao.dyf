@@ -1,4 +1,4 @@
-<Workspace Version="0.9.1.4062" X="99.3668833211232" Y="291.116965153501" zoom="0.0772208685187351" Name="createFirstTiao" Description="创建第一跳（栌斗+泥道栱+华栱" ID="7d8073a9-58bf-471f-abd8-7533d36c2552" Category="Geometry.Solid">
+<Workspace Version="0.9.1.4062" X="-1338.84495927047" Y="121.563164188233" zoom="0.238952306368437" Name="createFirstTiao" Description="创建第一跳（栌斗+泥道栱+华栱" ID="7d8073a9-58bf-471f-abd8-7533d36c2552" Category="Geometry.Solid">
   <NamespaceResolutionMap>
     <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
   </NamespaceResolutionMap>
@@ -292,17 +292,17 @@
     <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="86c9aa50-f6c8-4432-9563-5c2fc571d751" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input_m_Juansha" x="7407.36026305662" y="1404.63314498848" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <Symbol value="//Number of Juansha&#xD;&#xA;m : int = 4" />
     </Dynamo.Graph.Nodes.CustomNodes.Symbol>
-    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="f9af3aa9-5078-4f2a-8d0d-a580ebff24ee" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input_02_b" x="7416.86420115683" y="1577.28802047579" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
-      <Symbol value="//b of NiDaoGong&#xD;&#xA;b : double = 280.0" />
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="f9af3aa9-5078-4f2a-8d0d-a580ebff24ee" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input_02_b" x="7416.86420115683" y="1578.32224462868" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//b of NiDaoGong&#xD;&#xA;b_02 : double = 280.0" />
     </Dynamo.Graph.Nodes.CustomNodes.Symbol>
     <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="c76d181b-9c3e-4dfc-98fa-f21f4daa229f" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input_02_b1" x="7427.95212894042" y="1716.67911261233" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
-      <Symbol value="//b1 of NiDaoGong&#xD;&#xA;b1 : double = 60.0" />
+      <Symbol value="//b1 of NiDaoGong&#xD;&#xA;b1_02 : double = 60.0" />
     </Dynamo.Graph.Nodes.CustomNodes.Symbol>
     <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="acea427d-a6df-4aff-9dad-76dc585a2b55" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input_02_h1" x="7429.53611862379" y="1826.03149866197" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
-      <Symbol value="//h1 of NiDaoGong&#xD;&#xA;h1 : double = 32.0" />
+      <Symbol value="//h1 of NiDaoGong&#xD;&#xA;h1_02 : double = 32.0" />
     </Dynamo.Graph.Nodes.CustomNodes.Symbol>
     <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="cce10347-8967-49b0-bb16-adbe1b456907" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input_02_h" x="7412.11223210672" y="1960.61352385127" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
-      <Symbol value="//h of NiDaoGong&#xD;&#xA;h : double = 60.0" />
+      <Symbol value="//h of NiDaoGong&#xD;&#xA;h_02 : double = 60.0" />
     </Dynamo.Graph.Nodes.CustomNodes.Symbol>
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="bbe04109-8533-4a58-8b10-30fd819adf19" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="7879.19615654523" y="1718.47722374546" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="((b - 2 * b1) - b_01) / 2;" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="49ee813e-a0ac-44c7-bced-765126f4dbfd" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="6201" y="529" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="h2 / h1;" ShouldFocus="false" />
@@ -509,40 +509,40 @@
       <PortInfo index="2" default="True" />
     </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="e41b9aef-2258-44d8-b484-4205babbd471" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9730.77741782608" y="-239.641948114088" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha Surface y-" />
+      <Symbol value="Juansha1 Surface " />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="fbe0d281-9ffe-4d25-8159-62d356cfb892" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9750.64213471501" y="762.709369446984" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha Surface y+" />
+      <Symbol value="Juansha2 Surface" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="d847d609-61d9-4ebe-ba06-e951828b83d4" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9688.09075624758" y="2815.20638841739" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha Curve x+ 2" />
+      <Symbol value="Juansha3 Curve 2" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="c3dec2cb-f763-419f-afe0-8a031d7b79b5" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9693.52931791468" y="3119.57410713053" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha Curve x- 1" />
+      <Symbol value="Juansha4 Curve 1" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="bb69051b-00b7-4c92-ab38-a64a7f872b2e" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9699.27981860629" y="3430.84578282827" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha Surface x-" />
+      <Symbol value="Juansha4 Surface" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="584706a8-4ac2-4997-8f75-77b09b99e77b" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9747.39457329084" y="105.808893959997" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha Curve y- 2" />
+      <Symbol value="Juansha1 Curve 2" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="1754fe81-f858-4c9c-ab3d-9084084d1c80" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9762.56661498134" y="1069.09280160396" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha CUrve y+ 2" />
+      <Symbol value="Juansha2 Curve 2" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="09c03b49-14f9-45e8-92ea-80fdde2e5a9f" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9697.68939754481" y="2158.55947698498" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha Curve x+ 1" />
+      <Symbol value="Juansha3 Curve 1" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="6d73dc8e-1f3b-42af-96be-d3aa1c05a50c" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9695.38429845806" y="2462.32587103069" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha Surface x+" />
+      <Symbol value="Juansha3 Surface" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="c864d0fa-000c-49e7-8c51-102d70e74c5c" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9683.45800469248" y="3746.66893688127" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha Curve x- 2" />
+      <Symbol value="Juansha4 Curve 2" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="af63dcc9-4cab-447d-850e-f365914ca7e8" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9727.29766453774" y="-525.571263203644" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha Curve y- 1" />
+      <Symbol value="Juansha1 Curve 1" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="20dbcc85-9fed-42b7-b853-62b02413d8ed" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="9746.43286204303" y="476.436483576418" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
-      <Symbol value="Juansha CUrve y+ 1" />
+      <Symbol value="Juansha2 Curve 1" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
   </Elements>
   <Connectors>
