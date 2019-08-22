@@ -1,4 +1,4 @@
-<Workspace Version="0.9.1.4062" X="-586.179627302572" Y="-90.242485132003" zoom="0.859144092722918" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="True">
+<Workspace Version="0.9.1.4062" X="739.701689267264" Y="68.0466481477869" zoom="0.149065514901954" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="True">
   <NamespaceResolutionMap>
     <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
   </NamespaceResolutionMap>
@@ -82,6 +82,7 @@
         <Input value="m" />
         <Input value="h1_02" />
         <Input value="h_02" />
+        <Input value="b_08" />
       </Inputs>
       <Outputs>
         <Output value="_1_BottomQuad" />
@@ -436,6 +437,10 @@
     <DSRevitNodesUI.ElementsOfFamilyType guid="f806466e-0edd-4c5f-9d37-2e9e930a6c65" type="DSRevitNodesUI.ElementsOfFamilyType" nickname="All Elements of Family Type" x="1716.50184777798" y="251.745059213962" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" />
     <DSRevitNodesUI.FamilyTypes guid="2a85a2a0-9444-457f-84e0-23fb697c4a93" type="DSRevitNodesUI.FamilyTypes" nickname="Family Types" x="1453.44934946687" y="376.287613724092" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" index="0:标高标头 - 升级:6 mm" />
     <DSRevitNodesUI.ElementTypes guid="c9387081-076b-401d-9d6d-40b3bbaaec54" type="DSRevitNodesUI.ElementTypes" nickname="Element Types" x="1500.00731376972" y="795.309292449762" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" index="321:View3D" />
+    <CoreNodeModels.Input.DoubleSlider guid="4d172fa0-69e6-45a9-8c2f-04b15e97baf1" type="CoreNodeModels.Input.DoubleSlider" nickname="Number Slider" x="-39.5692465251996" y="2793.29685494529" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <System.Double>396</System.Double>
+      <Range min="360" max="440" step="2" />
+    </CoreNodeModels.Input.DoubleSlider>
   </Elements>
   <Connectors>
     <Dynamo.Graph.Connectors.ConnectorModel start="6a15f46e-a0ae-4816-816f-4f547394b3ec" start_index="0" end="f147aea6-9a13-472c-90e3-ea10fc7175c3" end_index="0" portType="0" />
@@ -675,11 +680,12 @@
     <Dynamo.Graph.Connectors.ConnectorModel start="7da7e322-df6c-4902-ab65-954623b5230b" start_index="0" end="6a15f46e-a0ae-4816-816f-4f547394b3ec" end_index="1" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="4b340951-17f2-4608-b81a-09591ff9f39b" start_index="0" end="eb80fa53-5544-404f-9aa4-89aa5d0f1bb3" end_index="0" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="2a85a2a0-9444-457f-84e0-23fb697c4a93" start_index="0" end="f806466e-0edd-4c5f-9d37-2e9e930a6c65" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="4d172fa0-69e6-45a9-8c2f-04b15e97baf1" start_index="0" end="6a15f46e-a0ae-4816-816f-4f547394b3ec" end_index="37" portType="0" />
   </Connectors>
   <Notes />
   <Annotations />
   <Presets />
   <Cameras>
-    <Camera Name="背景预览" eyeX="-291.606384277344" eyeY="321.490264892578" eyeZ="1377.26428222656" lookX="286.606384277344" lookY="-310.490264892578" lookZ="-1385.26428222656" upX="0" upY="1" upZ="0" />
+    <Camera Name="背景预览" eyeX="384.35915380852" eyeY="249.061489408613" eyeZ="684.067951032738" lookX="-424.816373608868" lookY="-50.4617392658453" lookZ="-741.452146205344" upX="0.0777690433288353" upY="0.987688340595142" upZ="0.13573399630211" />
   </Cameras>
 </Workspace>

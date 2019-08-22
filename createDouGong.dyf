@@ -1,4 +1,4 @@
-<Workspace Version="0.9.1.4062" X="115.517193151567" Y="296.836798982876" zoom="0.186917376084733" Name="createDouGong" Description="创建整体斗栱" ID="d5326abd-0a46-4d76-8ad6-bae4640354ab" Category="Geometry.Solid">
+<Workspace Version="0.9.1.4062" X="134.430186720803" Y="267.182051671857" zoom="0.194159612759339" Name="createDouGong" Description="创建整体斗栱" ID="d5326abd-0a46-4d76-8ad6-bae4640354ab" Category="Geometry.Solid">
   <NamespaceResolutionMap>
     <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
   </NamespaceResolutionMap>
@@ -98,6 +98,7 @@
         <Input value="m" />
         <Input value="b2_08" />
         <Input value="b_02" />
+        <Input value="b_08" />
       </Inputs>
       <Outputs>
         <Output value="SD1_Q" />
@@ -1110,6 +1111,9 @@
     <Dynamo.Graph.Nodes.CustomNodes.Output guid="ad5c1eb2-674b-4932-bb2a-f1e3a76ef9ab" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="6553.3906163645" y="-356.58347228984" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false">
       <Symbol value="_4_16_ChaZhu" />
     </Dynamo.Graph.Nodes.CustomNodes.Output>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="6288a9a6-e7f9-4535-a765-31f2dfde4f90" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="120.648909739999" y="1571.57629919223" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="b_08 : double = 396.0" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
   </Elements>
   <Connectors>
     <Dynamo.Graph.Connectors.ConnectorModel start="d80a567c-8474-48a5-b0f8-6d87bba1ffae" start_index="0" end="9586235c-11ad-40fb-9085-f32bb11d74c8" end_index="9" portType="0" />
@@ -1408,10 +1412,11 @@
     <Dynamo.Graph.Connectors.ConnectorModel start="fecf3df5-a73e-4fda-9dae-c3ae0aa3468e" start_index="0" end="c8063876-a736-4dbc-928b-2a7bc6d139b9" end_index="12" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="74ad3ad7-bc5f-4993-83db-d0d4e52dbf6f" start_index="0" end="9586235c-11ad-40fb-9085-f32bb11d74c8" end_index="10" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="afc2dcc5-c067-41a0-ba5d-563e82a7f1a8" start_index="0" end="9586235c-11ad-40fb-9085-f32bb11d74c8" end_index="11" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="6288a9a6-e7f9-4535-a765-31f2dfde4f90" start_index="0" end="cf38817f-d2cc-4dd7-8e04-a86659585648" end_index="19" portType="0" />
   </Connectors>
   <Notes />
   <Annotations>
-    <Dynamo.Graph.Annotations.AnnotationModel guid="2a675981-56a3-4eda-8525-42596315fd02" annotationText="Inputs" left="-530.928369136969" top="143.151414679469" width="1502.25285006871" height="1433.62622554723" fontSize="96" InitialTop="268.151414679469" InitialHeight="1338.62622554723" TextblockHeight="115" backgrouund="#FFC1D676">
+    <Dynamo.Graph.Annotations.AnnotationModel guid="2a675981-56a3-4eda-8525-42596315fd02" annotationText="Inputs" left="-530.928369136969" top="143.151414679469" width="1502.25285006871" height="1496.42488451276" fontSize="96" InitialTop="268.151414679469" InitialHeight="1338.62622554723" TextblockHeight="115" backgrouund="#FFC1D676">
       <Models ModelGuid="9ec36781-b3b2-4061-bae8-c22563fa0797" />
       <Models ModelGuid="b319829e-56f3-4542-ae65-9ba60833c8b8" />
       <Models ModelGuid="048f0d3e-222b-4aa2-a70a-dfced4dfbc6b" />
@@ -1449,7 +1454,11 @@
       <Models ModelGuid="fecf3df5-a73e-4fda-9dae-c3ae0aa3468e" />
       <Models ModelGuid="74ad3ad7-bc5f-4993-83db-d0d4e52dbf6f" />
       <Models ModelGuid="afc2dcc5-c067-41a0-ba5d-563e82a7f1a8" />
+      <Models ModelGuid="6288a9a6-e7f9-4535-a765-31f2dfde4f90" />
     </Dynamo.Graph.Annotations.AnnotationModel>
   </Annotations>
   <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="275.494476318359" eyeY="320.095642089844" eyeZ="85.1559753417969" lookX="-239.373947143555" lookY="-266.443878173828" lookZ="-70.4033203125" upX="-0.543391048908234" upY="0.824126183986664" upZ="-0.159819141030312" />
+  </Cameras>
 </Workspace>
