@@ -1,4 +1,4 @@
-<Workspace Version="0.9.1.4062" X="3856.47173418642" Y="5117.51771038117" zoom="1.17246831092042" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="True">
+<Workspace Version="0.9.1.4062" X="1732.84493055805" Y="1814.7032250999" zoom="0.709275768402936" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="True">
   <NamespaceResolutionMap>
     <ClassMap partialName="Point" resolvedName="Autodesk.DesignScript.Geometry.Point" assemblyName="ProtoGeometry.dll" />
     <ClassMap partialName="Polygon" resolvedName="Autodesk.DesignScript.Geometry.Polygon" assemblyName="ProtoGeometry.dll" />
@@ -13,15 +13,15 @@
   </NamespaceResolutionMap>
   <Elements>
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="b4507afa-aec1-48bf-938a-bb1176acde48" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-8553.87026169732" y="3177.17874885186" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//创建四边形面&#xA;//p-&gt;面的中心点&#xA;//r-&gt;面的边长&#xA;//z-&gt;面的位置z值&#xA;def createQuadCenter(p, r)&#xA;{&#xA;	//	.p1----.p2&#xA;	//	|		|&#xA;	//	|	p	|&#xA;	//	|		|&#xA;	//	|		|&#xA;	//	.p4----.p3&#xA;	x1 = p.X - r;&#xA;	y1 = p.Y - r;&#xA;	z1 = p.Z;&#xA;&#xA;	//test=p.X;&#xA;&#xA;	x2 = p.X + r;&#xA;	y2 = p.Y - r;&#xA;	z2 = p.Z;&#xA;&#xA;	x3 = p.X + r;&#xA;	y3 = p.Y + r;&#xA;	z3 = p.Z;&#xA;&#xA;	x4 = p.X - r;&#xA;	y4 = p.Y + r;&#xA;	z4 = p.Z;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;	p2 = Point.ByCoordinates(x2, y2, z2);&#xA;	p3 = Point.ByCoordinates(x3, y3, z3);&#xA;	p4 = Point.ByCoordinates(x4, y4, z4);&#xA;&#xA;	poly = Polygon.ByPoints({p1, p2, p3, p4});&#xA;&#xA;	//l1 = List.FirstItem(p1);&#xA;	//l1 = List.AddItemToEnd(p2);&#xA;	//l1 = List.AddItemToEnd(p3);&#xA;	//l1 = List.AddItemToEnd(p4);&#xA;&#xA;	//sur = Surface.ByPatch(ploy);&#xA;&#xA;	return = poly;&#xA;};" ShouldFocus="false" />
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="bbd1818f-055a-4df0-aff7-d090082aed1e" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-4020.42803302472" y="-3991.19084583884" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="Point.ByCoordinates(0, 0, 0);&#xA;10;&#xA;0;" ShouldFocus="false" />
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="594eed4b-c534-4b06-b22e-4a8c3387650e" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-3592.67185730184" y="-4036.01146850787" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="point;&#xA;r;&#xA;i;&#xA;&#xA;geometry = [Imperative]&#xA;{&#xA;	l = {};&#xA;	i = 5;&#xA;	while( i &gt; 0 )&#xA;	{&#xA;&#xA;		r = r + 1;&#xA;		l = List.AddItemToEnd(createQuadCenter(point, r), l);&#xA;&#xA;		i = i - 1;&#xA;&#xA;	}&#xA;&#xA;	return = l;&#xA;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="bbd1818f-055a-4df0-aff7-d090082aed1e" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-3307.8219780073" y="-3925.2088037076" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="Point.ByCoordinates(0, 0, 0);&#xA;10;&#xA;20;&#xA;4;&#xA;10;&#xA;5;&#xA;5;&#xA;&quot;y-&quot;;" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="594eed4b-c534-4b06-b22e-4a8c3387650e" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-3992.16313056918" y="-4097.19481666593" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="point;&#xA;r;&#xA;i;&#xA;&#xA;geometry = [Imperative]&#xA;{&#xA;	l = {};&#xA;	i = 5;&#xA;	while( i &gt; 0 )&#xA;	{&#xA;&#xA;		r = r + 1;&#xA;		l = List.AddItemToEnd(createQuadCenter(point, r), l);&#xA;&#xA;		i = i - 1;&#xA;&#xA;	}&#xA;&#xA;	return = l;&#xA;&#xA;};" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="e33ede6c-2584-4453-a710-d069a8839c71" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-7947.33775720479" y="3205.14499488474" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//创建梯形平面&#xA;//p-&gt;短边中心点&#xA;//d1-&gt;短边边长&#xA;//d2-&gt;长边边长&#xA;//h-&gt;高&#xA;//d-&gt;倾斜进深&#xA;//direc-&gt;倾斜方向&#xA;def createTrape(p, d1, d2, h, d, direc)&#xA;{&#xA;&#xA;	x1 = 0;&#xA;	x2 = 0;&#xA;	x3 = 0;&#xA;	x4 = 0;&#xA;	y1 = 0;&#xA;	y2 = 0;&#xA;	y3 = 0;&#xA;	y4 = 0;&#xA;	z1 = 0;&#xA;	z2 = 0;&#xA;	z3 = 0;&#xA;	z4 = 0;&#xA;	geometry = [Imperative]&#xA;	{&#xA;		if(direc == &quot;y-&quot;)&#xA;		{&#xA;			x1 = p.X - d1 / 2;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X + d1 / 2;&#xA;			y2 = p.Y;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X + d2 / 2;&#xA;			y3 = p.Y - d;&#xA;			z3 = p.Z + h;&#xA;&#xA;			x4 = p.X - d2 / 2;&#xA;			y4 = p.Y - d;&#xA;			z4 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;y+&quot;)&#xA;		{&#xA;			x1 = p.X - d1 / 2;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X + d1 / 2;&#xA;			y2 = p.Y;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X + d2 / 2;&#xA;			y3 = p.Y + d;&#xA;			z3 = p.Z + h;&#xA;&#xA;			x4 = p.X - d2 / 2;&#xA;			y4 = p.Y + d;&#xA;			z4 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;x-&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y - d1 / 2;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X;&#xA;			y2 = p.Y+ d1 / 2;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X - d;&#xA;			y3 = p.Y + d2 / 2;&#xA;			z3 = p.Z + h;&#xA;&#xA;			x4 = p.X - d;&#xA;			y4 = p.Y - d2 / 2;&#xA;			z4 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;x+&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y- d1 / 2;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X;&#xA;			y2 = p.Y+ d1 / 2;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X + d;&#xA;			y3 = p.Y + d2 / 2;&#xA;			z3 = p.Z + h;&#xA;&#xA;			x4 = p.X + d;&#xA;			y4 = p.Y - d2 / 2;&#xA;			z4 = p.Z + h;&#xA;		}&#xA;&#xA;	}&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;	p2 = Point.ByCoordinates(x2, y2, z2);&#xA;	p3 = Point.ByCoordinates(x3, y3, z3);&#xA;	p4 = Point.ByCoordinates(x4, y4, z4);&#xA;&#xA;	poly = Polygon.ByPoints({p1, p2, p3, p4});&#xA;&#xA;	return = poly;&#xA;&#xA;};" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="f175e972-ff1d-42e6-a572-0733af4a5991" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-7263.35313919434" y="3196.97217325321" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//创建栌枓U型侧面&#xA;//p-&gt;底边中心定位点&#xA;//w-&gt;长边长&#xA;//w1-&gt;顶部短边长&#xA;//h1-&gt;高（h - h1)&#xA;//h2-&gt;中间U型部分高&#xA;//direc-&gt;绘制方向&#xA;def createUPlane(p, w, w1, h1, h2, direc)&#xA;{&#xA;	x1 =0;&#xA;	y1 =0;&#xA;	z1 =0;&#xA;	x2 =0;&#xA;	y2 =0;&#xA;	z2 =0;&#xA;	x3 =0;&#xA;	y3 =0;&#xA;	z3 =0;&#xA;	x4 =0;&#xA;	y4 =0;&#xA;	z4 =0;&#xA;	x5 =0;&#xA;	y5 =0;&#xA;	z5 =0;&#xA;	x6 =0;&#xA;	y6 =0;&#xA;	z6 =0;&#xA;	x7 =0;&#xA;	y7 =0;&#xA;	z7 =0;&#xA;	x8 =0;&#xA;	y8 =0;&#xA;	z8 =0;&#xA;&#xA;	geometry = [Imperative]&#xA;	{&#xA;&#xA;		if(direc == &quot;x&quot;)&#xA;		{&#xA;			x1 = p.X - w / 2;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X + w / 2;&#xA;			y2 = p.Y;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X + w / 2;&#xA;			y3 = p.Y;&#xA;			z3 = p.Z + h1;&#xA;&#xA;			x4 = p.X + w1 / 2;&#xA;			y4 = p.Y;&#xA;			z4 = p.Z + h1;&#xA;&#xA;			x5 = p.X + w1 / 2;&#xA;			y5 = p.Y;&#xA;			z5 = p.Z + h1 - h2;&#xA;&#xA;			x6 = p.X - w1 / 2;&#xA;			y6 = p.Y;&#xA;			z6 = p.Z + h1 - h2;&#xA;&#xA;			x7 = p.X - w1 / 2;&#xA;			y7 = p.Y;&#xA;			z7 = p.Z + h1;&#xA;&#xA;			x8 = p.X - w / 2;&#xA;			y8 = p.Y;&#xA;			z8 = p.Z + h1;&#xA;		}&#xA;&#xA;		if(direc == &quot;y&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y - w / 2;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X;&#xA;			y2 = p.Y + w / 2;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X;&#xA;			y3 = p.Y + w / 2;&#xA;			z3 = p.Z + h1;&#xA;&#xA;			x4 = p.X;&#xA;			y4 = p.Y + w1 / 2;&#xA;			z4 = p.Z + h1;&#xA;&#xA;			x5 = p.X;&#xA;			y5 = p.Y + w1 / 2;&#xA;			z5 = p.Z + h1 - h2;&#xA;&#xA;			x6 = p.X;&#xA;			y6 = p.Y - w1 / 2;&#xA;			z6 = p.Z + h1 - h2;&#xA;&#xA;			x7 = p.X;&#xA;			y7 = p.Y - w1 / 2;&#xA;			z7 = p.Z + h1;&#xA;&#xA;			x8 = p.X;&#xA;			y8 = p.Y - w / 2;&#xA;			z8 = p.Z + h1;&#xA;		}&#xA;&#xA;	}&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;	p2 = Point.ByCoordinates(x2, y2, z2);&#xA;	p3 = Point.ByCoordinates(x3, y3, z3);&#xA;	p4 = Point.ByCoordinates(x4, y4, z4);&#xA;	p5 = Point.ByCoordinates(x5, y5, z5);&#xA;	p6 = Point.ByCoordinates(x6, y6, z6);&#xA;	p7 = Point.ByCoordinates(x7, y7, z7);&#xA;	p8 = Point.ByCoordinates(x8, y8, z8);&#xA;&#xA;	poly = Polygon.ByPoints({p1, p2, p3, p4, p5, p6, p7, p8});&#xA;&#xA;	return = poly;&#xA;};" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="3c56039a-0c02-4545-a8c1-1ddeaba22086" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-6467.44510283836" y="3205.18673244767" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//创建卷杀曲线&#xA;//p-&gt;定位点&#xA;//b1-&gt;卷杀部分长&#xA;//b2-&gt;其余部分长&#xA;//m-&gt;卷杀段数&#xA;//h1-&gt;卷杀部分高&#xA;//h-&gt;整体高&#xA;//direc-&gt;方向&#xA;def createJuanshaCurve(p, b1, b2, m, h1, h, direc)&#xA;{&#xA;	x1 = 0;&#xA;	y1 = 0;&#xA;	z1 = 0;&#xA;	x2 = 0;&#xA;	y2 = 0;&#xA;	z2 = 0;&#xA;	x3 = 0;&#xA;	y3 = 0;&#xA;	z3 = 0;&#xA;	x4 = 0;&#xA;	y4 = 0;&#xA;	z4 = 0;&#xA;	x5 = 0;&#xA;	y5 = 0;&#xA;	z5 = 0;&#xA;	x6 = 0;&#xA;	y6 = 0;&#xA;	z6 = 0;&#xA;	x7 = 0;&#xA;	y7 = 0;&#xA;	z7 = 0;&#xA;	x8 = 0;&#xA;	y8 = 0;&#xA;	z8 = 0;&#xA;	geometry = [Imperative]&#xA;	{&#xA;&#xA;		if(direc == &quot;x+&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X + b2;&#xA;			y2 = p.Y;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X + b2 + ((4 / 10) * b1);&#xA;			y3 = p.Y;&#xA;			z3 = p.Z + ((1 / 10) * h1);&#xA;&#xA;			x4 = p.X + b2 + ((7 / 10) * b1);&#xA;			y4 = p.Y;&#xA;			z4 = p.Z + ((3 / 10) * h1);&#xA;&#xA;			x5 = p.X + b2 + ((9 / 10) * b1);&#xA;			y5 = p.Y;&#xA;			z5 = p.Z + ((6 / 10) * h1);&#xA;&#xA;			x6 = p.X + b2 + b1;&#xA;			y6 = p.Y;&#xA;			z6 = p.Z + h1;&#xA;&#xA;			x7 = p.X + b2 + b1;&#xA;			y7 = p.Y;&#xA;			z7 = p.Z + h;&#xA;&#xA;			x8 = p.X;&#xA;			y8 = p.Y;&#xA;			z8 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;x-&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X - b2;&#xA;			y2 = p.Y;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X - b2 - ((4 / 10) * b1);&#xA;			y3 = p.Y;&#xA;			z3 = p.Z + ((1 / 10) * h1);&#xA;&#xA;			x4 = p.X - b2 - ((7 / 10) * b1);&#xA;			y4 = p.Y;&#xA;			z4 = p.Z + ((3 / 10) * h1);&#xA;&#xA;			x5 = p.X - b2 - ((9 / 10) * b1);&#xA;			y5 = p.Y;&#xA;			z5 = p.Z + ((6 / 10) * h1);&#xA;&#xA;			x6 = p.X - b2 - b1;&#xA;			y6 = p.Y;&#xA;			z6 = p.Z + h1;&#xA;&#xA;			x7 = p.X - b2 - b1;&#xA;			y7 = p.Y;&#xA;			z7 = p.Z + h;&#xA;&#xA;			x8 = p.X;&#xA;			y8 = p.Y;&#xA;			z8 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;y+&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X;&#xA;			y2 = p.Y + b2;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X;&#xA;			y3 = p.Y + b2 + ((4 / 10) * b1);&#xA;			z3 = p.Z + ((1 / 10) * h1);&#xA;&#xA;			x4 = p.X;&#xA;			y4 = p.Y + b2 + ((7 / 10) * b1);&#xA;			z4 = p.Z + ((3 / 10) * h1);&#xA;&#xA;			x5 = p.X;&#xA;			y5 = p.Y + b2 + ((9 / 10) * b1);&#xA;			z5 = p.Z + ((6 / 10) * h1);&#xA;&#xA;			x6 = p.X;&#xA;			y6 = p.Y + b2 + b1;&#xA;			z6 = p.Z + h1;&#xA;&#xA;			x7 = p.X;&#xA;			y7 = p.Y + b2 + b1;&#xA;			z7 = p.Z + h;&#xA;&#xA;			x8 = p.X;&#xA;			y8 = p.Y;&#xA;			z8 = p.Z + h;&#xA;		}&#xA;&#xA;		if(direc == &quot;y-&quot;)&#xA;		{&#xA;			x1 = p.X;&#xA;			y1 = p.Y;&#xA;			z1 = p.Z;&#xA;&#xA;			x2 = p.X;&#xA;			y2 = p.Y - b2;&#xA;			z2 = p.Z;&#xA;&#xA;			x3 = p.X;&#xA;			y3 = p.Y - b2 - ((4 / 10) * b1);&#xA;			z3 = p.Z + ((1 / 10) * h1);&#xA;&#xA;			x4 = p.X;&#xA;			y4 = p.Y - b2 - ((7 / 10) * b1);&#xA;			z4 = p.Z + ((3 / 10) * h1);&#xA;&#xA;			x5 = p.X;&#xA;			y5 = p.Y - b2 - ((9 / 10) * b1);&#xA;			z5 = p.Z + ((6 / 10) * h1);&#xA;&#xA;			x6 = p.X;&#xA;			y6 = p.Y - b2 - b1;&#xA;			z6 = p.Z + h1;&#xA;&#xA;			x7 = p.X;&#xA;			y7 = p.Y - b2 - b1;&#xA;			z7 = p.Z + h;&#xA;&#xA;			x8 = p.X;&#xA;			y8 = p.Y;&#xA;			z8 = p.Z + h;&#xA;		}&#xA;	}&#xA;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;	p2 = Point.ByCoordinates(x2, y2, z2);&#xA;	p3 = Point.ByCoordinates(x3, y3, z3);&#xA;	p4 = Point.ByCoordinates(x4, y4, z4);&#xA;	p5 = Point.ByCoordinates(x5, y5, z5);&#xA;	p6 = Point.ByCoordinates(x6, y6, z6);&#xA;	p7 = Point.ByCoordinates(x7, y7, z7);&#xA;	p8 = Point.ByCoordinates(x8, y8, z8);&#xA;&#xA;	poly = Polygon.ByPoints({p1, p2, p3, p4, p5, p6, p7, p8});&#xA;&#xA;	curve = PolyCurve.ByPoints({p1, p2, p3, p4, p5, p6, p7, p8}, true);&#xA;&#xA;	return = curve;&#xA;&#xA;};" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="c28abe09-46d8-4f3e-b911-cf862febad42" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-5719.37812752762" y="3212.97909677383" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//创建单卷杀长方体栱部分，&#xA;//cur-&gt;边界曲线&#xA;//width-&gt;长方体长度&#xA;//direction-&gt;延伸方向&#xA;def createCubiod(cur, width, direction)&#xA;{&#xA;	x1 = 0;&#xA;	y1 = 0;&#xA;	z1 = 0;&#xA;	x2 = 0;&#xA;	y2 = 0;&#xA;	z2 = 0;&#xA;&#xA;	geometry = [Imperative]&#xA;	{&#xA;		if(direction == &quot;x+&quot;)&#xA;		{&#xA;			x1 = cur.StartPoint.X + width;&#xA;			y1 = cur.StartPoint.Y;&#xA;			z1 = cur.StartPoint.Z;&#xA;&#xA;			x2 = cur.EndPoint.X + width;&#xA;			y2 = cur.EndPoint.Y;&#xA;			z2 = cur.EndPoint.Z;&#xA;		}&#xA;&#xA;		if(direction == &quot;x-&quot;)&#xA;		{&#xA;			x1 = cur.StartPoint.X - width;&#xA;			y1 = cur.StartPoint.Y;&#xA;			z1 = cur.StartPoint.Z;&#xA;&#xA;			x2 = cur.EndPoint.X - width;&#xA;			y2 = cur.EndPoint.Y;&#xA;			z2 = cur.EndPoint.Z;&#xA;		}&#xA;&#xA;		if(direction == &quot;y+&quot;)&#xA;		{&#xA;			x1 = cur.StartPoint.X;&#xA;			y1 = cur.StartPoint.Y + width;&#xA;			z1 = cur.StartPoint.Z;&#xA;&#xA;			x2 = cur.EndPoint.X;&#xA;			y2 = cur.EndPoint.Y + width;&#xA;			z2 = cur.EndPoint.Z;&#xA;		}&#xA;&#xA;		if(direction == &quot;y-&quot;)&#xA;		{&#xA;			x1 = cur.StartPoint.X;&#xA;			y1 = cur.StartPoint.Y - width;&#xA;			z1 = cur.StartPoint.Z;&#xA;&#xA;			x2 = cur.EndPoint.X;&#xA;			y2 = cur.EndPoint.Y - width;&#xA;			z2 = cur.EndPoint.Z;&#xA;		}&#xA;	}&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;	p2 = Point.ByCoordinates(x2, y2, z2);&#xA;&#xA;	curve = PolyCurve.ByPoints({p1, p2}, false);&#xA;&#xA;	return = curve;&#xA;&#xA;};" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="2b11fee3-ada1-486a-b10f-7285bc5c4799" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-5119.3660744138" y="3236.35618975229" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//获取创建枋类构件的中心点&#xA;//p_center-&gt;与坊正交的栱的长方体部分的质心&#xA;//p_down-&gt;栌枓的内角点&#xA;//dh-&gt;与坊正交的栱的高的一半&#xA;def getNDGFangCenterPoint(p_center, p_down, dh)&#xA;{&#xA;	x1 = 0;&#xA;	y1 = 0;&#xA;	z1 = p_down.Z + (p_center.Z + dh - p_down.Z) / 2;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p1;&#xA;};" ShouldFocus="false" />
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="0a7c427b-41be-4928-98fd-10e91ce54375" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-4503.76929264767" y="3251.94091840459" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//获取创建枋类构件的中心点&#xA;//p_center-&gt;与坊正交的栱的长方体部分的质心&#xA;//p_down-&gt;栌枓的内角点&#xA;//dh-&gt;与坊正交的栱的高的一半&#xA;def getHGFang(p, db, w, l, h)&#xA;{&#xA;	x1 = p.X + db - l / 2;&#xA;	y1 = p.Y - w / 2;&#xA;	z1 = p.Z + h / 2;&#xA;&#xA;	p1 = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	cube = Cuboid.ByLengths(p1, l, w, h);&#xA;&#xA;	return = cube;&#xA;};" ShouldFocus="false" />
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="efac0dde-5c4f-4a21-b45f-dbb2bfc5e7e5" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-3989.47324712154" y="3259.73328273075" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="def getMidPoint(p1, p2, h1, dh, h)&#xA;{&#xA;	x1 = (p1.X + p2.X) / 2;&#xA;	y1 = (p1.Y + p2.Y) / 2;&#xA;	z1 = p1.Z + h1 + dh + h / 2;&#xA;&#xA;	p_mid = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p_mid;&#xA;};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="efac0dde-5c4f-4a21-b45f-dbb2bfc5e7e5" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-3989.47324712154" y="3259.73328273075" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//获取整体枋类中心点&#xA;//p1-&gt;一端端点(sandou)&#xA;//p2-&gt;另一端端点(snadou)&#xA;//h1-&gt;散枓h1高&#xA;//dh-&gt;散枓槽口到斜边高&#xA;//h-&gt;枋高&#xA;//&#xA;def getMidPoint(p1, p2, h1, dh, h)&#xA;{&#xA;	x1 = (p1.X + p2.X) / 2;&#xA;	y1 = (p1.Y + p2.Y) / 2;&#xA;	z1 = p1.Z + h1 + dh + h / 2;&#xA;&#xA;	p_mid = Point.ByCoordinates(x1, y1, z1);&#xA;&#xA;	return = p_mid;&#xA;};" ShouldFocus="false" />
     <CoreNodeModels.Input.DoubleSlider guid="d2085207-53fb-48f9-9878-ce2ac849527f" type="CoreNodeModels.Input.DoubleSlider" nickname="b_12" x="-2005.84288770523" y="-4017.65822259492" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double>632</System.Double>
       <Range min="580" max="680" step="1" />
@@ -115,7 +115,7 @@
       <System.Double>90</System.Double>
       <Range min="70" max="100" step="2" />
     </CoreNodeModels.Input.DoubleSlider>
-    <CoreNodeModels.Input.DoubleSlider guid="db0836da-dc9f-42ac-899d-bd20ea16f789" type="CoreNodeModels.Input.DoubleSlider" nickname="b_02" x="-1961.91462266567" y="-3491.71218274125" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+    <CoreNodeModels.Input.DoubleSlider guid="db0836da-dc9f-42ac-899d-bd20ea16f789" type="CoreNodeModels.Input.DoubleSlider" nickname="b_02" x="-1961.91462266567" y="-3492.94133518231" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double>280</System.Double>
       <Range min="250" max="350" step="5" />
     </CoreNodeModels.Input.DoubleSlider>
@@ -167,7 +167,7 @@
       <Range min="50" max="80" step="2" />
     </CoreNodeModels.Input.DoubleSlider>
     <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="21945698-52b6-494b-aa94-4290e1f6c8b1" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-3182.02356610669" y="3191.21380723588" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//create first tiao&#xA;//&#xA;&#xA;&#xA;def createFirst(centerPoint, b1_01, h1_01, b_01, b2_01, h_01, h2_01, m,&#xA;b_02, b1_02, h1_02, h_02)&#xA;{&#xA;	result = {};&#xA;	/*****create quad****/&#xA;	//centerpoint&#xA;	p = centerPoint;&#xA;	//radius&#xA;	r = b1_01 / 2;&#xA;	//create Trape -- d&#xA;	T_d = (b_01 - b1_01) / 2;&#xA;	//create U Plane -- h1&#xA;	U_h1 = h_01 - h1_01;&#xA;	//create JuanSha -- u&#xA;	JS_u = h2_01 / U_h1;&#xA;	//create JuanSha -- v&#xA;	JS_v = b2_01 / b_01;&#xA;	//create JuanSha -- 1 - v&#xA;	JS_mv = 1 - (b2_01 / b_01);&#xA;	//create JuanSha -- b2&#xA;	JS_b2 = ((b_02 - 2 * b1_02) - b_01) / 2;&#xA;	//bottom quad&#xA;	bottomQuad = createQuadCenter(centerPoint, r);&#xA;&#xA;	bottomQuadSurface = Surface.ByPatch(bottomQuad);&#xA;	//0&#xA;	result = List.AddItemToEnd(bottomQuadSurface, result);&#xA;	/****create trape*****/&#xA;	//trape1&#xA;	p_T1 = Surface.PointAtParameter(bottomQuadSurface, 0.5, 0);&#xA;&#xA;	direc1 = &quot;y-&quot;;&#xA;	Trape1 = createTrape(p_T1, b1_01, b_01, h1_01, T_d, direc1);&#xA;&#xA;	Trape1_S = Surface.ByPatch(Trape1);&#xA;	//1&#xA;	result = List.AddItemToEnd(Trape1_S, result);&#xA;&#xA;	//trape2&#xA;	p_T2 = Surface.PointAtParameter(bottomQuadSurface, 0.5, 1);&#xA;&#xA;	direc2 = &quot;y+&quot;;&#xA;	Trape2 = createTrape(p_T2, b1_01, b_01, h1_01, T_d, direc2);&#xA;&#xA;	Trape2_S = Surface.ByPatch(Trape2);&#xA;	//2&#xA;	result = List.AddItemToEnd(Trape2_S, result);&#xA;&#xA;	//trape3&#xA;	p_T3 = Surface.PointAtParameter(bottomQuadSurface, 1, 0.5);&#xA;&#xA;	direc3 = &quot;x+&quot;;&#xA;	Trape3 = createTrape(p_T3, b1_01, b_01, h1_01, T_d, direc3);&#xA;&#xA;	Trape3_S = Surface.ByPatch(Trape3);&#xA;	//3&#xA;	result = List.AddItemToEnd(Trape3_S, result);&#xA;&#xA;	//trape4&#xA;	p_T4 = Surface.PointAtParameter(bottomQuadSurface, 0, 0.5);&#xA;&#xA;	direc4 = &quot;x-&quot;;&#xA;	Trape4 = createTrape(p_T4, b1_01, b_01, h1_01, T_d, direc4);&#xA;&#xA;	Trape4_S = Surface.ByPatch(Trape4);&#xA;	//4&#xA;	result = List.AddItemToEnd(Trape4_S, result);&#xA;&#xA;	/*****create U plane*****/&#xA;	//UPlane1&#xA;	p_U1 = Surface.PointAtParameter(Trape1_S, 0, 0.5);&#xA;&#xA;	direc12 = &quot;x&quot;;&#xA;	UPlane1 = createUPlane(p_U1, b_01, b2_01, U_h1, h2_01, direc12);&#xA;&#xA;	UPlane1_S = Surface.ByPatch(UPlane1);&#xA;	//5&#xA;	result = List.AddItemToEnd(UPlane1_S, result);&#xA;&#xA;	//UPlane2&#xA;	p_U2 = Surface.PointAtParameter(Trape2_S, 0, 0.5);&#xA;&#xA;&#xA;	UPlane2 = createUPlane(p_U2, b_01, b2_01, U_h1, h2_01, direc12);&#xA;&#xA;	UPlane2_S = Surface.ByPatch(UPlane2);&#xA;	//6&#xA;	result = List.AddItemToEnd(UPlane2_S, result);&#xA;&#xA;	//UPlane3&#xA;	p_U3 = Surface.PointAtParameter(Trape3_S, 0, 0.5);&#xA;&#xA;	direc34 = &quot;y&quot;;&#xA;	UPlane3 = createUPlane(p_U3, b_01, b2_01, U_h1, h2_01, direc34);&#xA;&#xA;	UPlane3_S = Surface.ByPatch(UPlane3);&#xA;	//7&#xA;	result = List.AddItemToEnd(UPlane3_S, result);&#xA;&#xA;	//UPlane4&#xA;	p_U4 = Surface.PointAtParameter(Trape4_S, 0, 0.5);&#xA;&#xA;&#xA;	UPlane4 = createUPlane(p_U4, b_01, b2_01, U_h1, h2_01, direc34);&#xA;&#xA;	UPlane4_S = Surface.ByPatch(UPlane4);&#xA;	//8&#xA;	result = List.AddItemToEnd(UPlane4_S, result);&#xA;&#xA;	/*****create JuanSha*****/&#xA;	//JS1&#xA;	direc1 = &quot;y-&quot;;&#xA;	//JS1_1&#xA;	p_JS1_1 = Surface.PointAtParameter(UPlane1_S, JS_u, JS_v);&#xA;&#xA;	JS1_1 = createJuanshaCurve(p_JS1_1, b1_02, JS_b2, m, h1_02, h_02, direc1);&#xA;&#xA;	JS1_C1 = Surface.ByPatch(JS1_1);&#xA;	//9&#xA;	result = List.AddItemToEnd(JS1_C1, result);&#xA;&#xA;	//JS1_2&#xA;	p_JS1_2 = Surface.PointAtParameter(UPlane1_S, JS_u, JS_mv);&#xA;&#xA;	JS1_2 = createJuanshaCurve(p_JS1_2, b1_02, JS_b2, m, h1_02, h_02, direc1);&#xA;&#xA;	JS1_C2 = Surface.ByPatch(JS1_2);&#xA;	//10&#xA;	result = List.AddItemToEnd(JS1_C2, result);&#xA;&#xA;	JS1 = {};&#xA;&#xA;	JS1 = List.AddItemToEnd(JS1_1, JS1);&#xA;	JS1 = List.AddItemToEnd(JS1_2, JS1);&#xA;	JS1_S = Surface.ByLoft(JS1);&#xA;	//11&#xA;	result = List.AddItemToEnd(JS1_S, result);&#xA;&#xA;	//JS2&#xA;	direc2 = &quot;y+&quot;;&#xA;	//JS2_1&#xA;	p_JS2_1 = Surface.PointAtParameter(UPlane2_S, JS_u, JS_v);&#xA;&#xA;	JS2_1 = createJuanshaCurve(p_JS2_1, b1_02, JS_b2, m, h1_02, h_02, direc2);&#xA;&#xA;	JS2_C1 = Surface.ByPatch(JS2_1);&#xA;	//12&#xA;	result = List.AddItemToEnd(JS2_C1, result);&#xA;&#xA;	//JS2_2&#xA;	p_JS2_2 = Surface.PointAtParameter(UPlane2_S, JS_u, JS_mv);&#xA;&#xA;	JS2_2 = createJuanshaCurve(p_JS2_2, b1_02, JS_b2, m, h1_02, h_02, direc2);&#xA;&#xA;	JS2_C2 = Surface.ByPatch(JS2_2);&#xA;	//13&#xA;	result = List.AddItemToEnd(JS2_C2, result);&#xA;&#xA;	JS2 = {};&#xA;&#xA;	JS2 = List.AddItemToEnd(JS2_1, JS2);&#xA;	JS2 = List.AddItemToEnd(JS2_2, JS2);&#xA;	JS2_S = Surface.ByLoft(JS2);&#xA;	//14&#xA;	result = List.AddItemToEnd(JS2_S, result);&#xA;&#xA;	//JS3&#xA;	direc3 = &quot;x+&quot;;&#xA;	//JS3_1&#xA;	p_JS3_1 = Surface.PointAtParameter(UPlane3_S, JS_u, JS_v);&#xA;&#xA;	JS3_1 = createJuanshaCurve(p_JS3_1, b1_02, JS_b2, m, h1_02, h_02, direc3);&#xA;&#xA;	JS3_C1 = Surface.ByPatch(JS3_1);&#xA;	//15&#xA;	result = List.AddItemToEnd(JS3_C1, result);&#xA;&#xA;	//JS3_2&#xA;	p_JS3_2 = Surface.PointAtParameter(UPlane3_S, JS_u, JS_mv);&#xA;&#xA;	JS3_2 = createJuanshaCurve(p_JS3_2, b1_02, JS_b2, m, h1_02, h_02, direc3);&#xA;&#xA;	JS3_C2 = Surface.ByPatch(JS3_2);&#xA;	//16&#xA;	result = List.AddItemToEnd(JS3_C2, result);&#xA;&#xA;	JS3 = {};&#xA;&#xA;	JS3 = List.AddItemToEnd(JS3_1, JS3);&#xA;	JS3 = List.AddItemToEnd(JS3_2, JS3);&#xA;	JS3_S = Surface.ByLoft(JS3);&#xA;	//17&#xA;	result = List.AddItemToEnd(JS3_S, result);&#xA;&#xA;	//JS4&#xA;	direc4 = &quot;x-&quot;;&#xA;	//JS4_1&#xA;	p_JS4_1 = Surface.PointAtParameter(UPlane4_S, JS_u, JS_v);&#xA;&#xA;	JS4_1 = createJuanshaCurve(p_JS4_1, b1_02, JS_b2, m, h1_02, h_02, direc4);&#xA;&#xA;	JS4_C1 = Surface.ByPatch(JS4_1);&#xA;	//18&#xA;	result = List.AddItemToEnd(JS4_C1, result);&#xA;&#xA;	//JS4_2&#xA;	p_JS4_2 = Surface.PointAtParameter(UPlane4_S, JS_u, JS_mv);&#xA;&#xA;	JS4_2 = createJuanshaCurve(p_JS4_2, b1_02, JS_b2, m, h1_02, h_02, direc4);&#xA;&#xA;	JS4_C2 = Surface.ByPatch(JS4_2);&#xA;	//19&#xA;	result = List.AddItemToEnd(JS4_C2, result);&#xA;&#xA;	JS4 = {};&#xA;&#xA;	JS4 = List.AddItemToEnd(JS4_1, JS4);&#xA;	JS4 = List.AddItemToEnd(JS4_2, JS4);&#xA;	JS4_S = Surface.ByLoft(JS4);&#xA;	//20&#xA;	result = List.AddItemToEnd(JS4_S, result);&#xA;&#xA;	return = result;&#xA;};" ShouldFocus="false" />
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="b49a469f-4a27-4fec-b261-cd823ba16b36" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-1072.11416262972" y="-3488.76444783138" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="true" CodeText="first = createFirst(centerPoint, b1_01, h1_01, b_01, b2_01, h_01, h2_01, m,&#xA;b_02, b1_02, h1_02, h_02);&#xA;&#xA;second = createSecond(first[9], first[12], first[15], b_07, b2_01, b1_04, b_02, b2_04,&#xA;h_04, h2_04, h2_05, h1_04, b_04, b_06, b1_06, h1_06, h_06, m, b2_08, b_08);&#xA;&#xA;third = createThird(second[29], second[32], second[35], second[38], second[41],&#xA;b2_01, b1_04, b2_04, h_04, h2_04, h2_05, h1_04, b_04, b_07, m, t_08, b_10, b1_10,&#xA;h1_10, h_10, b_11, b2_12, b_12, h_12, h_09, t_09, b_09);&#xA;&#xA;createFourth(third[0], third[1], third[47], third[50], third[53],&#xA;third[56], third[59], b2_01, b1_04, h_09, b2_04, h_04, h2_04, h2_05,&#xA;h1_04, b_04, h_13, w_13, l_13, w_14, l_14, b1_15, t_15, b_15, h_15,&#xA;centerPoint, h_01, h_16, r_16);" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="b49a469f-4a27-4fec-b261-cd823ba16b36" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-1064.9962856853" y="-3281.72053109208" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="true" CodeText="first = createFirst(centerPoint, b1_01, h1_01, b_01, b2_01, h_01, h2_01, m,&#xA;b_02, b1_02, h1_02, h_02);&#xA;&#xA;//second = createSecond(first[9], first[12], first[15], b_07, b2_01, b1_04, b_02, b2_04,&#xA;//h_04, h2_04, h2_05, h1_04, b_04, b_06, b1_06, h1_06, h_06, m, b2_08, b_08);&#xA;&#xA;//third = createThird(second[29], second[32], second[35], second[38], second[41],&#xA;//b2_01, b1_04, b2_04, h_04, h2_04, h2_05, h1_04, b_04, b_07, m, t_08, b_10, b1_10,&#xA;//h1_10, h_10, b_11, b2_12, b_12, h_12, h_09, t_09, b_09);&#xA;&#xA;//createFourth(third[0], third[1], third[47], third[50], third[53],&#xA;//third[56], third[59], b2_01, b1_04, h_09, b2_04, h_04, h2_04, h2_05,&#xA;//h1_04, b_04, h_13, w_13, l_13, w_14, l_14, b1_15, t_15, b_15, h_15,&#xA;//centerPoint, h_01, h_16, r_16);" ShouldFocus="false" />
     <CoreNodeModels.Input.DoubleSlider guid="0dc65791-bde4-4893-ace8-893546fb042a" type="CoreNodeModels.Input.DoubleSlider" nickname="b1_02" x="-1928.78174943944" y="-1516.50637529404" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
       <System.Double>60</System.Double>
       <Range min="50" max="80" step="2" />
@@ -243,79 +243,917 @@ OUT = document.Export(exFolder, fileName, viewset, fbxop);</Script>
     <DSRevitNodesUI.ElementsOfCategory guid="16e57956-228b-47d8-929b-49528fde5599" type="DSRevitNodesUI.ElementsOfCategory" nickname="All Elements of Category" x="2662.37186940373" y="3601.77368885389" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" />
     <DSRevitNodesUI.Categories guid="cb050d9b-5a7a-4b66-9655-b80db5e6eb0b" type="DSRevitNodesUI.Categories" nickname="Categories" x="2425.27172527175" y="3606.62484269803" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" index="922:Views" />
     <CoreNodeModels.Watch guid="c7f5fc22-c4c1-4e33-b619-fa28e47dde4b" type="CoreNodeModels.Watch" nickname="Watch" x="3088.20950772383" y="3608.00901980314" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" />
-    <PythonNodeModels.PythonNode guid="2ea30998-4f8f-4b4b-a887-182e24c49f1b" type="PythonNodeModels.PythonNode" nickname="Python Script" x="-2802.43168892238" y="-3961.69388611009" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" inputcount="1">
+    <PythonNodeModels.PythonNode guid="2ea30998-4f8f-4b4b-a887-182e24c49f1b" type="PythonNodeModels.PythonNode" nickname="Python Script" x="-1038.21367132373" y="-2435.22990434794" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" inputcount="12">
       <Script>import clr
 clr.AddReference('ProtoGeometry')
 from Autodesk.DesignScript.Geometry import *
-#该节点的输入内容将存储为 IN 变量中的一个列表。
-i = IN
-list = [];
+clr.AddReference('DSCoreNodes')
+from DSCore import *
 
-centerPoint = Point.ByCoordinates(0, 0, 0)
-b1_01 = 100.0
-h1_01 = 30.0
-b_01 = 120.0
-b2_01 = 40.0
-h_01 = 80.0
-h2_01 = 36.0
-m = 4
-b_02 = 280.0
-b1_02 = 60.0
-h1_02 = 32.0
-h_02 = 60.0
+#输入参数列表
+input = IN
+
+centerPoint = input[0]
+b1_01 = input[1]
+h1_01 = input[2]
+b_01 = input[3]
+b2_01 = input[4]
+h_01 = input[5]
+h2_01 = input[6]
+m = input[7]
+b_02 = input[8]
+b1_02 = input[9]
+h1_02 = input[10]
+h_02 = input[11]
+
+########################class Util########################
+
+class Util:
+
+############createQuadCenter############
+	#创建四边形面
+	#p-&gt;面的中心点
+	#r-&gt;面的边长
+	#z-&gt;面的位置z值
+	def createQuadCenter(self, p, r):
+
+		#	.p1----.p2
+		#	|		|
+		#	|	p	|
+		#	|		|
+		#	|		|
+		#	.p4----.p3
+		x1 = p.X - r
+		y1 = p.Y - r
+		z1 = p.Z
+	
+		#test=p.X
+	
+		x2 = p.X + r
+		y2 = p.Y - r
+		z2 = p.Z
+	
+		x3 = p.X + r
+		y3 = p.Y + r
+		z3 = p.Z
+	
+		x4 = p.X - r
+		y4 = p.Y + r
+		z4 = p.Z
+	
+		p1 = Point.ByCoordinates(x1, y1, z1)
+		p2 = Point.ByCoordinates(x2, y2, z2)
+		p3 = Point.ByCoordinates(x3, y3, z3)
+		p4 = Point.ByCoordinates(x4, y4, z4)
+	
+		poly = Polygon.ByPoints({p1, p2, p3, p4})
+	
+		#l1 = List.FirstItem(p1)
+		#l1 = List.AddItemToEnd(p2)
+		#l1 = List.AddItemToEnd(p3)
+		#l1 = List.AddItemToEnd(p4)
+	
+		#sur = Surface.ByPatch(ploy)
+	
+		return poly
+
+############createQuadCenter End############
+
+############createTrape############
+	#创建梯形平面
+	#p-&gt;短边中心点
+	#d1-&gt;短边边长
+	#d2-&gt;长边边长
+	#h-&gt;高
+	#d-&gt;倾斜进深
+	#direc-&gt;倾斜方向
+	def createTrape(self, p, d1, d2, h, d, direc):
+	
+		x1 = 0
+		x2 = 0
+		x3 = 0
+		x4 = 0
+		y1 = 0
+		y2 = 0
+		y3 = 0
+		y4 = 0
+		z1 = 0
+		z2 = 0
+		z3 = 0
+		z4 = 0
+		
+		
+		if(direc == "y-"):
+		
+			x1 = p.X - d1 / 2
+			y1 = p.Y
+			z1 = p.Z
+	
+			x2 = p.X + d1 / 2
+			y2 = p.Y
+			z2 = p.Z
+	
+			x3 = p.X + d2 / 2
+			y3 = p.Y - d
+			z3 = p.Z + h
+	
+			x4 = p.X - d2 / 2
+			y4 = p.Y - d
+			z4 = p.Z + h
+		
+	
+		if(direc == "y+"):
+		
+			x1 = p.X - d1 / 2
+			y1 = p.Y
+			z1 = p.Z
+	
+			x2 = p.X + d1 / 2
+			y2 = p.Y
+			z2 = p.Z
+	
+			x3 = p.X + d2 / 2
+			y3 = p.Y + d
+			z3 = p.Z + h
+	
+			x4 = p.X - d2 / 2
+			y4 = p.Y + d
+			z4 = p.Z + h
+		
+	
+		if(direc == "x-"):
+		
+			x1 = p.X
+			y1 = p.Y - d1 / 2
+			z1 = p.Z
+	
+			x2 = p.X
+			y2 = p.Y+ d1 / 2
+			z2 = p.Z
+	
+			x3 = p.X - d
+			y3 = p.Y + d2 / 2
+			z3 = p.Z + h
+	
+			x4 = p.X - d
+			y4 = p.Y - d2 / 2
+			z4 = p.Z + h
+		
+	
+		if(direc == "x+"):
+		
+			x1 = p.X
+			y1 = p.Y- d1 / 2
+			z1 = p.Z
+	
+			x2 = p.X
+			y2 = p.Y+ d1 / 2
+			z2 = p.Z
+	
+			x3 = p.X + d
+			y3 = p.Y + d2 / 2
+			z3 = p.Z + h
+	
+			x4 = p.X + d
+			y4 = p.Y - d2 / 2
+			z4 = p.Z + h
+			
+	
+	
+		p1 = Point.ByCoordinates(x1, y1, z1)
+		p2 = Point.ByCoordinates(x2, y2, z2)
+		p3 = Point.ByCoordinates(x3, y3, z3)
+		p4 = Point.ByCoordinates(x4, y4, z4)
+	
+		poly = Polygon.ByPoints({p1, p2, p3, p4})
+	
+		return poly
+
+############createTrape End############
+
+############createUPlane############
+
+	#创建栌枓U型侧面
+	#p-&gt;底边中心定位点
+	#w-&gt;长边长
+	#w1-&gt;顶部短边长
+	#h1-&gt;高（h - h1)
+	#h2-&gt;中间U型部分高
+	#direc-&gt;绘制方向
+	def createUPlane(self, p, w, w1, h1, h2, direc):
+	
+		x1 =0
+		y1 =0
+		z1 =0
+		x2 =0
+		y2 =0
+		z2 =0
+		x3 =0
+		y3 =0
+		z3 =0
+		x4 =0
+		y4 =0
+		z4 =0
+		x5 =0
+		y5 =0
+		z5 =0
+		x6 =0
+		y6 =0
+		z6 =0
+		x7 =0
+		y7 =0
+		z7 =0
+		x8 =0
+		y8 =0
+		z8 =0
+	
+		
+	
+		if(direc == "x"):
+		
+			x1 = p.X - w / 2
+			y1 = p.Y
+			z1 = p.Z
+	
+			x2 = p.X + w / 2
+			y2 = p.Y
+			z2 = p.Z
+	
+			x3 = p.X + w / 2
+			y3 = p.Y
+			z3 = p.Z + h1
+	
+			x4 = p.X + w1 / 2
+			y4 = p.Y
+			z4 = p.Z + h1
+	
+			x5 = p.X + w1 / 2
+			y5 = p.Y
+			z5 = p.Z + h1 - h2
+	
+			x6 = p.X - w1 / 2
+			y6 = p.Y
+			z6 = p.Z + h1 - h2
+	
+			x7 = p.X - w1 / 2
+			y7 = p.Y
+			z7 = p.Z + h1
+	
+			x8 = p.X - w / 2
+			y8 = p.Y
+			z8 = p.Z + h1
+		
+	
+		if(direc == "y"):
+		
+			x1 = p.X
+			y1 = p.Y - w / 2
+			z1 = p.Z
+	
+			x2 = p.X
+			y2 = p.Y + w / 2
+			z2 = p.Z
+	
+			x3 = p.X
+			y3 = p.Y + w / 2
+			z3 = p.Z + h1
+	
+			x4 = p.X
+			y4 = p.Y + w1 / 2
+			z4 = p.Z + h1
+	
+			x5 = p.X
+			y5 = p.Y + w1 / 2
+			z5 = p.Z + h1 - h2
+	
+			x6 = p.X
+			y6 = p.Y - w1 / 2
+			z6 = p.Z + h1 - h2
+	
+			x7 = p.X
+			y7 = p.Y - w1 / 2
+			z7 = p.Z + h1
+	
+			x8 = p.X
+			y8 = p.Y - w / 2
+			z8 = p.Z + h1
+		
+	
+		
+	
+		p1 = Point.ByCoordinates(x1, y1, z1)
+		p2 = Point.ByCoordinates(x2, y2, z2)
+		p3 = Point.ByCoordinates(x3, y3, z3)
+		p4 = Point.ByCoordinates(x4, y4, z4)
+		p5 = Point.ByCoordinates(x5, y5, z5)
+		p6 = Point.ByCoordinates(x6, y6, z6)
+		p7 = Point.ByCoordinates(x7, y7, z7)
+		p8 = Point.ByCoordinates(x8, y8, z8)
+	
+		poly = Polygon.ByPoints([p1, p2, p3, p4, p5, p6, p7, p8])
+	
+		return poly
+
+############createUPlane End############
+
+############createJuanshaCurve############
+	#创建卷杀曲线
+	#p-&gt;定位点
+	#b1-&gt;卷杀部分长
+	#b2-&gt;其余部分长
+	#m-&gt;卷杀段数
+	#h1-&gt;卷杀部分高
+	#h-&gt;整体高
+	#direc-&gt;方向
+	def createJuanshaCurve(self, p, b1, b2, m, h1, h, direc):
+	
+		x1 = 0
+		y1 = 0
+		z1 = 0
+		x2 = 0
+		y2 = 0
+		z2 = 0
+		x3 = 0
+		y3 = 0
+		z3 = 0
+		x4 = 0
+		y4 = 0
+		z4 = 0
+		x5 = 0
+		y5 = 0
+		z5 = 0
+		x6 = 0
+		y6 = 0
+		z6 = 0
+		x7 = 0
+		y7 = 0
+		z7 = 0
+		x8 = 0
+		y8 = 0
+		z8 = 0
+		
+	
+		if(direc == "x+"):
+		
+			x1 = p.X
+			y1 = p.Y
+			z1 = p.Z
+	
+			x2 = p.X + b2
+			y2 = p.Y
+			z2 = p.Z
+	
+			x3 = p.X + b2 + ((4.0 / 10.0) * b1)
+			y3 = p.Y
+			z3 = p.Z + ((1.0 / 10.0) * h1)
+	
+			x4 = p.X + b2 + ((7.0 / 10.0) * b1)
+			y4 = p.Y
+			z4 = p.Z + ((3.0 / 10.0) * h1)
+	
+			x5 = p.X + b2 + ((9.0 / 10.0) * b1)
+			y5 = p.Y
+			z5 = p.Z + ((6.0 / 10.0) * h1)
+	
+			x6 = p.X + b2 + b1
+			y6 = p.Y
+			z6 = p.Z + h1
+	
+			x7 = p.X + b2 + b1
+			y7 = p.Y
+			z7 = p.Z + h
+	
+			x8 = p.X
+			y8 = p.Y
+			z8 = p.Z + h
+		
+	
+		if(direc == "x-"):
+		
+			x1 = p.X
+			y1 = p.Y
+			z1 = p.Z
+	
+			x2 = p.X - b2
+			y2 = p.Y
+			z2 = p.Z
+	
+			x3 = p.X - b2 - ((4.0 / 10.0) * b1)
+			y3 = p.Y
+			z3 = p.Z + ((1.0 / 10.0) * h1)
+	
+			x4 = p.X - b2 - ((7.0 / 10.0) * b1)
+			y4 = p.Y
+			z4 = p.Z + ((3.0 / 10.0) * h1)
+	
+			x5 = p.X - b2 - ((9.0 / 10.0) * b1)
+			y5 = p.Y
+			z5 = p.Z + ((6.0 / 10.0) * h1)
+	
+			x6 = p.X - b2 - b1
+			y6 = p.Y
+			z6 = p.Z + h1
+	
+			x7 = p.X - b2 - b1
+			y7 = p.Y
+			z7 = p.Z + h
+	
+			x8 = p.X
+			y8 = p.Y
+			z8 = p.Z + h
+		
+	
+		if(direc == "y+"):
+		
+			x1 = p.X
+			y1 = p.Y
+			z1 = p.Z
+	
+			x2 = p.X
+			y2 = p.Y + b2
+			z2 = p.Z
+	
+			x3 = p.X
+			y3 = p.Y + b2 + ((4.0 / 10.0) * b1)
+			z3 = p.Z + ((1.0 / 10.0) * h1)
+	
+			x4 = p.X
+			y4 = p.Y + b2 + ((7.0 / 10.0) * b1)
+			z4 = p.Z + ((3.0 / 10.0) * h1)
+	
+			x5 = p.X
+			y5 = p.Y + b2 + ((9.0 / 10.0) * b1)
+			z5 = p.Z + ((6.0 / 10.0) * h1)
+	
+			x6 = p.X
+			y6 = p.Y + b2 + b1
+			z6 = p.Z + h1
+	
+			x7 = p.X
+			y7 = p.Y + b2 + b1
+			z7 = p.Z + h
+	
+			x8 = p.X
+			y8 = p.Y
+			z8 = p.Z + h
+		
+	
+		if(direc == "y-"):
+		
+			x1 = p.X
+			y1 = p.Y
+			z1 = p.Z
+	
+			x2 = p.X
+			y2 = p.Y - b2
+			z2 = p.Z
+	
+			x3 = p.X
+			y3 = p.Y - b2 - ((4.0 / 10.0) * b1)
+			z3 = p.Z + ((1.0 / 10.0) * h1)
+	
+			x4 = p.X
+			y4 = p.Y - b2 - ((7.0 / 10.0) * b1)
+			z4 = p.Z + ((3.0 / 10.0) * h1)
+	
+			x5 = p.X
+			y5 = p.Y - b2 - ((9.0 / 10.0) * b1)
+			z5 = p.Z + ((6.0 / 10.0) * h1)
+	
+			x6 = p.X
+			y6 = p.Y - b2 - b1
+			z6 = p.Z + h1
+	
+			x7 = p.X
+			y7 = p.Y - b2 - b1
+			z7 = p.Z + h
+	
+			x8 = p.X
+			y8 = p.Y
+			z8 = p.Z + h
+		
+	
+	
+		p1 = Point.ByCoordinates(x1, y1, z1)
+		p2 = Point.ByCoordinates(x2, y2, z2)
+		p3 = Point.ByCoordinates(x3, y3, z3)
+		p4 = Point.ByCoordinates(x4, y4, z4)
+		p5 = Point.ByCoordinates(x5, y5, z5)
+		p6 = Point.ByCoordinates(x6, y6, z6)
+		p7 = Point.ByCoordinates(x7, y7, z7)
+		p8 = Point.ByCoordinates(x8, y8, z8)
+	
+		poly = Polygon.ByPoints([p1, p2, p3, p4, p5, p6, p7, p8])
+	
+		curve = PolyCurve.ByPoints([p1, p2, p3, p4, p5, p6, p7, p8], True)
+	
+		return curve
+
+############createJuanshaCurve End############
+
+############createCubiod############
+	#创建单卷杀长方体栱部分，
+	#cur-&gt;边界曲线
+	#width-&gt;长方体长度
+	#direction-&gt;延伸方向
+	def createCubiod(self, cur, width, direction):
+	
+		x1 = 0
+		y1 = 0
+		z1 = 0
+		x2 = 0
+		y2 = 0
+		z2 = 0
+	
+		
+		
+		if(direction == "x+"):
+		
+			x1 = cur.StartPoint.X + width
+			y1 = cur.StartPoint.Y
+			z1 = cur.StartPoint.Z
+	
+			x2 = cur.EndPoint.X + width
+			y2 = cur.EndPoint.Y
+			z2 = cur.EndPoint.Z
+		
+	
+		if(direction == "x-"):
+		
+			x1 = cur.StartPoint.X - width
+			y1 = cur.StartPoint.Y
+			z1 = cur.StartPoint.Z
+	
+			x2 = cur.EndPoint.X - width
+			y2 = cur.EndPoint.Y
+			z2 = cur.EndPoint.Z
+		
+	
+		if(direction == "y+"):
+		
+			x1 = cur.StartPoint.X
+			y1 = cur.StartPoint.Y + width
+			z1 = cur.StartPoint.Z
+	
+			x2 = cur.EndPoint.X
+			y2 = cur.EndPoint.Y + width
+			z2 = cur.EndPoint.Z
+		
+	
+		if(direction == "y-"):
+		
+			x1 = cur.StartPoint.X
+			y1 = cur.StartPoint.Y - width
+			z1 = cur.StartPoint.Z
+	
+			x2 = cur.EndPoint.X
+			y2 = cur.EndPoint.Y - width
+			z2 = cur.EndPoint.Z
+		
+		
+	
+		p1 = Point.ByCoordinates(x1, y1, z1)
+		p2 = Point.ByCoordinates(x2, y2, z2)
+	
+		curve = PolyCurve.ByPoints({p1, p2}, False)
+	
+		return curve
+	
+############createCubiod End############
+
+############getNDGFangCenterPoint############
+	#获取创建枋类构件的中心点
+	#p_center-&gt;与坊正交的栱的长方体部分的质心
+	#p_down-&gt;栌枓的内角点
+	#dh-&gt;与坊正交的栱的高的一半
+	def getNDGFangCenterPoint(self, p_center, p_down, dh):
+	
+		x1 = 0
+		y1 = 0
+		z1 = p_down.Z + (p_center.Z + dh - p_down.Z) / 2
+	
+		p1 = Point.ByCoordinates(x1, y1, z1)
+	
+		return p1
+
+############getNDGFangCenterPoint End############
+
+############getHGFang############
+	#获取创建枋类构件的中心点
+	#p_center-&gt;与坊正交的栱的长方体部分的质心
+	#p_down-&gt;栌枓的内角点
+	#dh-&gt;与坊正交的栱的高的一半
+	def getHGFang(self, p, db, w, l, h):
+	
+		x1 = p.X + db - l / 2
+		y1 = p.Y - w / 2
+		z1 = p.Z + h / 2
+	
+		p1 = Point.ByCoordinates(x1, y1, z1)
+	
+		cube = Cuboid.ByLengths(p1, l, w, h)
+	
+		return cube
+
+############getHGFang End############
+
+############getMidPoint############
+	#获取整体枋类中心点
+	#p1-&gt;一端端点(sandou)
+	#p2-&gt;另一端端点(snadou)
+	#h1-&gt;散枓h1高
+	#dh-&gt;散枓槽口到斜边高
+	#h-&gt;枋高
+	#
+	def getMidPoint(self, p1, p2, h1, dh, h):
+	
+		x1 = (p1.X + p2.X) / 2
+		y1 = (p1.Y + p2.Y) / 2
+		z1 = p1.Z + h1 + dh + h / 2
+	
+		p_mid = Point.ByCoordinates(x1, y1, z1)
+	
+		return p_mid
+
+############getMidPoint End############
+
+########################class Util End########################
+
+########################class ExtendUtil########################
+
+class ExtendUtil:
+
+	#create first tiao
+	
+	def createFirst(self, centerPoint, b1_01, h1_01, b_01, b2_01, h_01, h2_01, m, b_02, b1_02, h1_02, h_02):
+		utils = Util()
+		result = []
+		#create quad
+		#centerpoint
+		p = centerPoint
+		#radius
+		r = b1_01 / 2
+		#create Trape -- d
+		T_d = (b_01 - b1_01) / 2
+		#create U Plane -- h1
+		U_h1 = h_01 - h1_01
+		#create JuanSha -- u
+		JS_u = h2_01 / U_h1
+		#create JuanSha -- v
+		JS_v = b2_01 / b_01
+		#create JuanSha -- 1 - v
+		JS_mv = 1 - (b2_01 / b_01)
+		#create JuanSha -- b2
+		JS_b2 = ((b_02 - 2 * b1_02) - b_01) / 2
+		###bottom quad
+		bottomQuad = utils.createQuadCenter(centerPoint, r)
+	
+		bottomQuadSurface = Surface.ByPatch(bottomQuad)
+		#0
+		result = List.AddItemToEnd(bottomQuadSurface, result)
+		#####create trape
+		###trape1
+		p_T1 = Surface.PointAtParameter(bottomQuadSurface, 0.5, 0)
+	
+		direc1 = "y-"
+		Trape1 = utils.createTrape(p_T1, b1_01, b_01, h1_01, T_d, direc1)
+	
+		Trape1_S = Surface.ByPatch(Trape1)
+		#1
+		result = List.AddItemToEnd(Trape1_S, result)
+	
+		###trape2
+		p_T2 = Surface.PointAtParameter(bottomQuadSurface, 0.5, 1)
+	
+		direc2 = "y+"
+		Trape2 = utils.createTrape(p_T2, b1_01, b_01, h1_01, T_d, direc2)
+	
+		Trape2_S = Surface.ByPatch(Trape2)
+		#2
+		result = List.AddItemToEnd(Trape2_S, result)
+	
+		###trape3
+		p_T3 = Surface.PointAtParameter(bottomQuadSurface, 1, 0.5)
+	
+		direc3 = "x+"
+		Trape3 = utils.createTrape(p_T3, b1_01, b_01, h1_01, T_d, direc3)
+	
+		Trape3_S = Surface.ByPatch(Trape3)
+		#3
+		result = List.AddItemToEnd(Trape3_S, result)
+	
+		###trape4
+		p_T4 = Surface.PointAtParameter(bottomQuadSurface, 0, 0.5)
+	
+		direc4 = "x-"
+		Trape4 = utils.createTrape(p_T4, b1_01, b_01, h1_01, T_d, direc4)
+	
+		Trape4_S = Surface.ByPatch(Trape4)
+		#4
+		result = List.AddItemToEnd(Trape4_S, result)
+	
+		######create U plane
+		###UPlane1
+		p_U1 = Surface.PointAtParameter(Trape1_S, 0, 0.5)
+	
+		direc12 = "x"
+		UPlane1 = utils.createUPlane(p_U1, b_01, b2_01, U_h1, h2_01, direc12)
+	
+		UPlane1_S = Surface.ByPatch(UPlane1)
+		#5
+		result = List.AddItemToEnd(UPlane1_S, result)
+	
+		###UPlane2
+		p_U2 = Surface.PointAtParameter(Trape2_S, 0, 0.5)
+	
+	
+		UPlane2 = utils.createUPlane(p_U2, b_01, b2_01, U_h1, h2_01, direc12)
+	
+		UPlane2_S = Surface.ByPatch(UPlane2)
+		#6
+		result = List.AddItemToEnd(UPlane2_S, result)
+	
+		###UPlane3
+		p_U3 = Surface.PointAtParameter(Trape3_S, 0, 0.5)
+	
+		direc34 = "y"
+		UPlane3 = utils.createUPlane(p_U3, b_01, b2_01, U_h1, h2_01, direc34)
+	
+		UPlane3_S = Surface.ByPatch(UPlane3)
+		#7
+		result = List.AddItemToEnd(UPlane3_S, result)
+	
+		###UPlane4
+		p_U4 = Surface.PointAtParameter(Trape4_S, 0, 0.5)
+	
+	
+		UPlane4 = utils.createUPlane(p_U4, b_01, b2_01, U_h1, h2_01, direc34)
+	
+		UPlane4_S = Surface.ByPatch(UPlane4)
+		#8
+		result = List.AddItemToEnd(UPlane4_S, result)
+	
+		#####create JuanSha
+		###JS1
+		direc1 = "y-"
+		##JS1_1
+		p_JS1_1 = Surface.PointAtParameter(UPlane1_S, JS_u, JS_v)
+	
+		JS1_1 = utils.createJuanshaCurve(p_JS1_1, b1_02, JS_b2, m, h1_02, h_02, direc1)
+	
+		JS1_C1 = Surface.ByPatch(JS1_1)
+		#9
+		result = List.AddItemToEnd(JS1_C1, result)
+	
+		##JS1_2
+		p_JS1_2 = Surface.PointAtParameter(UPlane1_S, JS_u, JS_mv)
+	
+		JS1_2 = utils.createJuanshaCurve(p_JS1_2, b1_02, JS_b2, m, h1_02, h_02, direc1)
+	
+		JS1_C2 = Surface.ByPatch(JS1_2)
+		#10
+		result = List.AddItemToEnd(JS1_C2, result)
+	
+		JS1 = []
+	
+		JS1 = List.AddItemToEnd(JS1_1, JS1)
+		JS1 = List.AddItemToEnd(JS1_2, JS1)
+		JS1_S = Surface.ByLoft(JS1)
+		#11
+		result = List.AddItemToEnd(JS1_S, result)
+	
+		###JS2
+		direc2 = "y+"
+		##JS2_1
+		p_JS2_1 = Surface.PointAtParameter(UPlane2_S, JS_u, JS_v)
+	
+		JS2_1 = utils.createJuanshaCurve(p_JS2_1, b1_02, JS_b2, m, h1_02, h_02, direc2)
+	
+		JS2_C1 = Surface.ByPatch(JS2_1)
+		#12
+		result = List.AddItemToEnd(JS2_C1, result)
+	
+		##JS2_2
+		p_JS2_2 = Surface.PointAtParameter(UPlane2_S, JS_u, JS_mv)
+	
+		JS2_2 = utils.createJuanshaCurve(p_JS2_2, b1_02, JS_b2, m, h1_02, h_02, direc2)
+	
+		JS2_C2 = Surface.ByPatch(JS2_2)
+		#13
+		result = List.AddItemToEnd(JS2_C2, result)
+	
+		JS2 = []
+	
+		JS2 = List.AddItemToEnd(JS2_1, JS2)
+		JS2 = List.AddItemToEnd(JS2_2, JS2)
+		JS2_S = Surface.ByLoft(JS2)
+		#14
+		result = List.AddItemToEnd(JS2_S, result)
+	
+		###JS3
+		direc3 = "x+"
+		##JS3_1
+		p_JS3_1 = Surface.PointAtParameter(UPlane3_S, JS_u, JS_v)
+	
+		JS3_1 = utils.createJuanshaCurve(p_JS3_1, b1_02, JS_b2, m, h1_02, h_02, direc3)
+	
+		JS3_C1 = Surface.ByPatch(JS3_1)
+		#15
+		result = List.AddItemToEnd(JS3_C1, result)
+	
+		##JS3_2
+		p_JS3_2 = Surface.PointAtParameter(UPlane3_S, JS_u, JS_mv)
+	
+		JS3_2 = utils.createJuanshaCurve(p_JS3_2, b1_02, JS_b2, m, h1_02, h_02, direc3)
+	
+		JS3_C2 = Surface.ByPatch(JS3_2)
+		#16
+		result = List.AddItemToEnd(JS3_C2, result)
+	
+		JS3 = []
+	
+		JS3 = List.AddItemToEnd(JS3_1, JS3)
+		JS3 = List.AddItemToEnd(JS3_2, JS3)
+		JS3_S = Surface.ByLoft(JS3)
+		#17
+		result = List.AddItemToEnd(JS3_S, result)
+	
+		###JS4
+		direc4 = "x-"
+		##JS4_1
+		p_JS4_1 = Surface.PointAtParameter(UPlane4_S, JS_u, JS_v)
+	
+		JS4_1 = utils.createJuanshaCurve(p_JS4_1, b1_02, JS_b2, m, h1_02, h_02, direc4)
+	
+		JS4_C1 = Surface.ByPatch(JS4_1)
+		#18
+		result = List.AddItemToEnd(JS4_C1, result)
+	
+		##JS4_2
+		p_JS4_2 = Surface.PointAtParameter(UPlane4_S, JS_u, JS_mv)
+	
+		JS4_2 = utils.createJuanshaCurve(p_JS4_2, b1_02, JS_b2, m, h1_02, h_02, direc4)
+	
+		JS4_C2 = Surface.ByPatch(JS4_2)
+		#19
+		result = List.AddItemToEnd(JS4_C2, result)
+	
+		JS4 = []
+	
+		JS4 = List.AddItemToEnd(JS4_1, JS4)
+		JS4 = List.AddItemToEnd(JS4_2, JS4)
+		JS4_S = Surface.ByLoft(JS4)
+		#20
+		result = List.AddItemToEnd(JS4_S, result)
+	
+		return result
+	
 
 
-list = createFirst(centerPoint, b1_01, h1_01, b_01, b2_01, h_01, h2_01, m,
-b_02, b1_02, h1_02, h_02);
+########################class ExtendUtil End########################
+
+test = ExtendUtil()
+#test = Util()
+
 
 #将输出内容指定给 OUT 变量。
-OUT = list</Script>
+OUT = test.createFirst(centerPoint, b1_01, h1_01, b_01, b2_01, h_01, h2_01, m, b_02, b1_02, h1_02, h_02)
+#u1 = test.createUPlane(centerPoint, 120, 40, 50, 36, "x")
+#OUT = Surface.ByPatch(u1)</Script>
     </PythonNodeModels.PythonNode>
-    <CoreNodeModels.Watch guid="e4284a6b-ec5b-44fa-beb2-6976108846c1" type="CoreNodeModels.Watch" nickname="Watch" x="-2553.74591915143" y="-3963.67460612385" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" />
-    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="d9513612-02ca-43dc-a17f-4a0f3ce5a31d" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-2969.23077283898" y="-4083.94466658044" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//把所有的函数都建立在一个类 或者 直接写成函数放在一个python srcipt里&#xA;//然后再后面直接调用 循环创建 接上导出部分 应该就可以实现自动化完成构建导出" ShouldFocus="false" />
+    <CoreNodeModels.Watch guid="e4284a6b-ec5b-44fa-beb2-6976108846c1" type="CoreNodeModels.Watch" nickname="Watch" x="-807.141692157463" y="-2340.45848601047" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="d9513612-02ca-43dc-a17f-4a0f3ce5a31d" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-2982.67588152504" y="-4277.06531861659" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" CodeText="//把所有的函数都建立在一个类 或者 直接写成函数放在一个python srcipt里&#xA;//然后再后面直接调用 循环创建 接上导出部分 应该就可以实现自动化完成构建导出" ShouldFocus="false" />
   </Elements>
   <Connectors>
-    <Dynamo.Graph.Connectors.ConnectorModel start="d2085207-53fb-48f9-9878-ce2ac849527f" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="33" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="d2085207-53fb-48f9-9878-ce2ac849527f" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="33" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="678de147-592d-4364-a019-343093be90d2" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="48" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="678de147-592d-4364-a019-343093be90d2" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="48" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="79b9eac5-6126-4de9-9d79-fd1df2bf256a" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="45" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="79b9eac5-6126-4de9-9d79-fd1df2bf256a" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="45" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="45eb9376-dd25-47ef-910f-2e9dd4f7d17e" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="42" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="45eb9376-dd25-47ef-910f-2e9dd4f7d17e" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="42" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="aa79ecb8-58cd-4948-b5c1-ca054dba4eac" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="43" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="aa79ecb8-58cd-4948-b5c1-ca054dba4eac" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="43" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="7b2770c1-7471-4df9-90ce-4e052a223ec7" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="38" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="7b2770c1-7471-4df9-90ce-4e052a223ec7" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="46" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="7b2770c1-7471-4df9-90ce-4e052a223ec7" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="38" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="7b2770c1-7471-4df9-90ce-4e052a223ec7" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="46" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="f4950276-5946-42b8-9a8f-65bcb442f7ed" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="40" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="f4950276-5946-42b8-9a8f-65bcb442f7ed" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="40" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="7c7368c6-c311-4aaf-a4d2-6334f195585f" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="3" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="7c7368c6-c311-4aaf-a4d2-6334f195585f" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="3" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="0110c7ed-43be-4a1c-9605-4c99655ecc29" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="7c7368c6-c311-4aaf-a4d2-6334f195585f" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="3" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="7c7368c6-c311-4aaf-a4d2-6334f195585f" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="3" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="0110c7ed-43be-4a1c-9605-4c99655ecc29" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="1" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="1aef89b8-5bc1-4ab2-a231-d8ed9a17c1ab" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="0110c7ed-43be-4a1c-9605-4c99655ecc29" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="0110c7ed-43be-4a1c-9605-4c99655ecc29" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="1" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="1aef89b8-5bc1-4ab2-a231-d8ed9a17c1ab" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="2" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="42ff6256-589d-4f9c-9289-c315ab77e63d" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="6" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="1aef89b8-5bc1-4ab2-a231-d8ed9a17c1ab" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="1aef89b8-5bc1-4ab2-a231-d8ed9a17c1ab" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="2" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="42ff6256-589d-4f9c-9289-c315ab77e63d" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="6" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="25cd4e99-94de-459b-954a-9a25560105f6" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="4" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="42ff6256-589d-4f9c-9289-c315ab77e63d" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="6" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="42ff6256-589d-4f9c-9289-c315ab77e63d" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="6" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="25cd4e99-94de-459b-954a-9a25560105f6" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="4" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="83654766-3bca-4b6b-a4a4-ab79a6d766f6" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="25cd4e99-94de-459b-954a-9a25560105f6" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="4" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="25cd4e99-94de-459b-954a-9a25560105f6" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="4" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="83654766-3bca-4b6b-a4a4-ab79a6d766f6" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="0" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="3dfe2b18-a428-496b-872c-4a8e12d62e00" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="13" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="83654766-3bca-4b6b-a4a4-ab79a6d766f6" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="83654766-3bca-4b6b-a4a4-ab79a6d766f6" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="0" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="3dfe2b18-a428-496b-872c-4a8e12d62e00" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="13" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="32400e44-d45e-4738-af66-93cd0e2c1045" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="18" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="32400e44-d45e-4738-af66-93cd0e2c1045" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="18" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="f7ccc2df-1e40-4438-9e5c-281a04cf7f74" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="19" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="f7ccc2df-1e40-4438-9e5c-281a04cf7f74" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="19" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="14" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="26" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="28" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="36" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="44" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="39" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="41" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="14" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="26" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="28" portType="0" />
@@ -323,55 +1161,42 @@ OUT = list</Script>
     <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="39" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="41" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="3785db76-36b0-482c-b0b0-65229395b783" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="44" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="35411072-d811-4314-82b7-670e29a03c5d" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="15" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="35411072-d811-4314-82b7-670e29a03c5d" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="15" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="0ee57d16-d1be-44a2-b6c2-e6232b4469bc" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="16" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="0ee57d16-d1be-44a2-b6c2-e6232b4469bc" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="16" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="d5501f1e-f14a-441e-9b15-88a720ec7ecd" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="17" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="d5501f1e-f14a-441e-9b15-88a720ec7ecd" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="17" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="a247819c-52bb-426b-b65b-ee705c978791" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="20" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="a247819c-52bb-426b-b65b-ee705c978791" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="20" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="c2510042-c434-410c-86a6-f385cb925f98" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="22" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="c2510042-c434-410c-86a6-f385cb925f98" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="22" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="f30bcd95-591d-4014-926b-09f51d72e956" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="23" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="f30bcd95-591d-4014-926b-09f51d72e956" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="23" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="d27bf3df-e0f0-47aa-bf7e-40542416c99d" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="24" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="d27bf3df-e0f0-47aa-bf7e-40542416c99d" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="24" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="db0836da-dc9f-42ac-899d-bd20ea16f789" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="8" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="db0836da-dc9f-42ac-899d-bd20ea16f789" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="8" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="973651d4-a263-425b-b9c3-69d478e92a4b" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="12" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="db0836da-dc9f-42ac-899d-bd20ea16f789" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="8" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="db0836da-dc9f-42ac-899d-bd20ea16f789" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="8" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="973651d4-a263-425b-b9c3-69d478e92a4b" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="12" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="6ee453e0-acf3-4638-8ed7-bbd4898be5f9" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="27" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="6ee453e0-acf3-4638-8ed7-bbd4898be5f9" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="27" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="fde7e01b-a6ac-4f70-a90c-553803fa8edb" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="29" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="fde7e01b-a6ac-4f70-a90c-553803fa8edb" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="29" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="37d652a2-5e3c-407b-9dee-b5537aee585d" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="32" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="37d652a2-5e3c-407b-9dee-b5537aee585d" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="32" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="a937013d-d544-4e49-8806-32b3bbfa0205" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="30" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="a937013d-d544-4e49-8806-32b3bbfa0205" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="34" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="a937013d-d544-4e49-8806-32b3bbfa0205" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="35" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="a937013d-d544-4e49-8806-32b3bbfa0205" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="30" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="a937013d-d544-4e49-8806-32b3bbfa0205" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="34" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="a937013d-d544-4e49-8806-32b3bbfa0205" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="35" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="7fe5c62e-2944-4851-bb43-476cc71354a1" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="37" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="7fe5c62e-2944-4851-bb43-476cc71354a1" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="37" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="bc347a09-6be6-4b0f-a395-80a244d31d6e" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="31" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="bc347a09-6be6-4b0f-a395-80a244d31d6e" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="31" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="d06fe0f2-6d6a-4519-bed4-365f372ea5f8" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="47" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="d06fe0f2-6d6a-4519-bed4-365f372ea5f8" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="47" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="bcc85b4a-1a40-4656-acb7-e020c6bcfa51" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="5" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="bcc85b4a-1a40-4656-acb7-e020c6bcfa51" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="5" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="b9dd35e4-fc01-486c-9e75-0514d1513bb9" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="7" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="bcc85b4a-1a40-4656-acb7-e020c6bcfa51" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="5" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="bcc85b4a-1a40-4656-acb7-e020c6bcfa51" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="5" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="b9dd35e4-fc01-486c-9e75-0514d1513bb9" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="7" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="b16d67c8-641f-4993-8e4e-cc7bb78a0ee0" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="10" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="b9dd35e4-fc01-486c-9e75-0514d1513bb9" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="7" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="b9dd35e4-fc01-486c-9e75-0514d1513bb9" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="7" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="b16d67c8-641f-4993-8e4e-cc7bb78a0ee0" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="10" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="3c05d49d-0168-4da2-9d41-9bebaa46ed48" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="11" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="b16d67c8-641f-4993-8e4e-cc7bb78a0ee0" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="10" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="b16d67c8-641f-4993-8e4e-cc7bb78a0ee0" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="10" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="3c05d49d-0168-4da2-9d41-9bebaa46ed48" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="11" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="0dc65791-bde4-4893-ace8-893546fb042a" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="9" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="3c05d49d-0168-4da2-9d41-9bebaa46ed48" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="11" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="3c05d49d-0168-4da2-9d41-9bebaa46ed48" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="11" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="0dc65791-bde4-4893-ace8-893546fb042a" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="9" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="20003c2a-88bb-48e4-beb1-f9cac029c51c" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="21" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="0dc65791-bde4-4893-ace8-893546fb042a" start_index="0" end="2ea30998-4f8f-4b4b-a887-182e24c49f1b" end_index="9" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="0dc65791-bde4-4893-ace8-893546fb042a" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="9" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="20003c2a-88bb-48e4-beb1-f9cac029c51c" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="21" portType="0" />
-    <Dynamo.Graph.Connectors.ConnectorModel start="3ec19aae-711b-48f7-8f48-4b12b1cda135" start_index="0" end="b49a469f-4a27-4fec-b261-cd823ba16b36" end_index="25" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="3ec19aae-711b-48f7-8f48-4b12b1cda135" start_index="0" end="fed45352-9bc9-48f9-8c05-aa16bf277e0f" end_index="25" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="25b9cc93-2574-45a6-af30-245ca78a1294" start_index="0" end="7c01ba41-954f-4bf2-8e31-60bf48488944" end_index="0" portType="0" />
     <Dynamo.Graph.Connectors.ConnectorModel start="b94f2949-d965-4ca2-bd39-5fb2c96aa025" start_index="0" end="0e649c31-e48c-427b-bd47-49b3408d39ed" end_index="0" portType="0" />
@@ -412,6 +1237,6 @@ OUT = list</Script>
   </Annotations>
   <Presets />
   <Cameras>
-    <Camera Name="背景预览" eyeX="-39.4971758505194" eyeY="-41.3543828872786" eyeZ="-34.6382015445128" lookX="182.965245383556" lookY="216.26083305574" lookZ="167.007996461361" upX="-0.593712915280157" upY="0.594822762770943" upZ="-0.541932449994242" />
+    <Camera Name="背景预览" eyeX="338.541666194627" eyeY="289.694466920143" eyeZ="95.5638373012808" lookX="-407.263179861516" lookY="-296.559160804623" lookZ="47.1985068760913" upX="-0.396097920576965" upY="0.917060026281218" upZ="0.0459045306610251" />
   </Cameras>
 </Workspace>
