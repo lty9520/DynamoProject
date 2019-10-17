@@ -1,0 +1,71 @@
+<Workspace Version="0.9.1.4062" X="0" Y="0" zoom="1" Name="ExportFBX" Description="将3D View内的模型导出为FBX格式文件" ID="d659ec42-0901-48e6-bd95-6bda7417db54" Category="Core.File">
+  <NamespaceResolutionMap />
+  <Elements>
+    <PythonNodeModels.PythonNode guid="a0f938e4-0a5d-45b8-bf97-630f4941dd53" type="PythonNodeModels.PythonNode" nickname="Python Script" x="652.5" y="271" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" inputcount="2">
+      <Script>import clr
+clr.AddReference('ProtoGeometry')
+from Autodesk.DesignScript.Geometry import *
+
+clr.AddReference('RevitAPIUI')
+from Autodesk.Revit.UI import *
+
+clr.AddReference('RevitAPI')
+import Autodesk
+from Autodesk.Revit.DB import *
+
+#调用DocumentManager（import RevitServices）实现对Revit的Document的调用，不能用Dynamo中的CurrentDocument节点获取当前Document，不识别（不知道为什么）
+clr.AddReference('RevitServices')
+import RevitServices
+from RevitServices.Persistence import DocumentManager
+from RevitServices.Transactions import TransactionManager
+from Autodesk.Revit.ApplicationServices import *
+#该节点的输入内容将存储为 IN 变量中的一个列表。
+
+dataEnteringNode = IN
+
+
+#获取当前文档
+document = DocumentManager.Instance.CurrentDBDocument;
+
+#输出路径
+exFolder = IN[0];
+#输出文件名
+fileName = IN[1];
+#创建视图元素过滤收集器过滤3d视图
+viewCollector = Autodesk.Revit.DB.FilteredElementCollector(document);
+#过滤3d视图
+viewCollector.OfCategory(BuiltInCategory.OST_Views).OfClass(View3D);
+#获取第一个3d视图
+view3D = viewCollector.FirstElement();
+
+
+fbxop = FBXExportOptions();
+fbxop.LevelsOfDetailValue = -1;
+fbxop.StopOnError = False;
+fbxop.UseLevelsOfDetail = False;
+fbxop.WithoutBoundaryEdges = False;
+viewset = ViewSet();
+viewset.Insert(view3D);
+
+
+#将输出内容指定给 OUT 变量。
+OUT = document.Export(exFolder, fileName, viewset, fbxop);</Script>
+    </PythonNodeModels.PythonNode>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="991339da-3a0e-4c37-9ef9-f66ca7e24290" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="149.5" y="234" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Output File Path(Without File Name)&#xD;&#xA;filePath : string" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="930a461e-3349-46d1-ae70-d60dc68ef50d" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="147.5" y="367" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false">
+      <Symbol value="//Output File Name(Without File Path)&#xD;&#xA;fileName : string" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="991339da-3a0e-4c37-9ef9-f66ca7e24290" start_index="0" end="a0f938e4-0a5d-45b8-bf97-630f4941dd53" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="930a461e-3349-46d1-ae70-d60dc68ef50d" start_index="0" end="a0f938e4-0a5d-45b8-bf97-630f4941dd53" end_index="1" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="背景预览" eyeX="-524.892028808594" eyeY="182.819534301758" eyeZ="171.570999145508" lookX="569.976135253906" lookY="-3.87806367874146" lookZ="-133.798248291016" upX="-0.202409639954567" upY="0.978147566318512" upZ="0.0475143529474735" />
+  </Cameras>
+</Workspace>
